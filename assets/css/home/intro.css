@@ -1,0 +1,41 @@
+.intro {
+  display: flex;
+  padding: 7.5rem 15rem 1.5rem 15rem;
+  flex-direction: column;
+  align-items: center;
+  background: var(--cor-primaria, #1D7C87);
+}
+
+.intro__titulo {
+  font-size: 3.0625rem;
+  text-align: center;
+}
+
+.intro__titulo--destaque {
+  position: relative;
+}
+
+.intro__titulo--destaque::after {
+  content: ""; /* Conteúdo vazio para o pseudo-elemento */
+  position: absolute; /* Posição absoluta em relação ao elemento pai */
+  left: 0; /* Alinha à esquerda do elemento pai */
+  bottom: -0.25rem; /* Ajuste esse valor para mover o sublinhado para cima ou para baixo */
+  width: 100%; /* Largura completa do elemento pai */
+  height: 0.25rem;
+  background-color: var(--cor-terciaria, #ffde00);
+}
+
+.intro__subtitulo {
+  margin: 3rem 0 2rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.intro__botao {
+  padding: 1rem 2rem;
+  border-radius: 6.1875rem;
+  border: solid transparent;
+  background: var(--cor-terciaria, #ffde00);
+  color: var(--cor-primaria-900, #18595D);
+  font-size: 1.125rem;
+}

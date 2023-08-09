@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Century Gothic', sans-serif;
+  src: url(../fonts/GOTHICB.TTF);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+button {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  color: var(--cor-secundaria, #FDFCF4);
+}
+
+p, a, button {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Century Gothic', sans-serif;
+}

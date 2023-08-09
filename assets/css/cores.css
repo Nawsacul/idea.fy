@@ -1,0 +1,15 @@
+:root {
+    --cor-primaria: #1D7C87;
+    --cor-primaria-200: #82DAE5;
+    --cor-primaria-400: #35C0D2;
+    --cor-primaria-600: #23A4B8;
+    --cor-primaria-900: #18595D;
+    --cor-vermelha: #EB5757;
+    --cor-secundaria: #FDFCF4;
+    --cor-secundaria-300: #DAD9D1;
+    --cor-secundaria-500: #96958E;
+    --cor-secundaria-700: #5A5953;
+    --cor-terciaria: #FFDE00;
+    --branco: #FFFFFF;
+    --cor-primaria-transparente: rgba(35, 164, 184, 0.3);
+}

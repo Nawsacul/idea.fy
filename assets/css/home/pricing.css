@@ -1,0 +1,140 @@
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--cor-primaria, #1d7c87);
+  padding: 2rem 15rem 5rem 15rem;
+  gap: 2.5rem;
+}
+
+.pricing_cabecalho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pricing__titulo {
+  font-size: 2.4375rem;
+}
+
+.pricing__subtitulo {
+  color: var(--cor-secundaria, #fdfcf4);
+}
+
+.pricing__planos {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 13.125rem;
+  background: var(--cor-secundaria, #fdfcf4);
+  border: none;
+  border-radius: 1rem;
+}
+
+.plan__titulo {
+  font-size: 1.25rem;
+  padding: 1rem 0;
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+}
+
+.plan__titulo--basic {
+  background: var(--primary-primary-200, #82dae5);
+}
+
+.plan__titulo--standart {
+  background: var(--primary-primary-400, #35c0d2);
+}
+
+.plan__titulo--plus {
+  background: var(--primary-primary-600, #23a4b8);
+}
+
+.plan__titulo--premium {
+  background: var(--primary-primary-900, #18595d);
+}
+
+.plan__beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+}
+
+.plan__beneficio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.beneficio__descricao {
+  font-size: 0.6875rem;
+}
+
+.beneficio__descricao--desativado {
+  color: var(--cor-secundaria-500, #96958e);
+}
+
+.plan__preco {
+  color: var(--cor-primaria, #1d7c87);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 125%;
+  padding: 0.5rem 0.62rem;
+  border-top: 0.0625rem solid var(--cor-secundaria-300, #dad9d1);
+}
+
+.plan__divisao,
+.plan__taxas {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--cor-secundaria-700, #5a5953);
+}
+
+.plan__divisao {
+  margin-bottom: 0.5rem;
+}
+
+.plan__taxas {
+  margin-bottom: 1rem;
+}
+
+.plan__botao {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6.1875rem;
+  background: var(--cor-terciaria, #ffde00);
+  color: var(--cor-primaria-900, #18595d);
+  margin-bottom: 1rem;
+}
+
+.faq__pergunta {
+  display: flex;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-radius: 0.5rem;
+  border: 1px solid var(--cor-secundaria, #fdfcf4);
+  background: var(--cor-primaria-900, #18595d);
+}
+
+.faq__pergunta-titulo {
+  flex: 1 0 0;
+  align-self: center;
+  font-size: 1.25rem;
+}
+
+.faq__resposta {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 1.5rem 1.5rem 0;
+  color: var(--cor-secundaria, #fdfcf4);
+}

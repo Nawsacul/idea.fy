@@ -1,0 +1,7 @@
+@import url(reset.css);
+@import url(fontes.css);
+@import url(cores.css);
+@import url(navbar.css);
+@import url(home/intro.css);
+@import url(home/features.css);
+@import url(home/pricing.css);

@@ -1,0 +1,52 @@
+.features {
+  display: flex;
+  gap: 2.5rem;
+  background: var(--cor-primaria, #1d7c87);
+  padding-right: 15rem;
+}
+
+.features__conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8rem;
+  max-width: 28.875rem;;
+}
+
+.features__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.features__titulo {
+  font-size: 1.9375rem;
+}
+
+.features__titulo-principal {
+  font-size: 2.4375rem;
+}
+
+.features__subtitulo {
+  font-size: 1.25rem;
+}
+
+.features__detalhes {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--cor-secundaria, #FDFCF4);
+}
+
+.features__titulo--destaque {
+  position: relative;
+}
+
+.features__titulo--destaque::after {
+  content: ""; /* Conteúdo vazio para o pseudo-elemento */
+  position: absolute; /* Posição absoluta em relação ao elemento pai */
+  left: 0; /* Alinha à esquerda do elemento pai */
+  bottom: -5px; /* Ajuste esse valor para mover o sublinhado para cima ou para baixo */
+  width: 100%; /* Largura completa do elemento pai */
+  height: 0.25rem;
+  background-color: var(--cor-terciaria, #ffde00);
+}
