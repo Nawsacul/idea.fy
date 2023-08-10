@@ -1,7 +1,6 @@
 .features {
   display: flex;
   gap: 2.5rem;
-  background: var(--cor-primaria, #1d7c87);
   padding-right: 15rem;
 }
 

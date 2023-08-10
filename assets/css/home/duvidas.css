@@ -1,0 +1,31 @@
+.duvidas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 15rem;
+}
+
+.duvidas__titulo {
+  font-size: 2.4375rem;
+  margin-bottom: 4rem;
+}
+
+.duvidas__perguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq__ul {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 0.75rem;
+}
+
+.faq__ul li::before {
+    content: '•'; /* Conteúdo do marcador personalizado */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; /* Ajuste conforme necessário */
+    /* Outros estilos conforme necessário */
+}

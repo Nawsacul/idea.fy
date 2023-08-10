@@ -1,0 +1,12 @@
+.lembrete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4.5rem 0 2rem;
+}
+
+.lembrete__titulo {
+  font-size: 2.4375rem;
+  text-align: center;
+}

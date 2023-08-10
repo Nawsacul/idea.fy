@@ -1,0 +1,35 @@
+.outros-servicos {
+    display: flex;
+    justify-content: center;
+}
+
+.outros-servicos__link {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.duvidas__link {
+    margin-top: 4rem;
+}
+
+.outros-servicos__texto {
+    position: relative;
+}
+
+.outros-servicos__texto::after {
+    content: ""; /* Conteúdo vazio para o pseudo-elemento */
+    position: absolute; /* Posição absoluta em relação ao elemento pai */
+    left: 0; /* Alinha à esquerda do elemento pai */
+    bottom: 1px; /* Ajuste esse valor para mover o sublinhado para cima ou para baixo */
+    width: 100%; /* Largura completa do elemento pai */
+    height: 0.0625rem;;
+    background-color: var(--cor-terciaria, #ffde00);
+}
+
+.outros-servicos__link:active > .outros-servicos__texto {
+    color: var(--cor-primaria-200, #82dae5);
+}
+
+.outros-servicos__link:hover > .outros-servicos__texto::after {
+    background-color: var(--cor-primaria-200, #82dae5);
+}
