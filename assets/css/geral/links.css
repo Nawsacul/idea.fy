@@ -3,20 +3,18 @@
     justify-content: center;
 }
 
-.outros-servicos__link {
+.link {
     padding: 1rem 2rem;
     font-size: 1.125rem;
 }
 
-.duvidas__link {
-    margin-top: 4rem;
-}
-
-.outros-servicos__texto {
+.link__texto {
     position: relative;
+    color: var(--cor-secundaria, #FDFCF4);
+    
 }
 
-.outros-servicos__texto::after {
+.link__texto::after {
     content: ""; /* Conteúdo vazio para o pseudo-elemento */
     position: absolute; /* Posição absoluta em relação ao elemento pai */
     left: 0; /* Alinha à esquerda do elemento pai */
@@ -26,10 +24,21 @@
     background-color: var(--cor-terciaria, #ffde00);
 }
 
-.outros-servicos__link:active > .outros-servicos__texto {
+.link:active > .link__texto {
     color: var(--cor-primaria-200, #82dae5);
 }
 
-.outros-servicos__link:hover > .outros-servicos__texto::after {
+.link:hover > .link__texto::after {
     background-color: var(--cor-primaria-200, #82dae5);
+}
+
+/* Links diferentes */
+
+.duvidas__link {
+    margin-top: 4rem;
+}
+
+.navbar__mobile-menu {
+    background: transparent;
+    border: none;
 }
