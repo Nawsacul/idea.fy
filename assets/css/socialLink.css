@@ -1,0 +1,11 @@
+.social-link {
+  fill: var(--cor-terciaria, #ffde00);
+}
+
+.social-link:hover {
+  fill: var(--cor-secundaria, #fdfcf4);
+}
+
+.social-link:active {
+  fill: var(--cor-primaria-200, #82dae5);
+}

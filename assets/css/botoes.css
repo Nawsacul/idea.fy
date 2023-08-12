@@ -6,3 +6,14 @@
   color: var(--cor-primaria-900, #18595d);
   font-size: 1.125rem;
 }
+
+.botao:hover {
+  background: var(--cor-primaria-600, #23A4B8); 
+  color: var(--cor-secundaria, #FDFCF4);
+  cursor: pointer;
+}
+
+.botao:active {
+  background: var(--cor-primaria-900, #18595D);
+  color: var(--cor-secundaria, #FDFCF4);
+}

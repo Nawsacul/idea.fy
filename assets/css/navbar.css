@@ -1,3 +1,5 @@
+@import url(socialLink.css);
+
 .navbar {
   position: relative;
   display: flex;
@@ -29,16 +31,4 @@
 
 .navbar__link:active {
   border: 1px solid var(--cor-primaria-200, #82dae5);
-}
-
-.navbar__img-whatsapp {
-  fill: var(--cor-terciaria, #ffde00);
-}
-
-.navbar__img-whatsapp:hover {
-  fill: var(--cor-secundaria, #fdfcf4);
-}
-
-.navbar__img-whatsapp:active {
-  fill: var(--cor-primaria-200, #82dae5);
 }
