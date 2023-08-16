@@ -27,6 +27,7 @@
   .pricing__planos {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
   }
 
@@ -34,7 +35,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 100%;
+    width: 100%;
+    max-width: 18.5rem;
     background: var(--cor-secundaria, #fdfcf4);
     border: none;
     border-radius: 1rem;
@@ -105,29 +107,19 @@
   .plan__divisao {
     margin-bottom: 0.5rem;
   }
-  
+
   .plan__taxas {
     margin-bottom: 1rem;
   }
-  
+
   .plan__botao {
     margin-bottom: 1rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-}
-
-@media screen and (min-width: 989px) {
-}
-
-@media screen and (min-width: 1024px) {
-}
-
-@media screen and (min-width: 1440px) {
   .pricing {
-    padding: 2rem 15rem 5rem 15rem;
-    gap: 2.5rem;
+    padding: 2rem 4rem 2.5rem;
   }
 
   .pricing__titulo {
@@ -135,11 +127,67 @@
   }
 
   .pricing__subtitulo {
-    color: var(--cor-secundaria, #fdfcf4);
+    font-size: 1.125rem;
   }
 
   .pricing__planos {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem 2rem;
+  }
+
+  .plan {
+    width: 18.438rem;
+    max-width: unset;
+  }
+
+  .plan__beneficios {
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 989px) {
+  .pricing {
+    padding: 2rem 3rem 5rem;
+  }
+
+  .pricing__planos {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+
+  .plan {
+    width: 12.453rem;
+  }
+
+  .plan__beneficios {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pricing {
+    padding: 2rem 2.5rem 5rem;
+  }
+
+  .plan {
+    width: 13.25rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .pricing {
+    padding: 2rem 15rem 5rem;
+  }
+
+  .plan {
+    width: 13.125rem;
+  }
+
+  .pricing__planos {
     gap: 2.5rem;
   }
 }

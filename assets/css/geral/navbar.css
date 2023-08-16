@@ -11,13 +11,18 @@
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
   }
 
+  .navbar__logo {
+    width: 8.75rem;
+    height: 2.9375rem;
+  }
+
   .navbar__mobile-menu {
     display: initial;
   }
 
   .navbar__nav {
     position: absolute;
-    top: 104px;
+    top: 6.2rem;
     left: 0;
     width: 100%;
     z-index: 2;
@@ -68,6 +73,11 @@
     padding: 1.5rem 4rem 1rem;
   }
 
+  .navbar__logo {
+    width: 8.625rem;
+    height: 2.875rem;
+  }
+
   .navbar__nav {
     position: initial;
     width: initial;
@@ -85,6 +95,10 @@
     padding: 1rem 1.5rem;
     border-radius: 6.1875rem;
     border: 1px solid transparent;
+  }
+
+  .navbar__botao-svg {
+    padding: 0;
   }
 
   .navbar__link:hover {
@@ -111,6 +125,11 @@
 @media screen and (min-width: 989px) {
   .navbar {
     padding: 1.5rem 3rem 1rem;
+  }
+
+  .navbar__logo {
+    width: 11.9rem;
+    height: 4rem;
   }
 }
 
