@@ -11,25 +11,15 @@
 .link__texto {
     position: relative;
     color: var(--cor-secundaria, #FDFCF4);
-    
-}
-
-.link__texto::after {
-    content: ""; /* Conteúdo vazio para o pseudo-elemento */
-    position: absolute; /* Posição absoluta em relação ao elemento pai */
-    left: 0; /* Alinha à esquerda do elemento pai */
-    bottom: 1px; /* Ajuste esse valor para mover o sublinhado para cima ou para baixo */
-    width: 100%; /* Largura completa do elemento pai */
-    height: 0.0625rem;;
-    background-color: var(--cor-terciaria, #ffde00);
+    border-bottom: 0.0625rem solid var(--cor-terciaria, #ffde00);
 }
 
 .link:active > .link__texto {
     color: var(--cor-primaria-200, #82dae5);
 }
 
-.link:hover > .link__texto::after {
-    background-color: var(--cor-primaria-200, #82dae5);
+.link:hover > .link__texto {
+    border-bottom-color: var(--cor-primaria-200, #82dae5);
 }
 
 /* Links diferentes */

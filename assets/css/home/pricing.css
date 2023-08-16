@@ -1,111 +1,145 @@
-.pricing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 15rem 5rem 15rem;
-  gap: 2.5rem;
+@media screen and (min-width: 320px) {
+  .pricing {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 2.5rem;
+    gap: 2.5rem;
+  }
+
+  .pricing_cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .pricing__titulo {
+    font-size: 1.9375rem;
+    text-align: center;
+  }
+
+  .pricing__subtitulo {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--cor-secundaria, #fdfcf4);
+  }
+
+  .pricing__planos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    background: var(--cor-secundaria, #fdfcf4);
+    border: none;
+    border-radius: 1rem;
+  }
+
+  .plan__titulo {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    text-align: center;
+  }
+
+  .plan__titulo--basic {
+    background: var(--primary-primary-200, #82dae5);
+  }
+
+  .plan__titulo--standart {
+    background: var(--primary-primary-400, #35c0d2);
+  }
+
+  .plan__titulo--plus {
+    background: var(--primary-primary-600, #23a4b8);
+  }
+
+  .plan__titulo--premium {
+    background: var(--primary-primary-900, #18595d);
+  }
+
+  .plan__beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .plan__beneficio {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .beneficio__descricao {
+    font-size: 0.6875rem;
+  }
+
+  .beneficio__descricao--desativado {
+    color: var(--cor-secundaria-500, #96958e);
+  }
+
+  .plan__preco {
+    color: var(--cor-primaria, #1d7c87);
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 125%;
+    padding: 0.5rem 0.62rem;
+    border-top: 0.0625rem solid var(--cor-secundaria-300, #dad9d1);
+  }
+
+  .plan__divisao,
+  .plan__taxas {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: var(--cor-secundaria-700, #5a5953);
+  }
+
+  .plan__divisao {
+    margin-bottom: 0.5rem;
+  }
+  
+  .plan__taxas {
+    margin-bottom: 1rem;
+  }
+  
+  .plan__botao {
+    margin-bottom: 1rem;
+  }
 }
 
-.pricing_cabecalho {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+@media screen and (min-width: 768px) {
 }
 
-.pricing__titulo {
-  font-size: 2.4375rem;
+@media screen and (min-width: 989px) {
 }
 
-.pricing__subtitulo {
-  color: var(--cor-secundaria, #fdfcf4);
+@media screen and (min-width: 1024px) {
 }
 
-.pricing__planos {
-  display: flex;
-  gap: 2.5rem;
-}
+@media screen and (min-width: 1440px) {
+  .pricing {
+    padding: 2rem 15rem 5rem 15rem;
+    gap: 2.5rem;
+  }
 
-.plan {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 13.125rem;
-  background: var(--cor-secundaria, #fdfcf4);
-  border: none;
-  border-radius: 1rem;
-}
+  .pricing__titulo {
+    font-size: 2.4375rem;
+  }
 
-.plan__titulo {
-  font-size: 1.25rem;
-  padding: 1rem 0;
-  width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  text-align: center;
-}
+  .pricing__subtitulo {
+    color: var(--cor-secundaria, #fdfcf4);
+  }
 
-.plan__titulo--basic {
-  background: var(--primary-primary-200, #82dae5);
-}
-
-.plan__titulo--standart {
-  background: var(--primary-primary-400, #35c0d2);
-}
-
-.plan__titulo--plus {
-  background: var(--primary-primary-600, #23a4b8);
-}
-
-.plan__titulo--premium {
-  background: var(--primary-primary-900, #18595d);
-}
-
-.plan__beneficios {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.5rem 1rem;
-}
-
-.plan__beneficio {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.beneficio__descricao {
-  font-size: 0.6875rem;
-}
-
-.beneficio__descricao--desativado {
-  color: var(--cor-secundaria-500, #96958e);
-}
-
-.plan__preco {
-  color: var(--cor-primaria, #1d7c87);
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 125%;
-  padding: 0.5rem 0.62rem;
-  border-top: 0.0625rem solid var(--cor-secundaria-300, #dad9d1);
-}
-
-.plan__divisao,
-.plan__taxas {
-  font-size: 0.6875rem;
-  font-weight: 400;
-  color: var(--cor-secundaria-700, #5a5953);
-}
-
-.plan__divisao {
-  margin-bottom: 0.5rem;
-}
-
-.plan__taxas {
-  margin-bottom: 1rem;
-}
-
-.plan__botao {
-  margin-bottom: 1rem;
+  .pricing__planos {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
 }
