@@ -5,6 +5,7 @@
   background: var(--cor-terciaria, #ffde00);
   color: var(--cor-primaria-900, #18595d);
   font-size: 1.125rem;
+  line-height: 120%;
 }
 
 .botao:hover {

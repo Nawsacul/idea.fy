@@ -10,6 +10,7 @@
   .duvidas__titulo {
     font-size: 1.5625rem;
     text-align: center;
+    max-width: 18.5rem;
   }
 
   .duvidas__perguntas {
@@ -22,32 +23,31 @@
 }
 
 @media screen and (min-width: 768px) {
-}
-
-@media screen and (min-width: 989px) {
-}
-
-@media screen and (min-width: 1024px) {
-}
-
-@media screen and (min-width: 1440px) {
   .duvidas {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 15rem;
+    padding: 2.5rem 4rem;
+    gap: 4rem;
   }
 
   .duvidas__titulo {
     font-size: 2.4375rem;
-    margin-bottom: 4rem;
+    max-width: unset;
   }
+}
 
-  .duvidas__perguntas {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
+@media screen and (min-width: 989px) {
+  .duvidas {
+    padding: 4rem 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .duvidas {
+    padding: 4rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .duvidas {
+    padding: 4rem 15rem;
   }
 }
