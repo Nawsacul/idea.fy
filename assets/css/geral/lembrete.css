@@ -7,6 +7,10 @@
     padding: 2.5rem 4rem;
   }
 
+  .lembrete--duvidas {
+    padding: 4rem 2rem;
+  }
+
   .lembrete__titulo {
     font-size: 1.5625rem;
     text-align: center;
@@ -20,6 +24,10 @@
 @media screen and (min-width: 768px) {
   .lembrete {
     padding: 4rem;
+  }
+
+  .lembrete--duvidas {
+    padding: 4rem 0;
   }
 
   .lembrete__titulo {
@@ -36,5 +44,9 @@
 @media screen and (min-width: 1440px) {
   .lembrete {
     padding: 4.5rem 0 2rem;
+  }
+
+  .lembrete--duvidas {
+    padding: 4.5rem 0;
   }
 }

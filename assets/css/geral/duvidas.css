@@ -13,8 +13,14 @@
     max-width: 18.5rem;
   }
 
-  .duvidas__subtitulo {
+  .duvidas__titulo--pagina {
     font-size: 1.9375rem;
+    max-width: unset;
+  }
+
+  .duvidas__subtitulo {
+    font-size: 1.5625rem;
+    margin-top: 2rem;
     margin-bottom: 4rem;
   }
 
@@ -36,6 +42,11 @@
   .duvidas__titulo {
     font-size: 2.4375rem;
     max-width: unset;
+  }
+  
+  .duvidas__subtitulo {
+    margin-top: unset;
+    font-size: 1.9375rem;
   }
 }
 
