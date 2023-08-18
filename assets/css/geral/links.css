@@ -1,30 +1,30 @@
 .outros-servicos {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .link {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
 }
 
 .link__texto {
-    position: relative;
-    color: var(--cor-secundaria, #FDFCF4);
-    border-bottom: 0.0625rem solid var(--cor-terciaria, #ffde00);
+  position: relative;
+  color: var(--cor-secundaria, #fdfcf4);
+  border-bottom: 0.0625rem solid var(--cor-terciaria, #ffde00);
 }
 
 .link:active > .link__texto {
-    color: var(--cor-primaria-200, #82dae5);
+  color: var(--cor-primaria-200, #82dae5);
 }
 
 .link:hover > .link__texto {
-    border-bottom-color: var(--cor-primaria-200, #82dae5);
+  border-bottom-color: var(--cor-primaria-200, #82dae5);
 }
 
 /* Links diferentes */
 
 .navbar__mobile-menu {
-    background: transparent;
-    border: none;
+  background: transparent;
+  border: none;
 }

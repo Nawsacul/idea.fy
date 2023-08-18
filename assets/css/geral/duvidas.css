@@ -13,6 +13,11 @@
     max-width: 18.5rem;
   }
 
+  .duvidas__subtitulo {
+    font-size: 1.9375rem;
+    margin-bottom: 4rem;
+  }
+
   .duvidas__perguntas {
     display: flex;
     flex-direction: column;

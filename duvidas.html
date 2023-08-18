@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idea.fy - Dúvidas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/duvidas.css" />
+  </head>
+
+  <body>
+    <div id="overlay"></div>
+
+    <header class="navbar">
+      <img
+        class="navbar__logo"
+        src="assets/img/svg/logo.svg"
+        alt="Logo do Idea.fy"
+      />
+
+      <button class="navbar__mobile-menu link">
+        <span class="link__texto">Menu</span>
+      </button>
+
+      <nav class="navbar__nav">
+        <ul>
+          <li class="navbar__item">
+            <a class="navbar__link" href="index.html"
+              ><span class="navbar__link-texto">Início</span></a
+            >
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="duvidas.html"
+              ><span class="navbar__link-texto">Dúvidas</span></a
+            >
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="precos.html"
+              ><span class="navbar__link-texto">Preços</span></a
+            >
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="contato.html"
+              ><span class="navbar__link-texto">Contato</span></a
+            >
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__botao-whatsapp" href="#"
+              ><svg
+                class="navbar__botao-svg social-link"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  d="M25.3999 6.54658C24.1775 5.31182 22.7215 4.33281 21.1168 3.66665C19.5121 3.0005 17.7908 2.66053 16.0533 2.66658C8.77328 2.66658 2.83994 8.59992 2.83994 15.8799C2.83994 18.2132 3.45328 20.4799 4.59994 22.4799L2.73328 29.3333L9.73328 27.4933C11.6666 28.5466 13.8399 29.1066 16.0533 29.1066C23.3333 29.1066 29.2666 23.1733 29.2666 15.8932C29.2666 12.3599 27.8933 9.03992 25.3999 6.54658ZM16.0533 26.8666C14.0799 26.8666 12.1466 26.3333 10.4533 25.3333L10.0533 25.0933L5.89328 26.1866L6.99994 22.1333L6.73328 21.7199C5.63694 19.9692 5.0548 17.9456 5.05328 15.8799C5.05328 9.82658 9.98661 4.89325 16.0399 4.89325C18.9733 4.89325 21.7333 6.03992 23.7999 8.11992C24.8233 9.13854 25.6342 10.3501 26.1858 11.6845C26.7374 13.0188 27.0187 14.4494 27.0133 15.8932C27.0399 21.9466 22.1066 26.8666 16.0533 26.8666ZM22.0799 18.6532C21.7466 18.4932 20.1199 17.6933 19.8266 17.5732C19.5199 17.4666 19.3066 17.4132 19.0799 17.7332C18.8533 18.0666 18.2266 18.8132 18.0399 19.0266C17.8533 19.2533 17.6533 19.2799 17.3199 19.1066C16.9866 18.9466 15.9199 18.5866 14.6666 17.4666C13.6799 16.5866 13.0266 15.5066 12.8266 15.1733C12.6399 14.8399 12.7999 14.6666 12.9733 14.4932C13.1199 14.3466 13.3066 14.1066 13.4666 13.9199C13.6266 13.7332 13.6933 13.5866 13.7999 13.3732C13.9066 13.1466 13.8533 12.9599 13.7733 12.7999C13.6933 12.6399 13.0266 11.0133 12.7599 10.3466C12.4933 9.70658 12.2133 9.78658 12.0133 9.77325H11.3733C11.1466 9.77325 10.7999 9.85325 10.4933 10.1866C10.1999 10.5199 9.34661 11.3199 9.34661 12.9466C9.34661 14.5733 10.5333 16.1466 10.6933 16.3599C10.8533 16.5866 13.0266 19.9199 16.3333 21.3466C17.1199 21.6933 17.7333 21.8933 18.2133 22.0399C18.9999 22.2933 19.7199 22.2532 20.2933 22.1732C20.9333 22.0799 22.2533 21.3732 22.5199 20.5999C22.7999 19.8266 22.7999 19.1733 22.7066 19.0266C22.6133 18.8799 22.4133 18.8132 22.0799 18.6532Z"
+                /></svg
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="duvidas duvidas-frequentes">
+        <h1 class="duvidas__titulo duvidas-processo__titulo">
+          Dúvidas frequentes
+        </h1>
+
+        <div class="duvidas__container">
+          <input
+            id="duvidas-busca"
+            class="duvidas__busca"
+            type="search"
+            placeholder="Busca"
+          />
+          <!-- TODO: Adicionar ícone de pesquisa -->
+          <button id="duvidas-botao-busca" class="botao duvidas__botao-busca">
+            <svg
+              class="social-link"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                class="social-link-path"
+                d="M15.5 14H14.71L14.43 13.73C15.0549 13.0039 15.5117 12.1487 15.7675 11.2256C16.0234 10.3024 16.072 9.33413 15.91 8.38998C15.44 5.60998 13.12 3.38997 10.32 3.04997C9.33559 2.92544 8.33576 3.02775 7.397 3.34906C6.45824 3.67038 5.60542 4.20219 4.90381 4.90381C4.20219 5.60542 3.67038 6.45824 3.34906 7.397C3.02775 8.33576 2.92544 9.33559 3.04997 10.32C3.38997 13.12 5.60998 15.44 8.38998 15.91C9.33413 16.072 10.3024 16.0234 11.2256 15.7675C12.1487 15.5117 13.0039 15.0549 13.73 14.43L14 14.71V15.5L18.25 19.75C18.66 20.16 19.33 20.16 19.74 19.75C20.15 19.34 20.15 18.67 19.74 18.26L15.5 14ZM9.49997 14C7.00997 14 4.99997 11.99 4.99997 9.49997C4.99997 7.00997 7.00997 4.99997 9.49997 4.99997C11.99 4.99997 14 7.00997 14 9.49997C14 11.99 11.99 14 9.49997 14Z"
+                fill="#18595D"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="duvidas__perguntas duvidas-processo__perguntas">
+          <h2 class="duvidas__subtitulo">Sobre os planos</h2>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(0)">
+              <h3 class="faq__pergunta-titulo">
+                O que eu tenho no plano Basic?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-0">
+              <p>
+                Nesse plano vamos identificar qual é a melhor classe para
+                proteger seu produto/serviço, depois, a partir das informações
+                fornecidas por você, montaremos o seu processo junto ao INPI e
+                faremos todo o acompanhamento até a decisão final e a emissão do
+                seu certificado. Além disso, caso durante o processo o INPI faça
+                alguma exigência nossa equipe irá solucionar o mais rápido
+                possível.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(1)">
+              <h3 class="faq__pergunta-titulo">
+                O que eu tenho no plano Standard?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-1">
+              <p>
+                Nesse plano vamos realizar a pesquisa da sua marca para
+                identificar eventuais riscos ao seu pedido de registro. Em
+                seguida, após a sua aprovação, montaremos o seu processo junto
+                ao INPI, inclusive ajustando a sua logo aos padrões da
+                autarquia, e faremos todo o acompanhamento até a decisão final e
+                a emissão do seu certificado. Além disso, caso durante o
+                processo o INPI faça alguma exigência nossa equipe irá
+                solucionar o mais rápido possível. Ainda, caso sua marca seja
+                indeferida, nós garantimos um novo processo para sua nova marca
+                sem nenhum custo adicional.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(2)">
+              <h3 class="faq__pergunta-titulo">
+                O que eu tenho no plano Plus?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-2">
+              <p>
+                Nesse plano vamos realizar a pesquisa da sua marca para
+                identificar eventuais riscos ao seu pedido de registro, bem como
+                emitir um relatório detalhado para que você possa tomar uma
+                decisão da forma mais consciente possível. Em seguida, após a
+                sua aprovação, montaremos o seu processo junto ao INPI,
+                inclusive ajustando a sua logo aos padrões da autarquia, e
+                faremos todo o acompanhamento até a decisão final e a emissão do
+                seu certificado. Além disso, caso durante o processo o INPI faça
+                alguma exigência, ocorra oposição ou o indeferimento nossa
+                equipe irá apresentar os documentos e fazer a sua defesa o mais
+                rápido possível. Com a nossa garantia de registro, caso sua
+                marca seja indeferida, nós garantimos um novo processo para sua
+                nova marca sem nenhum custo adicional.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(3)">
+              <h3 class="faq__pergunta-titulo">
+                O que eu tenho no plano Premium?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-3">
+              <p>
+                Nesse plano vamos realizar a pesquisa da sua marca para
+                identificar eventuais riscos ao seu pedido de registro, bem como
+                emitir um relatório detalhado para que você possa tomar uma
+                decisão da forma mais consciente possível. Em seguida, após a
+                sua aprovação, montaremos o seu processo junto ao INPI,
+                inclusive ajustando a sua logo aos padrões da autarquia, e
+                faremos todo o acompanhamento até a decisão final e a emissão do
+                seu certificado. Além disso, caso durante o processo o INPI faça
+                alguma exigência, ocorra oposição ou o indeferimento nossa
+                equipe irá apresentar os documentos e fazer a sua defesa o mais
+                rápido possível. Com a nossa garantia de registro, caso sua
+                marca seja indeferida, nós garantimos um novo processo para sua
+                nova marca sem nenhum custo adicional. Registrar sua marca é só
+                o começo, nesse plano, você conta com nossa ajudar para
+                notificar e responder notificações de terceiros para garantir a
+                sua exclusividade.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(4)">
+              <h3 class="faq__pergunta-titulo">
+                Posso fazer Upgrade de um plano para outro?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-4">
+              <p>
+                Infelizmente não. Após a compra de um plano mais simples, caso
+                você precise, poderá adquirir os serviços avulsos. Eles estão
+                disponíveis na página de preços e planos.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(5)">
+              <h3 class="faq__pergunta-titulo">
+                Se eu precisar de algum serviço extra, posso comprar avulso?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-5">
+              <p>
+                Sim! Para maiores informações, veja nossos planos no link
+                abaixo.<br />
+                <a href="#">Ver planos.</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(6)">
+              <h3 class="faq__pergunta-titulo">
+                Como eu faço para contratar / comprar o serviço da idea.fy?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-6">
+              <ul class="faq__ul">
+                <li>
+                  Primeiro você deve escolher um pacote de serviços e clicar em
+                  comprar. Logo em seguida, você será direcionado a responder
+                  algumas perguntas para nos explicar quem é o dono da marca,
+                  sobre a marca e os serviços / produtos que você vende.
+                </li>
+                <li>
+                  Logo após, você será encaminhado ao pagamento através do
+                  Mercado Pago (para mais segurança das transações), onde poderá
+                  escolher entre cartão de crédito, boleto, pix e demais formas
+                  que sejam convenientes para você.
+                </li>
+                <li>
+                  Pagamento confirmado, vamos entrar em contato com você para
+                  dar seguimento no seu pedido, enviar o contrato, solicitar
+                  mais alguns documentos e iniciar o seu serviço da forma mais
+                  rápida possível!
+                </li>
+                <li>
+                  Depois disso, estaremos em contato com você através do nossos
+                  canais de whatsapp e e-mail e vamos avisando sobre cada etapa.
+                  Você terá 100% de suporte online da nossa equipe.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="duvidas__perguntas duvidas-processo__perguntas">
+          <h2 class="duvidas__subtitulo">Sobre o registro da sua marca</h2>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(7)">
+              <h3 class="faq__pergunta-titulo">
+                Porque preciso fazer o registro?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-7">
+              <p>
+                Porque a sua marca só estará protegida depois de registrada
+                junto ao Instituto Nacional da Propriedade Industrial, o INPI. O
+                registro garante que você terá exclusividade de usar a sua marca
+                em todo o Brasil, para os produtos ou serviços que você
+                comercializa. Com isso, você consegue impedir que outras pessoas
+                usem marcas iguais ou parecidas com a sua para destacar produtos
+                ou serviços idênticos aos seus.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(8)">
+              <h3 class="faq__pergunta-titulo">
+                Que riscos eu corro se não registrar?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-8">
+              <p>
+                Sem o registro você não tem o direito de exclusividade sobre a
+                sua marca, ou seja, outras pessoas vão poder copiar ela total ou
+                parcialmente, para assinalar os mesmos produtos ou serviços que
+                você comercializa. Além disso, se outra pessoa registrar a sua
+                marca antes de você, essa pessoa poderá impedir que você
+                continue usando a marca que você criou. Lembre-se, uma marca só
+                está protegida depois do registro!
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(9)">
+              <h3 class="faq__pergunta-titulo">
+                Tenho CNPJ e domínio do site há tempos. Preciso registrar?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-9">
+              <p>
+                O CNPJ, o contrato social da sua empresa e o nome de domínio não
+                protegem a sua marca. A marca só é protegida por meio do
+                registro no INPI. Só esse registro garante que você tenha o
+                direito de exclusividade de usar a sua marca em todo o Brasil,
+                para os produtos ou serviços que serão assinalados por ela.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(10)">
+              <h3 class="faq__pergunta-titulo">
+                Não tenho CNPJ, posso fazer o registro?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-10">
+              <p>
+                Com certeza! A marca também pode ser registrada em nome de
+                pessoas físicas.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(11)">
+              <h3 class="faq__pergunta-titulo">
+                O que é pesquisa de viabilidade e por que fazer?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-11">
+              <p>
+                É uma pesquisa feita para verificar se a marca que você deseja
+                registrar, ou uma marca parecida com ela, já está depositada ou
+                registrada no INPI em nome de outra pessoa, o que impede o
+                registro da sua marca. A pesquisa garante que a sua marca está
+                disponível e poderá ser registrada no seu nome.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(12)">
+              <h3 class="faq__pergunta-titulo">
+                Minha marca é parecida com a de outras pessoas. Posso ter
+                problemas?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-12">
+              <p>
+                Depende! A lei brasileira proíbe o registro de marcas iguais ou
+                parecidas com outras já depositadas ou registradas para
+                comercializar produtos iguais ou semelhantes. Mas, se a sua
+                marca for usada para produtos ou serviços diferentes daqueles
+                comercializados pela outra marca, você pode seguir com o pedido
+                de registro.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(13)">
+              <h3 class="faq__pergunta-titulo">
+                Ainda não tenho logo, posso fazer o registro?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-13">
+              <p>
+                Sim! Você pode fazer o registro somente do nome da marca, sem o
+                logo.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(14)">
+              <h3 class="faq__pergunta-titulo">
+                Já tenho nome e logo, posso registrar direto?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-14">
+              <p>
+                Sim! Você pode pedir o registro somente do nome, somente do
+                logo, ou dos dois juntos.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(15)">
+              <h3 class="faq__pergunta-titulo">
+                O registro protege minha marca também fora do Brasil?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-15">
+              <p>
+                Não. O registro da marca no Brasil a protege somente no nosso
+                país.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(16)">
+              <h3 class="faq__pergunta-titulo">
+                O que eu posso registrar como marca?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-16">
+              <p>
+                Você pode registrar somente o nome, somente o logotipo ou os
+                dois juntos.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(17)">
+              <h3 class="faq__pergunta-titulo">
+                Posso registrar minha marca para qualquer produto ou serviço?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-17">
+              <p>
+                Sim! Quando fazemos o pedido da sua marca, vamos escolher uma
+                classe específica dentro da qual estão incluídos os produtos ou
+                serviços para os quais você usa a marca. Essas classes são
+                definidas de acordo com uma classificação que possui 34 classes
+                de produtos e 11 classes de serviço. Na hora de pedir o registro
+                da sua marca, nós escolhemos qual é a classe ideal para você.
+                Lembrando que cada pedido de marca é feito somente em uma
+                classe, para proteger a sua marca dentro de mais de uma, é
+                necessário fazer mais pedidos de registro.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(18)">
+              <h3 class="faq__pergunta-titulo">
+                Quais documentos eu preciso para fazer o registro?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-18">
+              <p>
+                Se a sua marca for depositada em nome de pessoa física, você vai
+                precisar nos enviar a procuração assinada para os especialistas
+                da Idea.fy e o seu RG. Se a sua marca for depositada em nome da
+                sua empresa, você vai precisar nos enviar a procuração e o seu
+                cartão CNPJ.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(19)">
+              <h3 class="faq__pergunta-titulo">
+                Quanto tempo demora pra registrar uma marca?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-19">
+              <p>
+                Depois de depositado o pedido de registro, o INPI tem o prazo de
+                18 meses para analisar e conceder o registro.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(20)">
+              <h3 class="faq__pergunta-titulo">
+                Como funciona o processo de registro?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-20">
+              <img
+                class="faq__resposta-img"
+                src="assets/img/webp/processo-inpi-1.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="duvidas__perguntas duvidas-processo__perguntas">
+          <h2 class="duvidas__subtitulo">
+            Não consegui registrar minha marca, e agora?
+          </h2>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(21)">
+              <h3 class="faq__pergunta-titulo">
+                Fiz o registro por conta e foi indeferido, o que eu faço?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-21">
+              <p>
+                Você tem duas opções: mudar a sua marca e tentar um novo
+                registro, ou apresentar um recurso ao INPI para tentar registrar
+                a marca que foi indeferida. Por isso é tão importante fazer a
+                pesquisa de viabilidade de marca, pois ela diminui os riscos do
+                indeferimento dela.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(22)">
+              <h3 class="faq__pergunta-titulo">
+                O que é oposição à minha marca?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-22">
+              <p>
+                A oposição é um pedido feito ao INPI por outra pessoa ou empresa
+                para que a sua marca não seja registrada. A chance de oposição é
+                maior quando não é feita a pesquisa de viabilidade, por isso é
+                tão importante garantir que a sua marca esteja disponível para
+                registro antes de fazer o depósito do pedido!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="duvidas__perguntas duvidas-processo__perguntas">
+          <h2 class="duvidas__subtitulo">Preços e pagamentos</h2>
+          
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(23)">
+              <h3 class="faq__pergunta-titulo">
+                O que são as taxas do INPI que preciso pagar?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-23">
+              <p>
+                A primeira taxa é referente ao depósito do pedido de registro e,
+                após o INPI deferir esse registro, você precisará pagar a taxa
+                referente aos 10 primeiros anos de proteção da marca. Somente
+                depois do pagamento dessa segunda taxa é que sua marca será
+                registrada de fato. Para maiores informações, veja nossos planos
+                no link abaixo.<br />
+                <a href="#">Ver planos.</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(24)">
+              <h3 class="faq__pergunta-titulo">
+                O que é oposição à minha marca?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-24">
+              <p>
+                A oposição é um pedido feito ao INPI por outra pessoa ou empresa
+                para que a sua marca não seja registrada. A chance de oposição é
+                maior quando não é feita a pesquisa de viabilidade, por isso é
+                tão importante garantir que a sua marca esteja disponível para
+                registro antes de fazer o depósito do pedido!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="duvidas__perguntas duvidas-processo__perguntas">
+          <h2 class="duvidas__subtitulo">Depois do registro ser aprovado</h2>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(25)">
+              <h3 class="faq__pergunta-titulo">
+                O que eu recebo depois que o processo é aprovado?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-25">
+              <p>
+                Depois que o registro da sua marca for aprovado, será necessário
+                pagar a taxa do INPI referente aos 10 primeiros anos de proteção
+                da marca. Somente depois do pagamento dessa segunda taxa é que
+                sua marca será registrada de fato, com a expedição do
+                certificado de registro, que também será encaminhado a você pela
+                nossa equipe!
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(26)">
+              <h3 class="faq__pergunta-titulo">
+                Preciso acompanhar o meu registro?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-26">
+              <p>
+                Uma vez registrada a marca, você tem o direito de exclusividade
+                para usá-la em todo o Brasil. Mas é importante sempre manter um
+                acompanhamento para ter a certeza de que outras pessoas não vão
+                tentar copiar a sua marca. Para maiores informações sobre o
+                acompanhamento, veja nossos planos no link abaixo. <br />
+                <a href="#">Ver planos.</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__pergunta" onclick="toggleDropdown(27)">
+              <h3 class="faq__pergunta-titulo">
+                Como impeço alguém de usar minha marca registrada?
+              </h3>
+              <img
+                class="faq__pergunta-seta"
+                src="assets/img/svg/keyboard-arrow-up.svg"
+              />
+            </button>
+            <div class="faq__resposta" id="answer-27">
+              <p>
+                Por meio do acompanhamento da sua marca, nós podemos tomar as
+                medidas cabíveis para impedir que uma marca igual ou parecida
+                com a sua seja registrada. Assim, podemos apresentar oposição ao
+                pedido de registro e até enviar uma notificação para que a
+                pessoa pare de usar a sua marca.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lembrete">
+        <h2 class="lembrete__titulo">
+          Lembre-se:<br />
+          O dono é quem registra primeiro!
+        </h2>
+
+        <button class="botao lembrete__botao">Registrar minha marca</button>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="assets/js/buscaFaq.js"></script>
+    <script src="assets/js/faq.js"></script>
+    <script src="assets/js/navbarMenu.js"></script>
+  </body>
+</html>

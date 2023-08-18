@@ -8,6 +8,4 @@
 @import url(geral/navbar.css);
 @import url(geral/lembrete.css);
 @import url(geral/duvidas.css);
-@import url(home/features.css);
-@import url(home/intro.css);
-@import url(home/pricing.css);
+@import url(duvidas/busca.css);
