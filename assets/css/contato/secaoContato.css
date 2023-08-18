@@ -1,0 +1,62 @@
+@media screen and (min-width: 320px) {
+  .contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+  }
+
+  .contato__titulo {
+    font-size: 1.9375rem;
+  }
+
+  .contato__texto {
+    color: var(--cor-secundaria, #fdfcf4);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin: 2rem 0 3rem;
+  }
+
+  .contato__botao-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contato {
+    padding: 6rem 4rem 4rem;
+  }
+
+  .contato__titulo {
+    font-size: 2.4375rem;
+  }
+
+  .contato__texto {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 989px) {
+  .contato {
+    padding: 7.5rem 3rem 4rem;
+  }
+
+  .contato__titulo {
+    font-size: 3.0625rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contato {
+    padding: 7.5rem 2.5rem 4rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contato {
+    padding: 7.5rem 15rem 4rem;
+  }
+}

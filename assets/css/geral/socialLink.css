@@ -10,11 +10,11 @@
   fill: var(--cor-primaria-200, #82dae5);
 }
 
-.duvidas__botao-busca:hover .social-link-path {
+.botao:hover .social-link-path {
   fill: var(--cor-secundaria, #fdfcf4);
 }
 
-.duvidas__botao-busca:active .social-link-path {
+.botao:active .social-link-path {
   fill: var(--cor-primaria-200, #82dae5);
 }
 

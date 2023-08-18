@@ -7,6 +7,10 @@
     padding: 2.5rem 4rem;
   }
 
+  .lembrete--precos {
+    padding: 4rem 2rem;
+  }
+
   .lembrete--duvidas {
     padding: 4rem 2rem;
   }
@@ -44,6 +48,10 @@
 @media screen and (min-width: 1440px) {
   .lembrete {
     padding: 4.5rem 0 2rem;
+  }
+
+  .lembrete--precos {
+    padding: 4.5rem 0;
   }
 
   .lembrete--duvidas {

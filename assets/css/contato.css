@@ -8,6 +8,5 @@
 @import url(geral/navbar.css);
 @import url(geral/lembrete.css);
 @import url(geral/duvidas.css);
-@import url(geral/pricing.css);
-@import url(precos/pricingPrecos.css);
-@import url(precos/outrosServicos.css);
+@import url(contato/secaoContato.css);
+@import url(contato/contatoFormulario.css);

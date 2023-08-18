@@ -27,7 +27,8 @@
 
   .pricing__planos {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
   }
