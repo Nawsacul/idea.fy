@@ -24,15 +24,25 @@
     padding: 0.5rem 0rem;
   }
 
-  #success-message {
-    background-color: #dff0d8;
-    color: #3c763d;
-    padding: 15px;
-    border: 1px solid #d6e9c6;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 18px;
-    margin: 10px 0;
+  .contato-formulario__mensagem-sucesso-container {
+    background: var(--cor-secundaria-900, #18595d);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .contato-formulario__mensagem-sucesso-container p {
+    color: var(--cor-secundaria, #fdfcf4);
+    font-size: 0.875rem;
+  }
+
+  .contato-formulario__mensagem-sucesso {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contato-formulario__mensagem-sucesso-botao {
+    align-self: flex-end;
   }
 
   .contato-formulario__form {
