@@ -9,5 +9,7 @@
 @import url(geral/lembrete.css);
 @import url(geral/duvidas.css);
 @import url(geral/pricing.css);
-@import url(home/features.css);
-@import url(home/intro.css);
+@import url(precos/pricingPrecos.css);
+@import url(precos/faqPrecos.css);
+@import url(precos/outrosServicos.css);
+@import url(precos/lembretePrecos.css);
