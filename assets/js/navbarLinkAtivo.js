@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Pega o nome da página atual
-    let pageName = window.location.pathname.split("/").pop();
+    // Pega a URL atual
+    let currentUrl = window.location.href;
 
     // Pega todos os links na navbar
     let navbarLinks = document.querySelectorAll(".navbar__link");
 
     navbarLinks.forEach(link => {
-        if (link.getAttribute("href") === pageName) {
+        if (currentUrl.startsWith(link.href)) {
             link.classList.add("navbar__link--active");
         }
     });
