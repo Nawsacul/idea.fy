@@ -103,10 +103,14 @@
   }
 
   .navbar__link:hover {
-    border: 1px solid var(---cor-terciaria, #ffde00);
+    border: 1px solid var(--cor-terciaria, #ffde00);
   }
 
   .navbar__link:active {
+    border: 1px solid var(--cor-primaria-200, #82dae5);
+  }
+
+  .navbar__link--active {
     border: 1px solid var(--cor-primaria-200, #82dae5);
   }
 
