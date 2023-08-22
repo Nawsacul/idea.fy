@@ -5,24 +5,51 @@
   }
 
   .pricing_cabecalho {
+    margin-bottom: 2.5rem;
     width: 18.75rem;
   }
-  
+
   .pricing__titulo {
     font-size: 2.4375rem;
-    margin-bottom: 2.5rem;
     width: 100%;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .pricing {
+    padding: 6rem 4rem 4rem;
+    gap: 3rem 2rem;
+  }
+
+  .pricing_cabecalho {
+    width: unset;
+  }
+
+  .pricing__titulo {
+    font-size: 3.0625rem;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 989px) {
+  .pricing {
+    padding: 7.5rem 3rem 4rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .pricing {
+    padding: 7.5rem 2.5rem 4rem;
+    gap: 2.5rem;
+  }
+
+  .pricing_cabecalho {
+    margin-bottom: 3rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .pricing {
+    padding: 7.5rem 15rem 4rem;
+  }
 }
