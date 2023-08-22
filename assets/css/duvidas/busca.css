@@ -5,7 +5,7 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
-    max-width: 39rem;
+    /* max-width: 39rem; */
   }
 
   .duvidas__busca {
@@ -57,7 +57,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .duvidas__container {
     max-width: 38.95rem;
   }
@@ -79,4 +79,4 @@
   .duvidas__container {
     max-width: 60rem;
   }
-}
+} */

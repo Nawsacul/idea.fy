@@ -18,6 +18,7 @@
 
   .navbar__mobile-menu {
     display: initial;
+    padding: 1rem 0.5rem;
   }
 
   .navbar__nav {

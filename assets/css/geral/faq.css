@@ -4,7 +4,7 @@
     flex-direction: column;
     gap: 1.5rem;
     width: 100%;
-    max-width: 39rem;
+    /* max-width: 39rem; */
   }
 
   .faq__pergunta {
@@ -82,17 +82,7 @@
   }  
 }
 
-@media screen and (min-width: 768px) {
-  .faq__item {
-    max-width: 38.95rem;
-  }
-}
-
 @media screen and (min-width: 989px) {
-  .faq__item {
-    max-width: 55.809rem;
-  }
-
   .faq__pergunta-titulo {
     font-size: 1.5625rem;
   }
@@ -110,17 +100,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .faq__item {
-    max-width: 59rem;
-  }
-}
-
 @media screen and (min-width: 1440px) {
-  .faq__item {
-    max-width: 60rem;
-  }
-
   .faq__resposta {
     padding: 0 1.5rem 0;
   }

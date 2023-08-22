@@ -37,8 +37,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 18.5rem;
+    width: calc(50% - 1rem);
+    min-width: 18.5rem;
     background: var(--cor-secundaria, #fdfcf4);
     border: none;
     border-radius: 1rem;
@@ -133,15 +133,11 @@
   }
 
   .pricing__planos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 2.5rem 2rem;
   }
 
   .plan {
-    width: 18.438rem;
+    width: calc(50% - 1rem);
     max-width: unset;
   }
 
@@ -156,13 +152,12 @@
   }
 
   .pricing__planos {
-    display: flex;
     flex-wrap: nowrap;
     gap: 2rem;
   }
 
   .plan {
-    width: 12.453rem;
+    min-width: 12.453rem;
   }
 
   .plan__beneficios {
@@ -176,7 +171,7 @@
   }
 
   .plan {
-    width: 13.25rem;
+    width: calc(25% - 1rem);
   }
 }
 
@@ -185,11 +180,11 @@
     padding: 2rem 15rem 5rem;
   }
 
-  .plan {
-    width: 13.125rem;
-  }
-
   .pricing__planos {
     gap: 2.5rem;
+  }
+  
+  .plan {
+    width: calc(25% - 1rem);
   }
 }
