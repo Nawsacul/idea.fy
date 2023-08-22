@@ -1,7 +1,7 @@
 @import url(reset.css);
+@import url(geral/botoes.css);
 @import url(geral/cores.css);
 @import url(geral/preloader.css);
-@import url(geral/botoes.css);
 @import url(geral/faq.css);
 @import url(geral/fontes.css);
 @import url(geral/footer.css);
