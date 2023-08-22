@@ -39,6 +39,7 @@
   .faq__pergunta-seta {
     transition: transform 0.3s ease;
     align-self: center;
+    rotate: 180deg;
   }
 
   .rotacionar180 {

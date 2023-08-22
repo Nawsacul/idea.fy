@@ -1,0 +1,57 @@
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: var(--cor-primaria, #1d7c87);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader svg {
+  transform-origin: center;
+  animation: rotation 1s linear infinite;
+}
+
+@media screen and (min-width: 320px) {
+  #preloader svg {
+    width: 8.75rem;
+    height: 8.75rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  #preloader svg {
+    width: 8.875rem;
+    height: 8.875rem;
+  }
+}
+@media screen and (min-width: 989px) {
+  #preloader svg {
+    width: 11.875rem;
+    height: 11.875rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #preloader svg {
+    width: 7.75rem;
+    height: 7.75rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #preloader svg {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
