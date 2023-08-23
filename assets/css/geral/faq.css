@@ -48,15 +48,20 @@
 
   .faq__resposta {
     display: none; /* Esconde as respostas inicialmente */
+    padding: 0;
+  }
+
+  .faq__resposta p {
+    line-height: 125%;
     font-size: 1rem;
     font-weight: 400;
-    padding: 0;
     color: var(--cor-secundaria, #fdfcf4);
   }
 
-  .faq__resposta--inpi {
+  .faq__resposta--inpi p {
     font-size: 0.75rem;
     font-weight: 500;
+    line-height: 120%;
   }
 
   .faq__resposta-img {
