@@ -21,6 +21,7 @@
     transform: translate(-50%, -50%);
     width: 24.62581rem;
     height: 24.60244rem;
+    user-select: none; 
   }
 
   .features__conteudo {
