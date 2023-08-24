@@ -53,7 +53,7 @@
     text-align: center;
   }
 
-  .plan__titulo--basic {
+  /* .plan__titulo--basic {
     background: var(--primary-primary-200, #82dae5);
   }
 
@@ -63,9 +63,9 @@
 
   .plan__titulo--plus {
     background: var(--primary-primary-600, #23a4b8);
-  }
+  } */
 
-  .plan__titulo--premium {
+  .plan__titulo--basic, .plan__titulo--standart, .plan__titulo--plus, .plan__titulo--premium {
     background: var(--primary-primary-900, #18595d);
   }
 
@@ -88,11 +88,12 @@
   }
 
   .beneficio__descricao {
+    color: var(--cor-primaria, #1d7c87);
     font-size: 0.75rem;
   }
 
   .beneficio__descricao--desativado {
-    color: var(--cor-secundaria-500, #96958e);
+    color: var(--cor-secundaria-700, #96958e);
   }
 
   .plan__preco {
