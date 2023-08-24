@@ -40,6 +40,8 @@
     transition: transform 0.3s ease;
     align-self: center;
     rotate: 180deg;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .rotacionar180 {
@@ -51,7 +53,8 @@
     padding: 0;
   }
 
-  .faq__resposta p, .faq__resposta li {
+  .faq__resposta p,
+  .faq__resposta li {
     line-height: 125%;
     font-size: 1rem;
     font-weight: 400;
@@ -85,9 +88,12 @@
   }
 
   .highlight {
-    background-color: var(--cor-terciaria, #ffde00); /* ou qualquer outra cor de sua escolha */
-    color: var(--cor-primaria-900, #18595D);
-  }  
+    background-color: var(
+      --cor-terciaria,
+      #ffde00
+    ); /* ou qualquer outra cor de sua escolha */
+    color: var(--cor-primaria-900, #18595d);
+  }
 }
 
 @media screen and (min-width: 989px) {
@@ -99,7 +105,8 @@
     font-size: 1.25rem;
   }
 
-  .faq__resposta p, .faq__resposta li {
+  .faq__resposta p,
+  .faq__resposta li {
     font-size: 1.125rem;
   }
 
