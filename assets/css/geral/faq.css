@@ -110,6 +110,10 @@
     font-size: 1.125rem;
   }
 
+  .faq__resposta--inpi p {
+    font-size: 0.75rem;
+  }
+
   .faq__resposta--inpi {
     font-size: 0.75rem;
   }
