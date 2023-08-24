@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.5rem 2rem;
+    padding: 2.5rem var(--padding-320);
     gap: 2.5rem;
   }
 
@@ -97,7 +97,7 @@
 
 @media screen and (min-width: 768px) {
   .outros-servicos {
-    padding: 4rem;
+    padding: 4rem var(--padding-768);
   }
 
   .outros-servicos__titulo {
@@ -140,7 +140,7 @@
 
 @media screen and (min-width: 989px) {
   .outros-servicos {
-    padding: 4rem 3rem;
+    padding: 4rem var(--padding-989);
   }
 
   .outros-servicos__planos {
@@ -170,7 +170,11 @@
 
 @media screen and (min-width: 1024px) {
   .outros-servicos {
-    padding: 4rem 2.5rem;
+    padding: 4rem var(--padding-1024);
+  }
+
+  .outros-servicos__planos {
+    width: 59rem;
   }
 
   .outros-servicos__plan {
@@ -181,10 +185,11 @@
 
 @media screen and (min-width: 1440px) {
   .outros-servicos {
-    padding: 4rem 15rem;
+    padding: 4rem var(--padding-1440);
   }
 
   .outros-servicos__planos {
+    width: unset;
     max-width: 103.344rem;
   }
 

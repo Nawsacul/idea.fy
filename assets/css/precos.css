@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(geral/valores.css);
 @import url(geral/botoes.css);
 @import url(geral/cores.css);
 @import url(geral/preloader.css);

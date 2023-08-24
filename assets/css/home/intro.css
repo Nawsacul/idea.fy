@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 2rem 1.5rem;
+    padding: 5rem var(--padding-320) 1.5rem;
   }
 
   .intro__titulo {
@@ -24,7 +24,7 @@
 
 @media screen and (min-width: 768px) {
   .intro {
-    padding: 7.5rem 4rem 1.5rem;
+    padding: 7.5rem var(--padding-768) 1.5rem;
   }
 
   .intro__titulo {
@@ -38,7 +38,7 @@
 
 @media screen and (min-width: 989px) {
   .intro {
-    padding: 7.5rem 3rem 1.5rem;
+    padding: 7.5rem var(--padding-989) 1.5rem;
   }
 
   .intro__titulo--destaque {
@@ -48,7 +48,8 @@
 
 @media screen and (min-width: 1024px) {
   .intro {
-    padding: 7.5rem 2.5rem 1.5rem;
+    padding: 7.5rem var(--padding-1024) 1.5rem;
+    width: 59rem;
   }
 
   .intro__titulo--destaque {
@@ -58,6 +59,7 @@
 
 @media screen and (min-width: 1440px) {
   .intro {
-    padding: 7.5rem 15rem 1.5rem;
+    padding: 7.5rem var(--padding-1440) 1.5rem;
+    width: unset;
   }
 }

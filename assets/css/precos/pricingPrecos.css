@@ -1,6 +1,6 @@
 @media screen and (min-width: 320px) {
   .pricing {
-    padding: 4rem 2rem 4rem;
+    padding: 4rem var(--padding-320) 4rem;
     gap: 3rem;
   }
 
@@ -17,7 +17,7 @@
 
 @media screen and (min-width: 768px) {
   .pricing {
-    padding: 6rem 4rem 4rem;
+    padding: 6rem var(--padding-768) 4rem;
     gap: 3rem 2rem;
   }
 
@@ -33,13 +33,13 @@
 
 @media screen and (min-width: 989px) {
   .pricing {
-    padding: 7.5rem 3rem 4rem;
+    padding: 7.5rem var(--padding-989) 4rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .pricing {
-    padding: 7.5rem 2.5rem 4rem;
+    padding: 7.5rem var(--padding-1024) 4rem;
     gap: 2.5rem;
   }
 
@@ -50,6 +50,6 @@
 
 @media screen and (min-width: 1440px) {
   .pricing {
-    padding: 7.5rem 15rem 4rem;
+    padding: 7.5rem var(--padding-1440) 4rem;
   }
 }

@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 2rem 2.5rem;
+    padding: 2rem var(--padding-320) 2.5rem;
     gap: 2.5rem;
   }
 
@@ -121,7 +121,7 @@
 
 @media screen and (min-width: 768px) {
   .pricing {
-    padding: 2rem 4rem 2.5rem;
+    padding: 2rem var(--padding-768) 2.5rem;
   }
 
   .pricing__titulo {
@@ -148,7 +148,7 @@
 
 @media screen and (min-width: 989px) {
   .pricing {
-    padding: 2rem 3rem 5rem;
+    padding: 2rem var(--padding-989) 5rem;
   }
 
   .pricing__planos {
@@ -167,7 +167,8 @@
 
 @media screen and (min-width: 1024px) {
   .pricing {
-    padding: 2rem 2.5rem 5rem;
+    padding: 2rem var(--padding-1024) 5rem;
+    width: 59rem;
   }
 
   .plan {
@@ -177,7 +178,8 @@
 
 @media screen and (min-width: 1440px) {
   .pricing {
-    padding: 2rem 15rem 5rem;
+    padding: 2rem var(--padding-1440) 5rem;
+    width: unset;
   }
 
   .pricing__planos {

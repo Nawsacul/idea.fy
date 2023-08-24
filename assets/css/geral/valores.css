@@ -1,0 +1,17 @@
+:root {
+  --padding-320: 2rem;
+  --padding-768: 4rem;
+  --padding-989: 3rem;
+  --padding-1024: 2.5rem;
+  --padding-1440: 15rem;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  header,
+  main,
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

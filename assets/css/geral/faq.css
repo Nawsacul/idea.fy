@@ -51,7 +51,7 @@
     padding: 0;
   }
 
-  .faq__resposta p {
+  .faq__resposta p, .faq__resposta li {
     line-height: 125%;
     font-size: 1rem;
     font-weight: 400;
@@ -85,7 +85,8 @@
   }
 
   .highlight {
-    background-color: yellow; /* ou qualquer outra cor de sua escolha */
+    background-color: var(--cor-terciaria, #ffde00); /* ou qualquer outra cor de sua escolha */
+    color: var(--cor-primaria-900, #18595D);
   }  
 }
 
@@ -98,7 +99,7 @@
     font-size: 1.25rem;
   }
 
-  .faq__resposta {
+  .faq__resposta p, .faq__resposta li {
     font-size: 1.125rem;
   }
 

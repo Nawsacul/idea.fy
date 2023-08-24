@@ -1,14 +1,38 @@
+/* Parte Geral */
+
 @import url(socialLink.css);
 
+.navbar {
+  position: relative;
+  background: var(--cor-primaria, #1d7c87);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cor-primaria, #1d7c87);
+}
+
+.navbar__nav ul {
+  display: flex;
+}
+
+.navbar__link {
+  display: block;
+}
+
+.navbar__botao-whatsapp {
+  display: block;
+}
+
+/* Media Queries */
+
 @media screen and (min-width: 320px) {
-  .navbar {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem 1rem;
-    background: var(--cor-primaria);
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  .navbar__container {
+    padding: 1.5rem var(--padding-320) 1rem;
   }
 
   .navbar__logo {
@@ -33,7 +57,6 @@
   }
 
   .navbar__nav ul {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -43,38 +66,39 @@
     padding: 1rem 2rem;
   }
 
-  .navbar__link {
-    display: block;
-  }
-
-  .navbar__botao-whatsapp {
-    display: block;
+  .navbar__nav--aberta {
+    display: flex;
+    justify-content: center;
   }
 
   .navbar__botao-svg {
     padding: 0.5rem;
   }
 
-  .navbar__nav--aberta {
-    display: flex;
-    justify-content: center;
+  .navbar__link:hover {
+    border: unset;
+  }
+
+  .navbar__link:active,
+  .navbar__link--active {
+    border: unset;
   }
 
   #overlay {
-    position: fixed; /* Fixa o overlay na janela */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
-    z-index: 1; /* Coloca o overlay acima do restante do conteúdo */
-    display: none; /* Oculta o overlay inicialmente */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .navbar {
-    padding: 1.5rem 4rem 1rem;
+  .navbar__container {
+    padding: 1.5rem var(--padding-768) 1rem;
   }
 
   .navbar__logo {
@@ -92,33 +116,29 @@
   .navbar__nav ul {
     gap: 0;
     flex-direction: row;
-    align-items: center;
   }
 
   .navbar__link {
-    padding: 1rem 1.5rem;
+    padding: 1rem calc(1.5rem - 0.5px);
     border-radius: 6.1875rem;
     border: 1px solid transparent;
-  }
-
-  .navbar__botao-svg {
-    padding: 0;
   }
 
   .navbar__link:hover {
     border: 1px solid var(--cor-terciaria, #ffde00);
   }
 
-  .navbar__link:active {
-    border: 1px solid var(--cor-primaria-200, #82dae5);
-  }
-
+  .navbar__link:active,
   .navbar__link--active {
     border: 1px solid var(--cor-primaria-200, #82dae5);
   }
 
   .navbar__botao-whatsapp {
-    padding-left: 1rem;
+    margin-left: 1rem;
+  }
+
+  .navbar__botao-svg {
+    padding: unset;
   }
 
   .navbar__mobile-menu {
@@ -131,8 +151,8 @@
 }
 
 @media screen and (min-width: 989px) {
-  .navbar {
-    padding: 1.5rem 3rem 1rem;
+  .navbar__container {
+    padding: 1.5rem var(--padding-989) 1rem;
   }
 
   .navbar__logo {
@@ -142,13 +162,15 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .navbar {
-    padding: 1.5rem 2.5rem 1rem;
+  .navbar__container {
+    padding: 1.5rem var(--padding-1024) 1rem;
+    width: 59rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .navbar {
-    padding: 1.5rem 15rem 1rem;
+  .navbar__container {
+    padding: 1.5rem var(--padding-1440) 1rem;
+    width: unset;
   }
 }

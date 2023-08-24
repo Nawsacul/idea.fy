@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2.5rem 2rem;
+    padding: 2.5rem var(--padding-320);
     gap: 2rem;
   }
 
@@ -40,7 +40,7 @@
 
 @media screen and (min-width: 768px) {
   .duvidas {
-    padding: 2.5rem 4rem;
+    padding: 2.5rem var(--padding-768);
     gap: 4rem;
   }
 
@@ -57,18 +57,20 @@
 
 @media screen and (min-width: 989px) {
   .duvidas {
-    padding: 4rem 3rem;
+    padding: 4rem var(--padding-989);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .duvidas {
-    padding: 4rem 2.5rem;
+    padding: 4rem var(--padding-1024);
+    width: 59rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .duvidas {
-    padding: 4rem 15rem;
+    padding: 4rem var(--padding-1440);
+    width: unset;
   }
 }

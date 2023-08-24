@@ -15,7 +15,9 @@ function performSearch() {
         faqItems.forEach(function (item) {
             // Pegar o título da pergunta
             var questionTitle = item.querySelector('.faq__pergunta-titulo');
+            var pergunta =  item.querySelector('.faq__pergunta');
             var questionText = questionTitle.innerText.toLowerCase();
+            var answerDiv = item.querySelector('.faq__resposta');
 
             // Pegar a div da resposta e concatenar o texto de todos os elementos filhos
             var answerDiv = item.querySelector('.faq__resposta');
@@ -35,6 +37,8 @@ function performSearch() {
                 answerDiv.style.display = 'none';
                 answerDiv.innerHTML = originalAnswer;
                 item.style.display = '';
+                pergunta.classList.remove('faq__pergunta-aberta');
+                pergunta.classList.add('faq__pergunta-fechado');
             } else if (questionText.includes(query) || answerText.includes(query)) {
                 // Se a consulta de busca for encontrada, exibir o item, abrir o dropdown e destacar as palavras-chave
                 sectionContainsQuery = true; // Marcar a seção como contendo a consulta
@@ -54,12 +58,16 @@ function performSearch() {
                     });
                     child.innerHTML = highlightedAnswer;
                 });
+                pergunta.classList.remove('faq__pergunta-fechado');
+                pergunta.classList.add('faq__pergunta-aberta');
             } else {
                 // Se a consulta de busca não for encontrada, ocultar o item e fechar o dropdown
                 questionTitle.innerHTML = originalQuestion;
                 answerDiv.style.display = 'none';
                 answerDiv.innerHTML = originalAnswer;
                 item.style.display = 'none';
+                pergunta.classList.remove('faq__pergunta-aberta');
+                pergunta.classList.add('faq__pergunta-fechado');
             }
         });
 

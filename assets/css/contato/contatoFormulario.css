@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
-    padding: 1.5rem 2rem 4rem;
+    padding: 1.5rem var(--padding-320) 4rem;
   }
 
   .contato-formulario__container {
@@ -50,7 +50,7 @@
     flex-direction: column;
     gap: 2rem;
     width: 100%;
-    max-width: 39.188rem;
+    /* max-width: 39.188rem; */
   }
 
   .contato-formulario__campo {
@@ -101,7 +101,7 @@
 @media screen and (min-width: 768px) {
   .contato-formulario {
     flex-direction: row;
-    padding: 4rem;
+    padding: 4rem var(--padding-768);
   }
 
   .contato-formulario__container {
@@ -111,13 +111,14 @@
 
 @media screen and (min-width: 989px) {
   .contato-formulario {
-    padding: 4rem 3rem;
+    padding: 4rem var(--padding-989);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .contato-formulario {
-    padding: 4rem 2.5rem;
+    padding: 4rem var(--padding-1024);
+    width: 59rem;
   }
 
   .contato-formulario__container {
@@ -127,6 +128,7 @@
 
 @media screen and (min-width: 1440px) {
   .contato-formulario {
-    padding: 4rem 15rem;
+    padding: 4rem var(--padding-1440);
+    width: unset;
   }
 }

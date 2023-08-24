@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 6rem 2rem 4rem;
+    padding: 6rem var(--padding-320) 4rem;
   }
 
   .contato__titulo {
@@ -27,7 +27,7 @@
 
 @media screen and (min-width: 768px) {
   .contato {
-    padding: 6rem 4rem 4rem;
+    padding: 6rem var(--padding-768) 4rem;
   }
 
   .contato__titulo {
@@ -41,7 +41,7 @@
 
 @media screen and (min-width: 989px) {
   .contato {
-    padding: 7.5rem 3rem 4rem;
+    padding: 7.5rem var(--padding-989) 4rem;
   }
 
   .contato__titulo {
@@ -51,12 +51,14 @@
 
 @media screen and (min-width: 1024px) {
   .contato {
-    padding: 7.5rem 2.5rem 4rem;
+    padding: 7.5rem var(--padding-1024) 4rem;
+    width: 59rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .contato {
-    padding: 7.5rem 15rem 4rem;
+    padding: 7.5rem var(--padding-1440) 4rem;
+    width: unset;
   }
 }
