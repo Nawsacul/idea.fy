@@ -1,0 +1,68 @@
+@media screen and (min-width: 320px) {
+  .info__conteudo {
+    gap: 5rem;
+  }
+
+  .info__item {
+    gap: 2.5rem;
+  }
+
+  .info__titulo {
+    font-size: 1.9375rem;
+  }
+
+  .info__descricao {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .info__proposito {
+    font-size: 1.5625rem;
+    font-weight: 700;
+  }
+
+  .info__item--titulo-slogan {
+    gap: 1.5rem;
+  }
+
+  .info__titulo {
+    font-size: 1.9375rem;
+    font-weight: 700;
+  }
+
+  .info__slogan {
+    color: var(--cor-secundaria, #FDFCF4);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .intro {
+    padding: 5rem var(--padding-768) 4rem;
+  }
+
+  .intro__titulo {
+    font-size: 3.0625rem;
+  }
+}
+
+@media screen and (min-width: 989px) {
+  .intro {
+    padding: 7.5rem var(--padding-989) 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .intro {
+    padding: 7.5rem var(--padding-1024) 4rem;
+    width: 59rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .intro {
+    padding: 7.5rem var(--padding-1440) 4rem;
+    width: unset;
+  }
+}

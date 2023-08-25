@@ -1,27 +1,37 @@
+let timer;
+
+// Cache dos elementos para evitar repetidas chamadas ao DOM
+const sectionBase = document.querySelector('.navbar__container');
+const secaoAlvo = document.querySelector('.info');
+
 function getDistanceFromRight(element) {
-    var windowWidth = window.innerWidth;
-    var rect = element.getBoundingClientRect();
-    var distanceFromRight = windowWidth - (rect.left + element.offsetWidth);
-    return distanceFromRight;
+    const windowWidth = window.innerWidth;
+    const rect = element.getBoundingClientRect();
+    return windowWidth - (rect.left + element.offsetWidth);
 }
 
-function mudarPadding(section) {
-    var sectionBase = document.querySelector('.navbar__container');
-    var distanciaBase = getDistanceFromRight(sectionBase);
-    var secaoAlvo = document.querySelector(section);
-    secaoAlvo.style.paddingRight = `${distanciaBase + 40}px`;
-}
-
-const handleResize = () => {
-    const width = window.innerWidth;
-    if (width > 1024 && width < 1439) {
-        mudarPadding('.features');
+function mudarPadding(remove = false) {
+    const distanciaBase = getDistanceFromRight(sectionBase);
+    
+    if (remove) {
+        secaoAlvo.style.paddingRight = `${distanciaBase + 40}px`;
+    } else {
+        secaoAlvo.style.removeProperty('padding-right');
     }
-};
+}
 
-// Executa quando a página é carregada
+function handleResize() {
+    clearTimeout(timer); // Limpa o timer anterior
+    timer = setTimeout(() => { // Adiciona um debounce para otimizar a escuta do redimensionamento
+        const width = window.innerWidth;
+        if (width > 1024 && width < 1439) {
+            mudarPadding(true);
+        } else {
+            mudarPadding(false);
+        }
+    }, 0); // 100ms de delay
+}
+
+// EventListeners
 window.addEventListener('load', handleResize);
-
-// Executa quando a janela é redimensionada
 window.addEventListener('resize', handleResize);
-

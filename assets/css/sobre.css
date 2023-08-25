@@ -4,12 +4,10 @@
 @import url(geral/botoes.css);
 @import url(geral/cores.css);
 /* @import url(geral/preloader.css); */
-@import url(geral/faq.css);
 @import url(geral/footer.css);
 @import url(geral/links.css);
 @import url(geral/navbar.css);
 @import url(geral/lembrete.css);
-@import url(geral/duvidas.css);
-@import url(geral/pricing.css);
-@import url(home/intro.css);
 @import url(home/info.css);
+@import url(home/intro.css);
+@import url(sobre/introSobre.css);

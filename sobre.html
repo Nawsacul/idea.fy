@@ -3,27 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Idea.fy - Erro 404</title>
-    <link rel="stylesheet" href="assets/css/error404.css" />
+    <title>Idea.fy - Sobre</title>
+    <meta name="description" content="Insira aqui a descrição da sua página." />
+    <link rel="stylesheet" href="assets/css/sobre.css" />
   </head>
   <body>
-    <!-- <div id="preloader">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="124"
-        height="124"
-        viewBox="0 0 124 124"
-        fill="none"
-      >
-        <path
-          d="M114.334 62C119.672 62 124.077 57.6465 123.248 52.3727C122.489 47.5439 121.16 42.8105 119.281 38.2736C116.165 30.7514 111.598 23.9166 105.841 18.1594C100.083 12.4021 93.2486 7.83526 85.7264 4.71947C81.1895 2.84022 76.4561 1.51104 71.6273 0.752015C66.3535 -0.076954 62 4.32776 62 9.66632C62 15.0049 66.3818 19.2238 71.5839 20.4229C73.8825 20.9528 76.1385 21.6736 78.3281 22.5805C83.5047 24.7247 88.2083 27.8676 92.1704 31.8296C96.1324 35.7917 99.2753 40.4953 101.419 45.6719C102.326 47.8615 103.047 50.1175 103.577 52.4161C104.776 57.6182 108.995 62 114.334 62Z"
-          fill="#FFDE00"
-        />
-      </svg>
-    </div> -->
-
-    <div id="overlay"></div>
-
     <header class="navbar">
       <div class="navbar__container">
         <a href="index.html">
@@ -40,7 +24,7 @@
         <nav class="navbar__nav">
           <ul>
             <li class="navbar__item">
-              <a class="navbar__link" href="index.html"
+              <a class="navbar__link navbar__link--active" href="index.html"
                 ><span class="navbar__link-texto">Início</span></a
               >
             </li>
@@ -83,17 +67,60 @@
     </header>
 
     <main>
-      <section class="erro">
-        <img
-          class="erro__ideafy-logo"
-          src="assets/img/svg/logoIdeafyErro404.svg"
-          alt="Letra D da logo do Idea.fy"
-        />
+      <section class="intro">
+        <h1 class="intro__titulo">Sobre o Idea.fy</h1>
+      </section>
 
-        <div class="erro__container">
-          <p class="erro__404">404</p>
-          <p class="erro__texto">Ops, não tem nada aqui...</p>
+      <section class="info">
+        <div class="info__image-container">
+          <img
+            class="info__image"
+            src="assets/img/svg/featuresR.svg"
+            alt="Imagem do símbolo de marca registrada."
+            draggable="false"
+          />
         </div>
+        <div class="info__conteudo">
+          <div class="info__item">
+            <h3 class="info__descricao">
+              A Idea.fy foi fundada por profissionais éticos e competentes que,
+              juntos, somam mais de 40 anos de experiência no mercado de marcas,
+              propriedade intelectual, design, marketing e negócios, ajudando
+              diversas empresas e empreendedores a alcançarem seus sonhos.
+            </h3>
+            <h3 class="info__descricao">
+              Nossa gama de conhecimentos interdisciplinares se complementam e
+              nos dão uma visão muito ampla de todas as possibilidades que a
+              marca pode agregar ao seu empreendimento.
+            </h3>
+            <h3 class="info__proposito">
+              O nosso propósito é ajudar pessoas e empresas a protegerem o seu
+              bem mais valioso: A
+              <span class="info__titulo--destaque">MARCA</span>. É ela que
+              garante o seu
+              <span class="info__titulo--destaque">destaque</span> no mercado.
+            </h3>
+            <h3 class="info__proposito">Destaque-se você também!</h3>
+            <h3 class="info__descricao">
+              Venha com a gente registrar suas ideias e transformá-las em marcas
+              de sucesso!
+            </h3>
+          </div>
+
+          <div class="info__item info__item--titulo-slogan">
+            <h2 class="info__titulo">Idea.fy</h2>
+            <p class="info__slogan">Registramos ideias, criamos legados.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lembrete">
+        <h2 class="lembrete__titulo">
+          Lembre-se:<br />
+          O dono é quem registra primeiro!
+        </h2>
+
+        <button class="botao lembrete__botao">Registrar minha marca</button>
       </section>
     </main>
 
@@ -195,6 +222,7 @@
       </div>
     </footer>
 
-    <script src="assets/js/navbarMenu.js"></script>
+    <script src="assets/js/paddingRight.js"></script>
+    <script defer src="assets/js/navbarMenu.js"></script>
   </body>
 </html>
