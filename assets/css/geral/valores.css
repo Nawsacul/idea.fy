@@ -6,7 +6,7 @@
   --padding-1440: 15rem;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439.9px) {
   header,
   main,
   footer {

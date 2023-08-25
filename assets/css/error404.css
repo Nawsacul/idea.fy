@@ -1,0 +1,127 @@
+@import url(reset.css);
+@import url(geral/fontes.css);
+@import url(geral/valores.css);
+@import url(geral/botoes.css);
+@import url(geral/cores.css);
+@import url(geral/links.css);
+@import url(geral/navbar.css);
+@import url(geral/footer.css);
+
+@media screen and (min-width: 320px) {
+  .erro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    gap: 2.5rem;
+    height: 100vh;
+    max-height: calc(100vh - 99.2px);
+  }
+
+  .erro__ideafy-logo {
+    width: 8.62456rem;
+    height: 12.18106rem;
+  }
+
+  .erro__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.0625rem;
+    text-align: center;
+  }
+
+  p {
+    color: var(--cor-secundaria);
+    font-family: "Century Gothic", sans-serif;
+  }
+
+  .erro__404 {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  .erro__texto {
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .erro {
+    flex-direction: row;
+    padding: 0 4rem;
+    gap: 6.75rem;
+    max-height: calc(100vh - 92.8px);
+  }
+
+  .erro__ideafy-logo {
+    width: 14.0625rem;
+    height: 19.86169rem;
+  }
+
+  .erro__container {
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .erro_404 {
+    font-size: 6rem;
+  }
+
+  .erro__texto {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 989px) {
+  .erro {
+    padding: 0 3rem;
+    gap: 9.75rem;
+    max-height: calc(100vh - 104px);
+  }
+
+  .erro__ideafy-logo {
+    width: 19.37913rem;
+    height: 27.3705rem;
+  }
+
+  .erro_404 {
+    font-size: 8rem;
+  }
+
+  .erro__texto {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .erro {
+    padding: 0 2.5rem;
+    gap: 7.5rem;
+    max-width: 59rem;
+  }
+
+  .erro__ideafy-logo {
+    max-width: 23.1405rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .erro {
+    padding: 0rem 15rem;
+    gap: 7.625rem;
+    max-width: unset;
+  }
+
+  .erro__ideafy-logo {
+    width: 23.625rem;
+    height: 33.36725rem;
+  }
+}
