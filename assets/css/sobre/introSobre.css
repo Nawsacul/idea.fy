@@ -1,39 +1,10 @@
 @media screen and (min-width: 320px) {
-  .info__conteudo {
-    gap: 5rem;
+  .intro {
+    padding: 5rem var(--padding-768) 1.5rem;
   }
 
-  .info__item {
-    gap: 2.5rem;
-  }
-
-  .info__titulo {
+  .intro__titulo {
     font-size: 1.9375rem;
-  }
-
-  .info__descricao {
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
-  .info__proposito {
-    font-size: 1.5625rem;
-    font-weight: 700;
-  }
-
-  .info__item--titulo-slogan {
-    gap: 1.5rem;
-  }
-
-  .info__titulo {
-    font-size: 1.9375rem;
-    font-weight: 700;
-  }
-
-  .info__slogan {
-    color: var(--cor-secundaria, #FDFCF4);
-    font-size: 1.25rem;
-    font-weight: 700;
   }
 }
 

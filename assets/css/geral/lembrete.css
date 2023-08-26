@@ -37,13 +37,20 @@
 
 @media screen and (min-width: 989px) {
   .lembrete {
-    padding: 4.5rem 0;
+    padding: 4.5rem var(padding-989);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .lembrete {
+    padding: 4.5rem var(padding-1024);
+    width: 59rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .lembrete {
-    padding: 4.5rem 0 2rem;
+    padding: 4.5rem var(--padding-1440) 2rem;
   }
 
   .lembrete--precos {

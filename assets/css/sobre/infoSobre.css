@@ -1,0 +1,154 @@
+@media screen and (min-width: 320px) {
+  .info {
+    flex-direction: column-reverse;
+  }
+
+  .info__image-container {
+    height: 28rem;
+  }
+
+  .info__image {
+    width: 26.78588rem;
+    height: 26.7605rem;
+  }
+
+  .info__conteudo {
+    gap: 5rem;
+    padding: 2rem;
+  }
+
+  .info__item {
+    gap: 2.5rem;
+  }
+
+  .info__titulo {
+    font-size: 1.9375rem;
+  }
+
+  .info__descricao {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .info__proposito {
+    font-size: 1.5625rem;
+    font-weight: 700;
+  }
+
+  .info__item--titulo-slogan {
+    gap: 1.5rem;
+  }
+
+  .info__titulo {
+    font-size: 1.9375rem;
+    font-weight: 700;
+  }
+
+  .info__slogan {
+    color: var(--cor-secundaria, #fdfcf4);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 2rem var(--padding-768) 2rem 0;
+  }
+
+  .info__image-container {
+    width: 100%;
+    height: 34.375rem;
+    min-width: unset;
+  }
+
+  .info__image {
+    width: 31.6rem;
+    height: 31.57rem;
+  }
+
+  .info__conteudo {
+    max-width: 389px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 989px) {
+  .info {
+    gap: 2.5rem;
+    padding: 2rem var(--padding-989) 2rem 0;
+  }
+
+  .info__image-container {
+    width: 100%;
+    height: 39.4375rem;
+  }
+
+  .info__image {
+    width: 33.77331rem;
+    height: 33.74125rem;
+  }
+
+  .info__conteudo {
+    max-width: 543px;
+    padding: 0;
+  }
+
+  .info__descricao {
+    font-size: 1.5625rem;
+  }
+
+  .info__proposito {
+    font-size: 1.9375rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .info {
+    padding: 2rem var(--padding-1024) 2rem 0;
+  }
+
+  .info__image-container {
+    width: 100%;
+    height: 36.75rem;
+    min-width: 20.8125rem;
+  }
+
+  .info__image {
+    width: 32.13106rem;
+    height: 32.10056rem;
+  }
+
+  .info__conteudo {
+    width: 100%;
+    min-width: 611px;
+    max-width: unset;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .info {
+    padding: 2rem var(--padding-1440) 2rem 0;
+  }
+
+  .info__image-container {
+    width: 100%;
+    height: 47.0625rem;
+    min-width: 33.4375rem;
+  }
+
+  .info__image {
+    width: 46.33725rem;
+    height: 46.29325rem;
+  }
+
+  .info__conteudo {
+    width: 100%;
+    min-width: 625px;
+    max-width: unset;
+    padding: 0;
+  }
+}
