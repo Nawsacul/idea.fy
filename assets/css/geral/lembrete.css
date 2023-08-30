@@ -2,6 +2,7 @@
   .lembrete {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 2.5rem 4rem;
@@ -37,13 +38,13 @@
 
 @media screen and (min-width: 989px) {
   .lembrete {
-    padding: 4.5rem var(padding-989);
+    padding: 4.5rem var(--padding-989);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .lembrete {
-    padding: 4.5rem var(padding-1024);
+    padding: 4.5rem var(--padding-1024);
     width: 59rem;
   }
 }
@@ -51,6 +52,7 @@
 @media screen and (min-width: 1440px) {
   .lembrete {
     padding: 4.5rem var(--padding-1440) 2rem;
+    width: unset;
   }
 
   .lembrete--precos {
