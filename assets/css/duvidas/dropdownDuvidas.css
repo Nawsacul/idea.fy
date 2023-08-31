@@ -1,14 +1,14 @@
 @media screen and (min-width: 768px) {
-  .faq__pergunta-titulo {
+  .dropdown__pergunta-titulo {
     font-size: 1.5625rem;
   }
 
-  .faq__pergunta-titulo--inpi {
+  .dropdown__pergunta-titulo--inpi {
     font-size: 1.25rem;
   }
 
-  .faq__resposta p,
-  .faq__resposta li {
+  .dropdown__resposta p,
+  .dropdown__resposta li {
     font-size: 1.125rem;
   }
 }
