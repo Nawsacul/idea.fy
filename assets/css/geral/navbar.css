@@ -21,11 +21,11 @@
 }
 
 .navbar__link {
-  display: block;
+  display: flex;
 }
 
 .navbar__botao-whatsapp {
-  display: block;
+  display: flex;
 }
 
 /* Media Queries */

@@ -17,3 +17,8 @@
 body, main {
   background: var(--cor-primaria, #1d7c87);
 }
+
+::selection {
+  background-color: var(--cor-terciaria, #ffde00);
+  color: var(--cor-primaria-900, #18595d);
+}

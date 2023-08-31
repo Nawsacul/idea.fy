@@ -301,7 +301,7 @@
             <p class="plan__preco">R$ 849,90</p>
             <p class="plan__divisao">10x de R$ 84,99</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="basic">Comprar</button>
           </div>
 
           <div class="plan">
@@ -456,7 +456,7 @@
             <p class="plan__preco">R$ 1252,00</p>
             <p class="plan__divisao">10x de R$ 125,20</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="standart">Comprar</button>
           </div>
 
           <div class="plan">
@@ -595,7 +595,7 @@
             <p class="plan__preco">R$ 1657,00</p>
             <p class="plan__divisao">10x de R$ 165,70</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="plus">Comprar</button>
           </div>
 
           <div class="plan">
@@ -726,22 +726,22 @@
             <p class="plan__preco">R$ 1984,00</p>
             <p class="plan__divisao">10x de R$ 198,40</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="premium">Comprar</button>
           </div>
         </div>
-        <div class="faq__item">
-          <button class="faq__pergunta" onclick="toggleDropdown(0)">
-            <h3 class="faq__pergunta-titulo faq__pergunta-titulo--inpi">
+        <div class="dropdown__item">
+          <button class="dropdown__pergunta" onclick="toggleDropdown(0)">
+            <h3 class="dropdown__pergunta-titulo dropdown__pergunta-titulo--inpi">
               Taxas INPI
             </h3>
             <img
-              class="faq__pergunta-seta"
+              class="dropdown__pergunta-seta"
               src="assets/img/svg/keyboard-arrow-up.svg"
               alt=""
               aria-hidden="true"
             />
           </button>
-          <div class="faq__resposta faq__resposta--inpi" id="answer-0">
+          <div class="dropdown__resposta dropdown__resposta--inpi" id="answer-0">
             <p>
               Pedido de registro de marca (com especificação pré-aprovada) -
               valor por classe 355,00 / 142,00*<br />
@@ -780,17 +780,17 @@
           Como funciona o processo?
         </h2>
         <div class="duvidas__perguntas duvidas-processo__perguntas">
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(1)">
-              <h3 class="faq__pergunta-titulo">No plano Basic</h3>
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(1)">
+              <h3 class="dropdown__pergunta-titulo">No plano Basic</h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-1">
+            <div class="dropdown__resposta" id="answer-1">
               <p>
                 Fazemos a identificação da classe adequada, protocolo do pedido,
                 acompanhamento, cumprimento de exigências e emissão do
@@ -799,17 +799,17 @@
             </div>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(2)">
-              <h3 class="faq__pergunta-titulo">No plano Standard</h3>
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(2)">
+              <h3 class="dropdown__pergunta-titulo">No plano Standard</h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-2">
+            <div class="dropdown__resposta" id="answer-2">
               <p>
                 Fazemos a identificação da classe adequada, pesquisa para
                 identificar marcas iguais ou semelhantes, comunicação do
@@ -820,17 +820,17 @@
             </div>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(3)">
-              <h3 class="faq__pergunta-titulo">No plano Plus</h3>
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(3)">
+              <h3 class="dropdown__pergunta-titulo">No plano Plus</h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-3">
+            <div class="dropdown__resposta" id="answer-3">
               <p>
                 Fazemos a identificação da classe adequada, pesquisa para
                 identificar marcas iguais ou semelhantes, comunicação do
@@ -842,17 +842,17 @@
             </div>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(4)">
-              <h3 class="faq__pergunta-titulo">No plano Premium</h3>
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(4)">
+              <h3 class="dropdown__pergunta-titulo">No plano Premium</h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-4">
+            <div class="dropdown__resposta" id="answer-4">
               <p>
                 Fazemos a identificação da classe adequada, pesquisa para
                 identificar marcas iguais ou semelhantes, comunicação do
@@ -866,20 +866,20 @@
             </div>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(5)">
-              <h3 class="faq__pergunta-titulo">
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(5)">
+              <h3 class="dropdown__pergunta-titulo">
                 Como eu faço para contratar / comprar o serviço da idea.fy?
               </h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-5">
-              <ul class="faq__ul">
+            <div class="dropdown__resposta" id="answer-5">
+              <ul class="dropdown__ul">
                 <li>
                   Primeiro você deve escolher um pacote de serviços e clicar em
                   comprar. Logo em seguida, você será direcionado a responder
@@ -915,19 +915,19 @@
         </h2>
 
         <div class="duvidas__perguntas duvidas-processo__perguntas">
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(6)">
-              <h3 class="faq__pergunta-titulo">
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(6)">
+              <h3 class="dropdown__pergunta-titulo">
                 Por que preciso fazer o registro?
               </h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-6">
+            <div class="dropdown__resposta" id="answer-6">
               <p>
                 Porque a sua marca só estará protegida depois de registrada
                 junto ao Instituto Nacional da Propriedade Industrial, o INPI. O
@@ -940,19 +940,19 @@
             </div>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(7)">
-              <h3 class="faq__pergunta-titulo">
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(7)">
+              <h3 class="dropdown__pergunta-titulo">
                 Que riscos eu corro se não registrar minha marca?
               </h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-7">
+            <div class="dropdown__resposta" id="answer-7">
               <p>
                 Sem o registro você não tem o direito de exclusividade sobre a
                 sua marca, ou seja, outras pessoas vão poder copiar ela total ou
@@ -965,20 +965,20 @@
             </div>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(8)">
-              <h3 class="faq__pergunta-titulo">
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(8)">
+              <h3 class="dropdown__pergunta-titulo">
                 Tenho CNPJ e domínio do site há tempos. Preciso registrar a
                 marca?
               </h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-8">
+            <div class="dropdown__resposta" id="answer-8">
               <p>
                 O CNPJ, o contrato social da sua empresa e o nome de domínio não
                 protegem a sua marca. A marca só é protegida por meio do
@@ -989,19 +989,19 @@
             </div>
           </div>
 
-          <div class="faq__item">
-            <button class="faq__pergunta" onclick="toggleDropdown(9)">
-              <h3 class="faq__pergunta-titulo">
+          <div class="dropdown__item">
+            <button class="dropdown__pergunta" onclick="toggleDropdown(9)">
+              <h3 class="dropdown__pergunta-titulo">
                 Quanto tempo demora para registrar uma marca?
               </h3>
               <img
-                class="faq__pergunta-seta"
+                class="dropdown__pergunta-seta"
                 src="assets/img/svg/keyboard-arrow-up.svg"
                 alt=""
                 aria-hidden="true"
               />
             </button>
-            <div class="faq__resposta" id="answer-9">
+            <div class="dropdown__resposta" id="answer-9">
               <p>
                 Depois de depositado o pedido de registro, o INPI tem o prazo de
                 18 meses para analisar e conceder o registro.
@@ -1125,7 +1125,8 @@
 
     <script src="assets/js/paddingRight.js"></script>
     <!-- <script src="assets/js/preloader.js"></script> -->
-    <script defer src="assets/js/faq.js"></script>
+    <script defer src="assets/js/dropdown.js"></script>
     <script defer src="assets/js/navbarMenu.js"></script>
+    <script src="assets/js/detectaBotaoCarrinho.js"></script>
   </body>
 </html>

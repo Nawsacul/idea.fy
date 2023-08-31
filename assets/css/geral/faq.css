@@ -1,5 +1,5 @@
 @media screen and (min-width: 320px) {
-  .faq__item {
+  .dropdown__item {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -7,7 +7,7 @@
     /* max-width: 39rem; */
   }
 
-  .faq__pergunta {
+  .dropdown__pergunta {
     display: flex;
     width: 100%;
     padding: 1rem 1.5rem;
@@ -18,25 +18,25 @@
     cursor: pointer;
   }
 
-  .faq__pergunta-fechada {
+  .dropdown__pergunta-fechada {
     background: var(--cor-primaria, #1d7c87);
   }
 
-  .faq__pergunta-aberta {
+  .dropdown__pergunta-aberta {
     background: var(--cor-primaria-900, #18595d);
   }
 
-  .faq__pergunta-titulo {
+  .dropdown__pergunta-titulo {
     flex: 1 0 0;
     align-self: center;
     font-size: 1.25rem;
   }
 
-  .faq__pergunta-titulo--inpi {
+  .dropdown__pergunta-titulo--inpi {
     font-size: 1.25rem;
   }
 
-  .faq__pergunta-seta {
+  .dropdown__pergunta-seta {
     transition: transform 0.3s ease;
     align-self: center;
     rotate: 180deg;
@@ -48,38 +48,38 @@
     transform: rotate(180deg);
   }
 
-  .faq__resposta {
+  .dropdown__resposta {
     display: none; /* Esconde as respostas inicialmente */
     padding: 0;
   }
 
-  .faq__resposta p,
-  .faq__resposta li {
+  .dropdown__resposta p,
+  .dropdown__resposta li {
     line-height: 125%;
     font-size: 1rem;
     font-weight: 400;
     color: var(--cor-secundaria, #fdfcf4);
   }
 
-  .faq__resposta--inpi p {
+  .dropdown__resposta--inpi p {
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 120%;
   }
 
-  .faq__resposta-img {
+  .dropdown__resposta-img {
     display: block;
     margin: 0 auto;
     width: 36.375rem;
     height: 25.3125rem;
   }
 
-  .faq__ul {
+  .dropdown__ul {
     font-family: "Poppins", sans-serif;
     margin-left: 0.75rem;
   }
 
-  .faq__ul li::before {
+  .dropdown__ul li::before {
     content: "•"; /* Conteúdo do marcador personalizado */
     display: inline-block;
     width: 1em;
@@ -97,34 +97,34 @@
 }
 
 @media screen and (min-width: 989px) {
-  .faq__pergunta-titulo {
+  .dropdown__pergunta-titulo {
     font-size: 1.5625rem;
   }
 
-  .faq__pergunta-titulo--inpi {
+  .dropdown__pergunta-titulo--inpi {
     font-size: 1.25rem;
   }
 
-  .faq__resposta p,
-  .faq__resposta li {
+  .dropdown__resposta p,
+  .dropdown__resposta li {
     font-size: 1.125rem;
   }
 
-  .faq__resposta--inpi p {
+  .dropdown__resposta--inpi p {
     font-size: 0.75rem;
   }
 
-  .faq__resposta--inpi {
+  .dropdown__resposta--inpi {
     font-size: 0.75rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .faq__resposta {
+  .dropdown__resposta {
     padding: 0 1.5rem 0;
   }
 
-  .faq__pergunta-seta {
+  .dropdown__pergunta-seta {
     transition: transform 0.3s ease;
   }
 

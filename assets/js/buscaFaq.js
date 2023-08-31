@@ -3,24 +3,24 @@ function performSearch() {
     // Pegar o valor de busca
     var query = document.getElementById('duvidas-busca').value.toLowerCase();
 
-    // Selecionar todas as seções de FAQ
-    var faqSections = document.querySelectorAll('.duvidas__perguntas');
+    // Selecionar todas as seções de dropdown
+    var dropdownSections = document.querySelectorAll('.duvidas__perguntas');
 
-    // Percorrer todas as seções de FAQ
-    faqSections.forEach(function (section) {
-        var faqItems = section.querySelectorAll('.faq__item');
+    // Percorrer todas as seções de dropdown
+    dropdownSections.forEach(function (section) {
+        var dropdownItems = section.querySelectorAll('.dropdown__item');
         var sectionContainsQuery = false; // Indicador para saber se a seção contém a consulta de busca
 
-        // Percorrer todos os itens de FAQ na seção
-        faqItems.forEach(function (item) {
+        // Percorrer todos os itens de dropdown na seção
+        dropdownItems.forEach(function (item) {
             // Pegar o título da pergunta
-            var questionTitle = item.querySelector('.faq__pergunta-titulo');
-            var pergunta =  item.querySelector('.faq__pergunta');
+            var questionTitle = item.querySelector('.dropdown__pergunta-titulo');
+            var pergunta =  item.querySelector('.dropdown__pergunta');
             var questionText = questionTitle.innerText.toLowerCase();
-            var answerDiv = item.querySelector('.faq__resposta');
+            var answerDiv = item.querySelector('.dropdown__resposta');
 
             // Pegar a div da resposta e concatenar o texto de todos os elementos filhos
-            var answerDiv = item.querySelector('.faq__resposta');
+            var answerDiv = item.querySelector('.dropdown__resposta');
             var answerChildren = answerDiv.querySelectorAll('*'); // Seleciona todos os elementos filhos
             var answerText = '';
             answerChildren.forEach(function (child) {
@@ -37,8 +37,8 @@ function performSearch() {
                 answerDiv.style.display = 'none';
                 answerDiv.innerHTML = originalAnswer;
                 item.style.display = '';
-                pergunta.classList.remove('faq__pergunta-aberta');
-                pergunta.classList.add('faq__pergunta-fechado');
+                pergunta.classList.remove('dropdown__pergunta-aberta');
+                pergunta.classList.add('dropdown__pergunta-fechado');
             } else if (questionText.includes(query) || answerText.includes(query)) {
                 // Se a consulta de busca for encontrada, exibir o item, abrir o dropdown e destacar as palavras-chave
                 sectionContainsQuery = true; // Marcar a seção como contendo a consulta
@@ -58,16 +58,16 @@ function performSearch() {
                     });
                     child.innerHTML = highlightedAnswer;
                 });
-                pergunta.classList.remove('faq__pergunta-fechado');
-                pergunta.classList.add('faq__pergunta-aberta');
+                pergunta.classList.remove('dropdown__pergunta-fechado');
+                pergunta.classList.add('dropdown__pergunta-aberta');
             } else {
                 // Se a consulta de busca não for encontrada, ocultar o item e fechar o dropdown
                 questionTitle.innerHTML = originalQuestion;
                 answerDiv.style.display = 'none';
                 answerDiv.innerHTML = originalAnswer;
                 item.style.display = 'none';
-                pergunta.classList.remove('faq__pergunta-aberta');
-                pergunta.classList.add('faq__pergunta-fechado');
+                pergunta.classList.remove('dropdown__pergunta-aberta');
+                pergunta.classList.add('dropdown__pergunta-fechado');
             }
         });
 
