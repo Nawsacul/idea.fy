@@ -131,6 +131,7 @@
   .navbar__link:active,
   .navbar__link--active {
     border: 1px solid var(--cor-primaria-200, #82dae5);
+    outline: none;
   }
 
   .navbar__botao-whatsapp {
