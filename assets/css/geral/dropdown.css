@@ -1,4 +1,12 @@
 @media screen and (min-width: 320px) {
+  .block {
+    display: block;
+  }
+  
+  .none {
+    display: none;
+  }
+
   .dropdown__item {
     display: flex;
     flex-direction: column;
@@ -53,8 +61,8 @@
     padding: 0;
   }
 
-  .dropdown__resposta p,
-  .dropdown__resposta li {
+  .dropdown__texto,
+  .dropdown__li {
     line-height: 125%;
     font-size: 1rem;
     font-weight: 400;
@@ -79,7 +87,7 @@
     margin-left: 0.75rem;
   }
 
-  .dropdown__ul li::before {
+  .dropdown__li::before {
     content: "•"; /* Conteúdo do marcador personalizado */
     display: inline-block;
     width: 1em;

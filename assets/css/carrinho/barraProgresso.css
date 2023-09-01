@@ -1,0 +1,60 @@
+.carrinho__barra-progresso {
+  display: flex;
+  padding: 1rem 2rem;
+}
+
+.carrinho__barra-individual {
+  flex-grow: 1;
+  height: 0.5rem;
+  background: var(--cor-primaria-900, #18595d);
+  overflow: hidden; /* Esconde o elemento filho que se estende além deste elemento */
+}
+
+.carrinho__barra-fill {
+  height: 100%;
+  background: transparent;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.ativo .carrinho__barra-fill {
+  transform: scaleX(1);
+  background: var(--cor-terciaria, #ffde00);
+  transition: transform 0.5s ease; /* Adicione a transição aqui */
+}
+
+.removido .carrinho__barra-fill {
+    transform-origin: left;
+    background: var(--cor-terciaria, #ffde00);
+    transform: scaleX(0);
+}
+
+@media screen and (min-width: 320px) {
+    .carrinho__barra-progresso {
+        padding: 1rem var(--padding-320);
+      }
+}
+
+@media screen and (min-width: 768px) {
+    .carrinho__barra-progresso {
+        padding: 1rem var(--padding-768);
+      }
+}
+
+@media screen and (min-width: 989px) {
+    .carrinho__barra-progresso {
+        padding: 1rem var(--padding-989);
+      }
+}
+
+@media screen and (min-width: 1024px) {
+    .carrinho__barra-progresso {
+        padding: 1rem var(--padding-1024);
+      }
+}
+
+@media screen and (min-width: 1440px) {
+    .carrinho__barra-progresso {
+        padding: 1rem var(--padding-1440);
+      }
+}

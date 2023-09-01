@@ -9,3 +9,6 @@
 @import url(geral/links.css);
 @import url(geral/navbar.css);
 @import url(geral/duvidas.css);
+@import url(carrinho/carrinhoForm.css);
+@import url(carrinho/barraProgresso.css);
+@import url(carrinho/inputCustomizado.css);

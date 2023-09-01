@@ -84,16 +84,34 @@
 
     <main>
       <form action="" class="carrinho" id="carrinho">
-        <div class="carrinho__barra-progresso"></div>
+        <div class="carrinho__barra-progresso">
+          <div class="carrinho__barra-individual ativo">
+            <div class="carrinho__barra-fill"></div>
+          </div>
+          <div class="carrinho__barra-individual">
+            <div class="carrinho__barra-fill"></div>
+          </div>
+          <div class="carrinho__barra-individual">
+            <div class="carrinho__barra-fill"></div>
+          </div>
+          <div class="carrinho__barra-individual">
+            <div class="carrinho__barra-fill"></div>
+          </div>
+          <div class="carrinho__barra-individual">
+            <div class="carrinho__barra-fill"></div>
+          </div>
+          <div class="carrinho__barra-individual">
+            <div class="carrinho__barra-fill"></div>
+          </div>
+        </div>
 
         <div class="carrinho__primeira-escolha duvidas">
-          <h2 class="duvidas__titulo">Serviço escolhido</h2>
+          <h1 class="carrinho__primeira-escolha-titulo">Serviço escolhido</h1>
 
           <div
             class="carrinho__dropdown-container duvidas__perguntas"
             id="carrinho-container-itens"
-          >
-          </div>
+          ></div>
         </div>
       </form>
     </main>
@@ -196,9 +214,12 @@
       </div>
     </footer>
 
-    <script src="assets/js/carrinho.js"></script>
+    <script type="module" src="assets/js/gerarCarrinho.js"></script>
     <!-- <script src="assets/js/preloader.js"></script> -->
     <script defer src="assets/js/dropdown.js"></script>
     <script defer src="assets/js/navbarMenu.js"></script>
+    <script defer src="assets/js/detectaBotaoCarrinho.js"></script>
   </body>
 </html>
+
+

@@ -143,7 +143,7 @@
           <p class="pricing__subtitulo">Aqui você sabe o quanto vai pagar</p>
         </div>
         <div class="pricing__planos">
-          <div class="plan">
+          <div class="plan" id="planoBasic">
             <h3 class="plan__titulo plan__titulo--basic">Basic</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -304,7 +304,7 @@
             <button class="botao plan__botao" data-plano="basic">Comprar</button>
           </div>
 
-          <div class="plan">
+          <div class="plan" id="planoStandart">
             <h3 class="plan__titulo plan__titulo--standart">Standart</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -459,7 +459,7 @@
             <button class="botao plan__botao" data-plano="standart">Comprar</button>
           </div>
 
-          <div class="plan">
+          <div class="plan" id="planoPlus">
             <h3 class="plan__titulo plan__titulo--plus">Plus</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -598,7 +598,7 @@
             <button class="botao plan__botao" data-plano="plus">Comprar</button>
           </div>
 
-          <div class="plan">
+          <div class="plan" id="planoPremium">
             <h3 class="plan__titulo plan__titulo--premium">Premium</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -742,7 +742,7 @@
             />
           </button>
           <div class="dropdown__resposta dropdown__resposta--inpi" id="answer-0">
-            <p>
+            <p class="dropdown__texto">
               Pedido de registro de marca (com especificação pré-aprovada) -
               valor por classe 355,00 / 142,00*<br />
               Cumprimento de exigência: 140,00 / 56,00*<br />
@@ -791,7 +791,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-1">
-              <p>
+              <p class="dropdown__texto">
                 Fazemos a identificação da classe adequada, protocolo do pedido,
                 acompanhamento, cumprimento de exigências e emissão do
                 certificado.
@@ -810,7 +810,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-2">
-              <p>
+              <p class="dropdown__texto">
                 Fazemos a identificação da classe adequada, pesquisa para
                 identificar marcas iguais ou semelhantes, comunicação do
                 resultado e aprovação do cliente, protocolo do pedido,
@@ -831,7 +831,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-3">
-              <p>
+              <p class="dropdown__texto">
                 Fazemos a identificação da classe adequada, pesquisa para
                 identificar marcas iguais ou semelhantes, comunicação do
                 resultado e aprovação do cliente, protocolo do pedido,
@@ -853,7 +853,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-4">
-              <p>
+              <p class="dropdown__texto">
                 Fazemos a identificação da classe adequada, pesquisa para
                 identificar marcas iguais ou semelhantes, comunicação do
                 resultado e aprovação do cliente, protocolo do pedido,
@@ -880,25 +880,25 @@
             </button>
             <div class="dropdown__resposta" id="answer-5">
               <ul class="dropdown__ul">
-                <li>
+                <li class="dropdown__li">
                   Primeiro você deve escolher um pacote de serviços e clicar em
                   comprar. Logo em seguida, você será direcionado a responder
                   algumas perguntas para nos explicar quem é o dono da marca,
                   sobre a marca e os serviços / produtos que você vende.
                 </li>
-                <li>
+                <li class="dropdown__li">
                   Logo após, você será encaminhado ao pagamento através do
                   Mercado Pago (para mais segurança das transações), onde poderá
                   escolher entre cartão de crédito, boleto, pix e demais formas
                   que sejam convenientes para você.
                 </li>
-                <li>
+                <li class="dropdown__li">
                   Pagamento confirmado, vamos entrar em contato com você para
                   dar seguimento no seu pedido, enviar o contrato, solicitar
                   mais alguns documentos e iniciar o seu serviço da forma mais
                   rápida possível!
                 </li>
-                <li>
+                <li class="dropdown__li">
                   Depois disso, estaremos em contato com você através do nossos
                   canais de whatsapp e e-mail e vamos avisando sobre cada etapa.
                   Você terá 100% de suporte online da nossa equipe.
@@ -928,7 +928,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-6">
-              <p>
+              <p class="dropdown__texto">
                 Porque a sua marca só estará protegida depois de registrada
                 junto ao Instituto Nacional da Propriedade Industrial, o INPI. O
                 registro garante que você terá exclusividade de usar a sua marca
@@ -953,7 +953,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-7">
-              <p>
+              <p class="dropdown__texto">
                 Sem o registro você não tem o direito de exclusividade sobre a
                 sua marca, ou seja, outras pessoas vão poder copiar ela total ou
                 parcialmente, para assinalar os mesmos produtos ou serviços que
@@ -979,7 +979,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-8">
-              <p>
+              <p class="dropdown__texto">
                 O CNPJ, o contrato social da sua empresa e o nome de domínio não
                 protegem a sua marca. A marca só é protegida por meio do
                 registro no INPI. Só esse registro garante que você tenha o
@@ -1002,7 +1002,7 @@
               />
             </button>
             <div class="dropdown__resposta" id="answer-9">
-              <p>
+              <p class="dropdown__texto">
                 Depois de depositado o pedido de registro, o INPI tem o prazo de
                 18 meses para analisar e conceder o registro.
               </p>
