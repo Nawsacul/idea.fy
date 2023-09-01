@@ -17,6 +17,7 @@ const planosLink = {
 
 document.addEventListener('DOMContentLoaded', function () {
   const planoSelecionado = localStorage.getItem('planoSelecionado');  // Read the selected plan from localStorage
+  const paginaOrigem = localStorage.getItem('paginaOrigem') || 'index.html';  // Use index.html como padrão
 
   const planoPrimeiraTela = document.getElementById('carrinho-container-itens');
 
@@ -120,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const linkVoltar = document.getElementById('linkVoltar');  // Supondo que o link tenha um id 'linkVoltar'
 
     if (planosLink.hasOwnProperty(planoSelecionado)) {
-      linkVoltar.href = `index.html${planosLink[planoSelecionado]}`;
+      linkVoltar.href = `${paginaOrigem}${planosLink[planoSelecionado]}`;
     }
 
     const planoSugeridoKey = planosSugeridos[planoSelecionado];

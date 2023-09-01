@@ -86,7 +86,7 @@
           <h2 class="pricing__titulo">Preços e planos</h2>
         </div>
         <div class="pricing__planos">
-          <div class="plan">
+          <div class="plan" id="planoBasic">
             <h3 class="plan__titulo plan__titulo--basic">Basic</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -188,10 +188,10 @@
             <p class="plan__preco">R$ 849,90</p>
             <p class="plan__divisao">10x de R$ 84,99</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="basic">Comprar</button>
           </div>
 
-          <div class="plan">
+          <div class="plan" id="planoStandart">
             <h3 class="plan__titulo plan__titulo--standart">Standart</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -287,10 +287,10 @@
             <p class="plan__preco">R$ 1252,00</p>
             <p class="plan__divisao">10x de R$ 125,20</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="standart">Comprar</button>
           </div>
 
-          <div class="plan">
+          <div class="plan" id="planoPlus">
             <h3 class="plan__titulo plan__titulo--plus">Plus</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -370,10 +370,10 @@
             <p class="plan__preco">R$ 1657,00</p>
             <p class="plan__divisao">10x de R$ 165,70</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="plus">Comprar</button>
           </div>
 
-          <div class="plan">
+          <div class="plan" id="planoPremium">
             <h3 class="plan__titulo plan__titulo--premium">Premium</h3>
             <ul class="plan__beneficios">
               <li class="plan__beneficio">
@@ -445,7 +445,7 @@
             <p class="plan__preco">R$ 1984,00</p>
             <p class="plan__divisao">10x de R$ 198,40</p>
             <p class="plan__taxas">+ taxas do INPI*</p>
-            <button class="botao plan__botao">Comprar</button>
+            <button class="botao plan__botao" data-plano="premium">Comprar</button>
           </div>
         </div>
         <div class="dropdown__item">
@@ -872,7 +872,8 @@
     </footer>
 
     <!-- <script src="assets/js/preloader.js"></script> -->
-    <script src="assets/js/dropdown.js"></script>
+    <script defer src="assets/js/dropdown.js"></script>
     <script src="assets/js/navbarMenu.js"></script>
+    <script defer src="assets/js/detectaBotaoCarrinho.js"></script>
   </body>
 </html>
