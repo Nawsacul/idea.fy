@@ -43,66 +43,52 @@ document.addEventListener('DOMContentLoaded', function () {
               ${descricaoItems}
             </ul>
           </div>
+        </div>
 
-          <div class="termos">
-            <div class="termos__termo">
-              <label for="termo_documento" class="termos__label"
-                ><input
-                  type="checkbox"
-                  name="termo_documento"
-                  id="termo_documento"
-                  class="termos__checkbox"
-                  required
-                />
-                <span class="termos__checkbox-customizado"></span>Estou ciente de que
-                mais documentos podem ser solicitados e estarei atento ao meu e-mail,
-                caixa de spam ou WhatsApp.</label
-              >
-            </div>
-      
-            <div class="termos__termo">
-              <label for="termo_condicoes" class="termos__label"
-                ><input
-                  type="checkbox"
-                  name="termo_condicoes"
-                  id="termo_condicoes"
-                  class="termos__checkbox"
-                  required
-                /><span class="termos__checkbox-customizado"></span>Estou de acordo
-                com os
-                <a class="termos__texto-destaque" href="#"> Termos e Condições</a> do
-                site.</label
-              >
-            </div>
-      
-            <div class="termos__termo">
-              <label for="termo_privacidade" class="termos__label"
-                ><input
-                  type="checkbox"
-                  name="termo_privacidade"
-                  id="termo_privacidade"
-                  class="termos__checkbox"
-                  required
-                /><span class="termos__checkbox-customizado"></span>Estou de acordo
-                com o
-                <a class="termos__texto-destaque" href="#">Termo de Privacidade</a> do
-                site.</label
-              >
-            </div>
-      
-            <div class="termos__termo">
-              <label for="termo_avulso" class="termos__label"
-                ><input
-                  type="checkbox"
-                  name="termo_avulso"
-                  id="termo_avulso"
-                  class="termos__checkbox"
-                  required
-                /><span class="termos__checkbox-customizado"></span>Estou ciente que
-                meu plano é mais básico e que se precisar de outros serviços,
-                comprarei avulso.</label
-              >
-            </div>
+        <div class="termos">
+          <div class="termos__termo">
+            <label for="termo_documento" class="termos__label"
+              ><input
+                type="checkbox"
+                name="termo_documento"
+                id="termo_documento"
+                class="termos__checkbox"
+                required
+              />
+              <span class="termos__checkbox-customizado"></span>Estou ciente de que
+              mais documentos podem ser solicitados e estarei atento ao meu e-mail,
+              caixa de spam ou WhatsApp.</label
+            >
+          </div>
+    
+          <div class="termos__termo">
+            <label for="termo_condicoes" class="termos__label"
+              ><input
+                type="checkbox"
+                name="termo_condicoes"
+                id="termo_condicoes"
+                class="termos__checkbox"
+                required
+              /><span class="termos__checkbox-customizado"></span>Estou de acordo
+              com os
+              <a class="termos__texto-destaque" href="#"> Termos e Condições</a> do
+              site.</label
+            >
+          </div>
+    
+          <div class="termos__termo">
+            <label for="termo_privacidade" class="termos__label"
+              ><input
+                type="checkbox"
+                name="termo_privacidade"
+                id="termo_privacidade"
+                class="termos__checkbox"
+                required
+              /><span class="termos__checkbox-customizado"></span>Estou de acordo
+              com o
+              <a class="termos__texto-destaque" href="#">Termo de Privacidade</a> do
+              site.</label
+            >
           </div>
         </div>
 
@@ -116,6 +102,29 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
     `;
+
+    const divTermos = document.querySelector('.termos');
+
+    const termoAdicional = `
+    <div class="termos__termo">
+      <label for="termo_avulso" class="termos__label"
+        ><input
+          type="checkbox"
+          name="termo_avulso"
+          id="termo_avulso"
+          class="termos__checkbox"
+          required
+        /><span class="termos__checkbox-customizado"></span>Estou ciente que
+        meu plano é mais básico e que se precisar de outros serviços,
+        comprarei avulso.</label
+      >
+    </div>
+    `;
+
+    if (planoSelecionado === 'basic') {
+      divTermos.insertAdjacentHTML('beforeend', termoAdicional);
+    }
+
 
     // Uso
     const linkVoltar = document.getElementById('linkVoltar');  // Supondo que o link tenha um id 'linkVoltar'
@@ -173,6 +182,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
   } else {
-    planoPrimeiraTela.innerHTML = `<p>Plano não encontrado.</p>`;
+    planoPrimeiraTela.innerHTML = `
+    <div class="plano__nao-encontrado">
+    <h2 class="plano__texto-nao-encontrado">Plano não encontrado.</h2>
+    <a href="index.html" class="botao plano__link-nao-encontrado"
+    >Voltar</a>
+    </div>
+    `;
   }
 });

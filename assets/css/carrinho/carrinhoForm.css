@@ -29,7 +29,7 @@
   }
 
   .descricao-plano {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .descricao-plano--sugerido {
@@ -88,6 +88,18 @@
     height: 0.1875rem;
     background: var(--cor-terciaria, #ffde00);
     margin: 0.5rem 0;
+  }
+
+  .plano__nao-encontrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .plano__texto-nao-encontrado {
+    font-size: 2.4375rem;
+    text-align: center;
   }
 }
 
