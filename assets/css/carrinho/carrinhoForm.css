@@ -1,22 +1,30 @@
 @media screen and (min-width: 320px) {
   .carrinho {
-    padding: 2.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem var(--padding-320) 1.5rem;
   }
 
   .carrinho__dropdown-container {
     gap: 2.5rem;
   }
 
-  .carrinho__primeira-escolha {
-    padding-top: 2rem;
+  .carrinho__secao {
+    padding: 2.5rem 0;
+    align-items: flex-start;
   }
 
-  .carrinho__primeira-escolha-titulo,
+  .carrinho__segunda-escolha {
+    display: none;
+  }
+
+  .carrinho__secao-titulo,
   .carrinho__titulo-sugestao {
     padding: 0.625rem 1rem;
   }
 
-  .carrinho__primeira-escolha-titulo {
+  .carrinho__secao-titulo {
     font-size: 1.9375rem;
   }
 
@@ -41,15 +49,10 @@
     line-height: 120%;
   }
 
-  .descricao-plano__item {
-    /* position: relative; */
-    margin-left: 0.5rem;
-  }
-
   .descricao-plano__item::before {
-    /* position: absolute; */
     width: 0.7rem;
-    margin-left: -0.5rem;
+    margin-left: -0.2rem;
+    margin-right: 0.2rem;
   }
 
   .termos {
@@ -105,12 +108,11 @@
 
 @media screen and (min-width: 768px) {
   .carrinho {
-    padding: 2.5rem 0 1.5rem;
+    padding: 5rem var(--padding-768) 1.5rem;
   }
 
-  .carrinho__primeira-escolha-titulo {
-    font-size: 1.9375rem;
-    padding: 0.625rem 1rem;
+  .carrinho__secao-titulo {
+    font-size: 2.4375rem;
   }
 
   .botoes__container--sugerido {
@@ -120,33 +122,40 @@
 
 @media screen and (min-width: 989px) {
   .carrinho {
-    padding: 2.5rem 0 1.5rem;
-  }
-
-  .carrinho__primeira-escolha-titulo {
-    font-size: 1.9375rem;
-    padding: 0.625rem 1rem;
+    padding: 7.5rem var(--padding-989) 1.5rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .carrinho {
-    padding: 2.5rem 0 1.5rem;
+    padding: 7.5rem var(--padding-1024) 1.5rem;
   }
 
-  .carrinho__primeira-escolha-titulo {
+  .carrinho__secao-titulo {
     font-size: 1.9375rem;
     padding: 0.625rem 1rem;
+  }
+
+  .descricao-plano {
+    padding-left: 1rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .carrinho {
-    padding: 2.5rem 0 1.5rem;
+    padding: 7.5rem var(--padding-1440) 1.5rem;
   }
 
-  .carrinho__primeira-escolha-titulo {
+  .carrinho__secao-titulo {
     font-size: 1.9375rem;
     padding: 0.625rem 1rem;
+  }
+
+  .descricao-plano {
+    padding-left: 0;
+  }
+
+  .descricao-plano--sugerido {
+    padding-left: 1.5rem;
   }
 }

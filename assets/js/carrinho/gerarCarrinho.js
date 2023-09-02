@@ -10,7 +10,7 @@ const planosSugeridos = {
 
 const planosLink = {
   basic: '#planoBasic',
-  standard: '#planostandard',
+  standard: '#planoStandard',
   plus: '#planoPlus',
   premium: '#planoPremium'
 };
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <span class="link__texto">Voltar</span>
           </a>
 
-          <button class="botao" type="button">Avançar</button>
+          <button class="botao botao__avancar-primeira-tela" type="button">Avançar</button>
         </div>
       </div>
     `;
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
               aria-hidden="true"
             />
           </button>
-          <div class="class="descricao-plano descricao-plano--sugerido dropdown__resposta" id="answer-1" style="display: block;">
+          <div class="descricao-plano descricao-plano--sugerido dropdown__resposta" id="answer-1" style="display: block;">
             <p class="dropdown__texto descricao-plano__titulo">Esse plano inclui:</p>
             <ul class="descricao-plano__lista dropdown__ul">
               ${descricaoSugeridoItems}

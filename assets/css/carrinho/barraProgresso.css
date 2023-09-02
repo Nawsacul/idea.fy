@@ -1,6 +1,8 @@
 .carrinho__barra-progresso {
   display: flex;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .carrinho__barra-individual {
@@ -24,37 +26,25 @@
 }
 
 .removido .carrinho__barra-fill {
-    transform-origin: left;
-    background: var(--cor-terciaria, #ffde00);
-    transform: scaleX(0);
-}
-
-@media screen and (min-width: 320px) {
-    .carrinho__barra-progresso {
-        padding: 1rem var(--padding-320);
-      }
-}
-
-@media screen and (min-width: 768px) {
-    .carrinho__barra-progresso {
-        padding: 1rem var(--padding-768);
-      }
+  transform-origin: left;
+  background: var(--cor-terciaria, #ffde00);
+  transform: scaleX(0);
 }
 
 @media screen and (min-width: 989px) {
-    .carrinho__barra-progresso {
-        padding: 1rem var(--padding-989);
-      }
+  .carrinho__barra-progresso {
+    margin-bottom: 3rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .carrinho__barra-progresso {
-        padding: 1rem var(--padding-1024);
-      }
+  .carrinho__barra-progresso {
+    width: 59rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .carrinho__barra-progresso {
-        padding: 1rem var(--padding-1440);
-      }
+  .carrinho__barra-progresso {
+    width: 100%;
+  }
 }
