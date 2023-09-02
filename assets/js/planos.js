@@ -14,8 +14,8 @@ export const planos = {
     },
 
     standard: {
-        titulo: "Plano standard - R$ 1252,00",
-        subtitulo: "Plano standard",
+        titulo: "Plano Standard - R$ 1252,00",
+        subtitulo: "Plano Standard",
         descricao: [
             "Identificação de classes",
             "Protocolo de pedido de registro",
