@@ -57,7 +57,7 @@
     background: var(--primary-primary-200, #82dae5);
   }
 
-  .plan__titulo--standart {
+  .plan__titulo--standard {
     background: var(--primary-primary-400, #35c0d2);
   }
 
@@ -65,7 +65,7 @@
     background: var(--primary-primary-600, #23a4b8);
   } */
 
-  .plan__titulo--basic, .plan__titulo--standart, .plan__titulo--plus, .plan__titulo--premium {
+  .plan__titulo--basic, .plan__titulo--standard, .plan__titulo--plus, .plan__titulo--premium {
     background: var(--primary-primary-900, #18595d);
   }
 

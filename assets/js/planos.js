@@ -13,9 +13,9 @@ export const planos = {
         preco: 849.90
     },
 
-    standart: {
-        titulo: "Plano Standart - R$ 1252,00",
-        subtitulo: "Plano Standart",
+    standard: {
+        titulo: "Plano standard - R$ 1252,00",
+        subtitulo: "Plano standard",
         descricao: [
             "Identificação de classes",
             "Protocolo de pedido de registro",

@@ -2,15 +2,15 @@
 import { planos } from './planos.js';
 
 const planosSugeridos = {
-  basic: 'standart',
-  standart: 'plus',
+  basic: 'standard',
+  standard: 'plus',
   plus: 'premium',
   premium: null
 };
 
 const planosLink = {
   basic: '#planoBasic',
-  standart: '#planoStandart',
+  standard: '#planostandard',
   plus: '#planoPlus',
   premium: '#planoPremium'
 };
