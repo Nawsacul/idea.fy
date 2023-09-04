@@ -71,6 +71,6 @@
 @media screen and (min-width: 1440px) {
   .duvidas {
     padding: 4rem var(--padding-1440);
-    width: 100%;
+    width: unset;
   }
 }

@@ -13,6 +13,7 @@
   .carrinho__secao {
     padding: 2.5rem 0;
     align-items: flex-start;
+    width: 100%;
   }
 
   .carrinho__segunda-escolha {
