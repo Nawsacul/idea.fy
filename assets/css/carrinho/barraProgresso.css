@@ -1,40 +1,40 @@
 .carrinho__barra-progresso {
   display: flex;
   padding: 1rem 0;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   width: 100%;
 }
 
-.carrinho__barra-individual {
+.carrinho__barra-item {
   flex-grow: 1;
   height: 0.5rem;
   background: var(--cor-primaria-900, #18595d);
   overflow: hidden; /* Esconde o elemento filho que se estende além deste elemento */
 }
 
-.carrinho__barra-fill {
+.carrinho__barra-preenchimento {
   height: 100%;
   background: transparent;
   transform-origin: left;
   transform: scaleX(0);
 }
 
-.ativo .carrinho__barra-fill {
+.carrinho__barra-item--ativo .carrinho__barra-preenchimento {
   transform: scaleX(1);
   background: var(--cor-terciaria, #ffde00);
   transition: transform 0.5s ease; /* Adicione a transição aqui */
 }
 
-.removido .carrinho__barra-fill {
+.carrinho__barra-item--removido .carrinho__barra-preenchimento {
   transform-origin: left;
   background: var(--cor-terciaria, #ffde00);
   transform: scaleX(0);
 }
 
 @media screen and (min-width: 989px) {
-  .carrinho__barra-progresso {
+  /* .carrinho__barra-progresso {
     margin-bottom: 3rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 1024px) {

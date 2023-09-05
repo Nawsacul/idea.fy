@@ -84,29 +84,41 @@
 
     <main>
       <form action="" class="carrinho" id="carrinho">
+        <div class="carrinho__info-segunda-escolha esconder">
+          <h2 class="carrinho__titulo-segunda-escolha">Vamos começar?</h2>
+          <p class="carrinho__texto-segunda-escolha">
+            Precisamos de algumas poucas informações suas para dar início ao seu
+            processo. É só preencher as próximas perguntas e efetuar o
+            pagamento, que vamos entrar em contato com você para fazer o seu
+            processo.
+          </p>
+        </div>
+
         <div class="carrinho__barra-progresso">
-          <div class="carrinho__barra-individual ativo">
-            <div class="carrinho__barra-fill"></div>
+          <div class="carrinho__barra-item carrinho__barra-item--ativo">
+            <div class="carrinho__barra-preenchimento"></div>
           </div>
-          <div class="carrinho__barra-individual">
-            <div class="carrinho__barra-fill"></div>
+          <div class="carrinho__barra-item">
+            <div class="carrinho__barra-preenchimento"></div>
           </div>
-          <div class="carrinho__barra-individual">
-            <div class="carrinho__barra-fill"></div>
+          <div class="carrinho__barra-item">
+            <div class="carrinho__barra-preenchimento"></div>
           </div>
-          <div class="carrinho__barra-individual">
-            <div class="carrinho__barra-fill"></div>
+          <div class="carrinho__barra-item">
+            <div class="carrinho__barra-preenchimento"></div>
           </div>
-          <div class="carrinho__barra-individual">
-            <div class="carrinho__barra-fill"></div>
+          <div class="carrinho__barra-item">
+            <div class="carrinho__barra-preenchimento"></div>
           </div>
-          <div class="carrinho__barra-individual">
-            <div class="carrinho__barra-fill"></div>
+          <div class="carrinho__barra-item">
+            <div class="carrinho__barra-preenchimento"></div>
           </div>
         </div>
 
-        <section class="carrinho__secao carrinho__primeira-escolha duvidas">
-          <h2 class="carrinho__secao-titulo">Serviço escolhido</h2>
+        <section
+          class="carrinho__secao carrinho__secao--primeira-escolha duvidas mostrar"
+        >
+          <h2 class="carrinho__titulo-primeira-escolha">Serviço escolhido</h2>
 
           <div
             class="carrinho__dropdown-container duvidas__perguntas"
@@ -114,46 +126,138 @@
           ></div>
         </section>
 
-        <section class="carrinho__secao carrinho__segunda-escolha duvidas">
-          <h2 class="carrinho__segunda-escolha-titulo">Vamos começar?</h2>
-          <p class="carrinho__segunda-escolha-texto">
-            Precisamos de algumas poucas informações suas para dar início ao seu
-            processo. É só preencher as próximas perguntas e efetuar o
-            pagamento, que vamos entrar em contato com você para fazer o seu
-            processo.
-          </p>
+        <section
+          class="carrinho__secao carrinho__secao--segunda-escolha duvidas esconder"
+        >
+          <div class="carrinho__secao-container duvidas__perguntas">
+            <h2 class="carrinho__titulo-secao">
+              Quem é a pessoa dona da marca?
+            </h2>
 
-          <div>
-            <h2>Quem é a pessoa dona da marca?</h2>
+            <div class="carrinho__pergunta-container">
+              <h3 class="carrinho__pergunta-titulo">
+                Quem vai registrar a marca?
+              </h3>
 
-            <div>
-              <h3>Quem vai registrar a marca?</h3>
-
-              <label for="pessoaFisica">
-                <input
-                  type="radio"
-                  name="pessoaMarca"
-                  value="Pessoa Física"
-                  id="pessoaFisica"
-                />Pessoa Física
+              <label for="pessoaFisica" class="carrinho__opcao-label">
+                <div>
+                  <input
+                    type="radio"
+                    name="pessoaMarca"
+                    value="Pessoa Física"
+                    id="pessoaFisica"
+                    class="radio__segunda-tela"
+                  />
+                  <span class="carrinho__opcao-radio-personalizado"></span>
+                </div>
+                Pessoa Física (CPF)
               </label>
 
-              <label for="pessoaJuridica">
-                <input
-                  type="radio"
-                  name="pessoaMarca"
-                  value="Pessoa Jurídica"
-                  id="pessoaJuridica"
-                />Pessoa Júridica
+              <label for="pessoaJuridica" class="carrinho__opcao-label">
+                <div>
+                  <input
+                    type="radio"
+                    name="pessoaMarca"
+                    value="Pessoa Jurídica"
+                    id="pessoaJuridica"
+                    class="radio__segunda-tela"
+                  />
+                  <span class="carrinho__opcao-radio-personalizado"></span>
+                </div>
+                Pessoa Júridica (CNPJ)
               </label>
             </div>
 
             <div class="botoes__container">
-              <a href="#" class="link botao__voltar-primeira-tela" id="linkVoltarTela">
+              <a
+                href="#"
+                class="link botao__voltar-segunda-tela"
+                id="linkVoltarTela"
+              >
                 <span class="link__texto">Voltar</span>
               </a>
 
-              <button class="botao" type="button">Avançar</button>
+              <button class="botao botao__avancar-segunda-tela" type="button">
+                Avançar
+              </button>
+            </div>
+          </div>
+        </section>
+
+        
+        <section
+          class="carrinho__secao carrinho__secao--terceira-escolha duvidas esconder" style="display: flex;"
+        >
+          <div class="carrinho__secao-container duvidas__perguntas">
+            <h2 class="carrinho__titulo-secao">
+              Quem é a pessoa dona da marca?
+            </h2>
+
+            <div class="carrinho__pergunta-container">
+              <h3 class="carrinho__pergunta-titulo">
+                Como você prefere que a gente entre em contato?
+              </h3>
+
+              <label for="nomeCompleto">
+                Nome completo da pessoa física
+                <input type="text" name="nomeCompleto" id="nomeCompleto">
+              </label>
+
+              <label for="emailRadio" class="carrinho__opcao-label">
+                <div>
+                  <input
+                    type="radio"
+                    name="dadosPessoais"
+                    value="E-mail"
+                    id="emailRadio"
+                    class="radio__terceira-tela"
+                  />
+                  <span class="carrinho__opcao-radio-personalizado"></span>
+                </div>
+                E-mail
+              </label>
+
+              <label for="telefoneRadio" class="carrinho__opcao-label">
+                <div>
+                  <input
+                    type="radio"
+                    name="dadosPessoais"
+                    value="Telefone / Ligação"
+                    id="telefoneRadio"
+                    class="radio__terceira-tela"
+                  />
+                  <span class="carrinho__opcao-radio-personalizado"></span>
+                </div>
+                Telefone / Ligação
+              </label>
+
+              <label for="whatsappRadio" class="carrinho__opcao-label">
+                <div>
+                  <input
+                    type="radio"
+                    name="dadosPessoais"
+                    value="Whatsapp"
+                    id="whatsappRadio"
+                    class="radio__terceira-tela"
+                  />
+                  <span class="carrinho__opcao-radio-personalizado"></span>
+                </div>
+                Whatsapp
+              </label>
+            </div>
+
+            <div class="botoes__container">
+              <a
+                href="#"
+                class="link botao__voltar-terceira-tela"
+                id="linkVoltarTela"
+              >
+                <span class="link__texto">Voltar</span>
+              </a>
+
+              <button class="botao botao__avancar-terceira-tela" type="button">
+                Avançar
+              </button>
             </div>
           </div>
         </section>
@@ -261,11 +365,16 @@
       </div>
     </footer>
 
-    <script defer type="module" src="assets/js/carrinho/gerarCarrinho.js"></script>
+    <script
+      defer
+      type="module"
+      src="assets/js/carrinho/gerarCarrinho.js"
+    ></script>
     <!-- <script src="assets/js/preloader.js"></script> -->
     <script defer src="assets/js/dropdown.js"></script>
     <script defer src="assets/js/navbarMenu.js"></script>
     <script defer src="assets/js/carrinho/detectaBotaoCarrinho.js"></script>
     <script defer src="assets/js/carrinho/trocaDeTelas.js"></script>
+    <script defer src="assets/js/carrinho/validacao.js"></script>
   </body>
 </html>

@@ -18,3 +18,9 @@
   background: var(--cor-primaria-900, #18595D);
   color: var(--cor-secundaria, #FDFCF4);
 }
+
+.botao:disabled {
+  background: var(--cor-secundaria-500, #96958E);
+  color: var(--cor-secundaria, #FDFCF4);
+  cursor: not-allowed;
+}

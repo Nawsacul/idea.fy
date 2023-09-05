@@ -72,3 +72,62 @@
     transform: rotate(45deg);
   }
 }
+
+/* Parte para o RADIO */
+
+/* Esconder o input padrão */
+.carrinho__opcao-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Estilo da caixa que envolve o input */
+.carrinho__opcao-label div {
+  display: block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Criar um círculo personalizado */
+.carrinho__opcao-radio-personalizado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1.75px var(--cor-secundaria, #FDFCF4) solid;
+  height: calc(1.5rem - 3.2px);
+  width: calc(1.5rem - 3.2px);
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+/* Quando o rádio está marcado */
+.carrinho__opcao-label input:checked ~ .carrinho__opcao-radio-personalizado {
+  background-color: transparent;
+}
+
+/* Estilo do indicador interno */
+.carrinho__opcao-label .carrinho__opcao-radio-personalizado:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Mostrar o indicador interno quando marcado */
+.carrinho__opcao-label input:checked ~ .carrinho__opcao-radio-personalizado:after {
+  display: block;
+}
+
+/* Estilo do indicador interno */
+.carrinho__opcao-label .carrinho__opcao-radio-personalizado:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: white;
+}
