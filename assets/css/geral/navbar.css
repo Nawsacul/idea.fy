@@ -20,7 +20,7 @@
   display: flex;
 }
 
-.navbar__link {
+.navbar__link, .navbar__link-texto {
   display: flex;
 }
 

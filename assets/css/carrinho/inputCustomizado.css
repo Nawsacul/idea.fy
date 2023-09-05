@@ -74,6 +74,10 @@
 }
 
 /* Parte para o RADIO */
+.carrinho__opcao-label {
+  cursor: pointer;
+}
+
 
 /* Esconder o input padrão */
 .carrinho__opcao-label input {
@@ -130,4 +134,9 @@
   height: 1rem;
   border-radius: 50%;
   background: white;
+}
+
+.carrinho__opcao-label input:focus-visible + .carrinho__opcao-radio-personalizado, .termos__label input:focus-visible + .termos__checkbox-customizado {
+  /* Adicione seu estilo de foco aqui, como uma borda ou uma sombra */
+  box-shadow: 0 0 0 2px var(--cor-terciaria, #ffde00);
 }
