@@ -19,6 +19,7 @@
   .carrinho__titulo-primeira-escolha,
   .carrinho__titulo-sugestao {
     padding: 0.625rem 1rem;
+    align-self: flex-start;
   }
 
   .carrinho__titulo-primeira-escolha {
@@ -115,6 +116,10 @@
     font-size: 2.4375rem;
   }
 
+  .carrinho__titulo-sugestao {
+    font-size: 1.5625rem;
+  }
+
   .botoes__container {
     align-self: flex-end;
   }
@@ -139,11 +144,6 @@
   .carrinho__secao {
     align-items: center;
     width: 59rem;
-  }
-
-  .carrinho__titulo-primeira-escolha {
-    font-size: 1.9375rem;
-    padding: 0.625rem 1rem;
   }
 
   .descricao-plano {

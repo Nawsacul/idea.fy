@@ -1,3 +1,5 @@
+
+
 @media screen and (min-width: 320px) {
   .contato-formulario {
     display: flex;
@@ -95,6 +97,14 @@
     color: var(--cor-secundaria, #fdfcf4);
     font-size: 0.75rem;
     font-weight: 500;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not(:placeholder-shown) {
+    background: var(--cor-primaria-900, #18595d);
+  }
+
+  input.touched:invalid {
+    border: 1px solid var(--cor-vermelha, #EB5757);
   }
 
   .contato-formulario__botao {

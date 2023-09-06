@@ -184,66 +184,64 @@
           </div>
         </section>
 
-        
         <section
-          class="carrinho__secao carrinho__secao--terceira-escolha duvidas esconder" style="display: flex;"
+          class="carrinho__secao carrinho__secao--terceira-escolha duvidas esconder"
+          style="display: flex"
         >
           <div class="carrinho__secao-container duvidas__perguntas">
-            <h2 class="carrinho__titulo-secao">
+            <h2 class="carrinho__titulo-secao carrinho__titulo-secao--terceira-escolha">
               Quem é a pessoa dona da marca?
             </h2>
 
             <div class="carrinho__pergunta-container">
-              <h3 class="carrinho__pergunta-titulo">
-                Como você prefere que a gente entre em contato?
-              </h3>
+              <div class="carrinho__inputs-terceira-escolha"></div>
 
-              <label for="nomeCompleto">
-                Nome completo da pessoa física
-                <input type="text" name="nomeCompleto" id="nomeCompleto">
-              </label>
+              <div class="carrinho__pergunta-container">
+                <h3 class="carrinho__pergunta-titulo carrinho__pergunta-titulo--terceira-escolha">
+                  Como você prefere que a gente entre em contato?
+                </h3>
+                <label for="emailRadio" class="carrinho__opcao-label carrinho__opcao-label--terceira-escolha">
+                  <div>
+                    <input
+                      type="radio"
+                      name="dadosPessoais"
+                      value="E-mail"
+                      id="emailRadio"
+                      class="radio__terceira-tela"
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  E-mail
+                </label>
 
-              <label for="emailRadio" class="carrinho__opcao-label">
-                <div>
-                  <input
-                    type="radio"
-                    name="dadosPessoais"
-                    value="E-mail"
-                    id="emailRadio"
-                    class="radio__terceira-tela"
-                  />
-                  <span class="carrinho__opcao-radio-personalizado"></span>
-                </div>
-                E-mail
-              </label>
+                <label for="telefoneRadio" class="carrinho__opcao-label carrinho__opcao-label--terceira-escolha">
+                  <div>
+                    <input
+                      type="radio"
+                      name="dadosPessoais"
+                      value="Telefone / Ligação"
+                      id="telefoneRadio"
+                      class="radio__terceira-tela"
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  Telefone / Ligação
+                </label>
 
-              <label for="telefoneRadio" class="carrinho__opcao-label">
-                <div>
-                  <input
-                    type="radio"
-                    name="dadosPessoais"
-                    value="Telefone / Ligação"
-                    id="telefoneRadio"
-                    class="radio__terceira-tela"
-                  />
-                  <span class="carrinho__opcao-radio-personalizado"></span>
-                </div>
-                Telefone / Ligação
-              </label>
-
-              <label for="whatsappRadio" class="carrinho__opcao-label">
-                <div>
-                  <input
-                    type="radio"
-                    name="dadosPessoais"
-                    value="Whatsapp"
-                    id="whatsappRadio"
-                    class="radio__terceira-tela"
-                  />
-                  <span class="carrinho__opcao-radio-personalizado"></span>
-                </div>
-                Whatsapp
-              </label>
+                <label for="whatsappRadio" class="carrinho__opcao-label carrinho__opcao-label--terceira-escolha">
+                  <div>
+                    <input
+                      type="radio"
+                      name="dadosPessoais"
+                      value="Whatsapp"
+                      id="whatsappRadio"
+                      class="radio__terceira-tela"
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  Whatsapp
+                </label>
+              </div>
             </div>
 
             <div class="botoes__container">
@@ -376,5 +374,6 @@
     <script defer src="assets/js/carrinho/detectaBotaoCarrinho.js"></script>
     <script defer src="assets/js/carrinho/trocaDeTelas.js"></script>
     <script defer src="assets/js/carrinho/validacao.js"></script>
+    <script defer src="assets/js/carrinho/terceiraTelaCarrinho.js"></script>
   </body>
 </html>

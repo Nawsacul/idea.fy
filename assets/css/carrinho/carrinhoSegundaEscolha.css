@@ -43,7 +43,7 @@
     flex-direction: column;
     align-items: flex-start;
     align-self: flex-start;
-    gap: 0.625rem;
+    gap: 1rem;
   }
 
   .carrinho__pergunta-titulo {
@@ -77,6 +77,14 @@
 
   .carrinho__texto-segunda-escolha {
     font-size: 1.125rem;
+  }
+
+  .carrinho__pergunta-titulo {
+    padding: 0.5rem 0.5rem 0rem 1.5rem;
+  }
+
+  .carrinho__opcao-label {
+    padding: 0 1.5rem;
   }
 }
 
