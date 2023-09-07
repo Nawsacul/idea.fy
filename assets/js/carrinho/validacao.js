@@ -191,6 +191,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Verificar se está preenchida
         if (textArea.value.trim() === '') {
             textAreaFilled = false;
+            textArea.style.background = '';
+        } else {
+            textArea.style.background = 'var(--cor-primaria-900)';
         }
 
         // Verificar existência antes de validar

@@ -27,7 +27,7 @@
   .carrinho__secao-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
 
   .carrinho__titulo-secao {

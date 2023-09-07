@@ -16,6 +16,13 @@
   width: fit-content;
 }
 
+.custom-file-label > .contato-formulario__label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center ;
+}
+
 @media screen and (min-width: 360px) {
   .botoes__container--quinta-tela {
     max-width: 24.438rem;
@@ -30,4 +37,10 @@
   .botoes__container--quinta-tela {
     margin-top: 0;
   }
+}
+
+@media screen and (min-width: 989px) {
+    .custom-file-label > .contato-formulario__label {
+        gap: 0.5rem;
+    }
 }
