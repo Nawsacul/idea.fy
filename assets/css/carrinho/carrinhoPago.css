@@ -1,0 +1,59 @@
+.botao {
+  display: inline-block;
+}
+
+.carrinho-pago {
+  gap: 1rem;
+}
+
+.carrinho-pago__container,
+.carrinho-pago__container-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carrinho-pago__container {
+  gap: 5.5rem;
+}
+
+.carrinho-pago__container-texto {
+  gap: 2rem;
+}
+
+.carrinho-pago__texto {
+  color: var(--cor-secundaria, #fdfcf4);
+  text-align: center;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 320px) {
+  .carrinho-pago {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .carrinho-pago__titulo {
+    font-size: 1.9375rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carrinho-pago {
+    padding-top: 5rem;
+  }
+
+  .carrinho-pago__titulo {
+    font-size: 3.0625rem;
+  }
+}
+
+@media screen and (min-width: 989px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
