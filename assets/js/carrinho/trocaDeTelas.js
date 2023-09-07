@@ -15,16 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
         elemento.setAttribute('aria-hidden', ESPECIFICAR[acao === 'mostrar' ? 'falso' : 'verdadeiro']);
     }
 
-    // Função para trocar de tela com transição suave
     function trocaTela(telaAtual, telaNova) {
         const elementoAtual = document.querySelector(`.${telaAtual}`);
         const elementoNovo = document.querySelector(`.${telaNova}`);
 
-        if (elementoAtual && elementoNovo) {
+        if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado')) && telaNova === 'carrinho__secao--segunda-escolha') {
+            // Se um plano avulso for selecionado, pule a tela de seleção de tipo de pessoa e vá diretamente para a terceira tela
+            const telaTerceira = 'carrinho__secao--terceira-escolha';
+            const elementoTerceiraTela = document.querySelector(`.${telaTerceira}`);
             atualizaAtributos(elementoAtual, 'esconder');
-            atualizaAtributos(elementoNovo, 'mostrar');
+            atualizaAtributos(elementoTerceiraTela, 'mostrar');
+        } else {
+            if (elementoAtual && elementoNovo) {
+                atualizaAtributos(elementoAtual, 'esconder');
+                atualizaAtributos(elementoNovo, 'mostrar');
+            }
         }
     }
+
 
     // Função para atualizar a barra de progresso.
     function atualizaBarraProgresso(indice, acao) {
@@ -111,12 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     trocaTela(botao.telas[1], botao.telas[2]);
                 }
                 atualizaBarraProgresso(botao.barraAvancar, 'adicionar');
-                const telaAtual = botao.avancar === '.botao__avancar-primeira-tela' ? botao.telas[0] : botao.telas[1];
-                if (telaAtual === 'carrinho__secao--primeira-escolha') {
+
+                // Ajustou a lógica para verificar planos avulsos
+                if (!window.planosAvulsos.includes(localStorage.getItem('planoSelecionado')) && botao.avancar === '.botao__avancar-primeira-tela') {
                     atualizaAtributos(containerTituloSegundaEscolha, 'mostrar');
                 } else {
                     atualizaAtributos(containerTituloSegundaEscolha, 'esconder');
                 }
+
                 rolarParaOTopo();
             });
         }
@@ -125,16 +135,39 @@ document.addEventListener('DOMContentLoaded', () => {
         if (botao.voltar) {
             const btnVoltar = document.querySelector(botao.voltar);
             btnVoltar.addEventListener('click', () => {
-                trocaTela(botao.telas[1], botao.telas[0]);
-                atualizaBarraProgresso(botao.barraVoltar, 'remover');
-                const telaAtual = botao.voltar === '.botao__voltar-terceira-tela' ? botao.telas[1] : botao.telas[0];
-                if (telaAtual === 'carrinho__secao--terceira-escolha') {
+                // Se um plano avulso for selecionado, atualize a barra de progresso de acordo
+                if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
+                    trocaTela('carrinho__secao--terceira-escolha', 'carrinho__secao--primeira-escolha');
+                    atualizaBarraProgresso(1, 'remover');  // Linha corrigida
+                } else {
+                    trocaTela(botao.telas[1], botao.telas[0]);
+                    atualizaBarraProgresso(botao.barraVoltar, 'remover');
+                }
+
+                // Ajustei a lógica para verificar planos avulsos
+                if (!window.planosAvulsos.includes(localStorage.getItem('planoSelecionado')) && botao.voltar === '.botao__voltar-terceira-tela') {
                     atualizaAtributos(containerTituloSegundaEscolha, 'mostrar');
                 } else {
                     atualizaAtributos(containerTituloSegundaEscolha, 'esconder');
                 }
+
                 rolarParaOTopo();
             });
+        }
+    });
+
+
+    // Pegue o elemento do botão "Voltar"
+    const botaoVoltarTerceiraTela = document.querySelector('.botao__voltar-terceira-tela');
+
+    // Adicione um evento de clique ao botão
+    botaoVoltarTerceiraTela.addEventListener('click', function () {
+        if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
+            // Se um plano avulso for selecionado, volte para a primeira tela
+            trocaTela('carrinho__secao--terceira-escolha', 'carrinho__secao--primeira-escolha');
+        } else {
+            // Caso contrário, volte para a segunda tela (comportamento padrão)
+            trocaTela('carrinho__secao--terceira-escolha', 'carrinho__secao--segunda-escolha');
         }
     });
 

@@ -201,6 +201,15 @@ function generatePessoaJuridicaInputs() {
   `;
 }
 
+const botaoAvancarTerceiraTela = document.querySelector('.botao__avancar-terceira-tela');
+const secaoTerceiraTela = document.querySelector('.carrinho__secao--terceira-escolha');
+const containerBotoesTerceiraEscolha = secaoTerceiraTela.querySelector('.botoes__container');
+
+if (planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
+  containerBotoesTerceiraEscolha.classList.add('botoes__container--quinta-tela');
+  botaoAvancarTerceiraTela.textContent = 'Efetuar pagamento';
+}
+
 const tituloPaginaPessoaFisica = document.querySelector('.carrinho__titulo-secao--terceira-escolha');
 
 // Function to handle radio button selection
@@ -215,6 +224,16 @@ function handleSelection(event) {
     terceiraEscolhaSection.innerHTML = generatePessoaJuridicaInputs();
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Se um plano avulso for selecionado, gere automaticamente os inputs para "pessoa física"
+  if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
+      const inputsPessoaFisica = generatePessoaFisicaInputs();
+      // Supondo que haja um contêiner onde você deseja anexar esses inputs
+      const container = document.querySelector('.carrinho__inputs-terceira-escolha');
+      container.innerHTML = inputsPessoaFisica;
+  }
+});
 
 // Attach event listener to '.carrinho__secao--segunda-escolha' section
 document.addEventListener('DOMContentLoaded', function () {

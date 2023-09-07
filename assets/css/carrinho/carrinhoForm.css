@@ -42,6 +42,14 @@
     margin-bottom: 1rem;
   }
 
+  .dropdown__resposta {
+    margin-top: -1rem;
+  }
+
+  .descricao-plano__item {
+    color: var(--cor-secundaria, #FDFCF4);
+  }
+
   .descricao-plano__titulo,
   .descricao-plano__item {
     line-height: 120%;
