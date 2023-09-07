@@ -1,0 +1,33 @@
+.contato-formulario__campo--quinta-escolha {
+  width: 100%;
+}
+
+.carrinho__pergunta-container--quinta-escolha {
+  gap: 2rem;
+}
+
+.contato-formulario__label-letra-pequena {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.custom-file-label {
+  width: fit-content;
+}
+
+@media screen and (min-width: 360px) {
+  .botoes__container--quinta-tela {
+    max-width: 24.438rem;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .botoes__container--quinta-tela {
+    margin-top: 0;
+  }
+}

@@ -35,15 +35,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ----------------------------------------------
 
+    // Funções e variáveis relacionadas à terceira tela
     const botaoAvancarTerceiraTela = document.querySelector('.botao__avancar-terceira-tela');
 
-    // Funções e variáveis relacionadas à terceira tela
+    function toggleErrorMessage(inputElement, isValid) {
+        const errorMessageElement = inputElement.nextElementSibling;
+        if (inputElement.classList.contains('touched')) {
+            if (isValid) {
+                inputElement.setCustomValidity("");
+                errorMessageElement.style.display = 'none'; // Oculta a mensagem de erro
+            } else {
+                inputElement.setCustomValidity("Campo inválido");
+                errorMessageElement.style.display = 'block'; // Mostra a mensagem de erro
+            }
+        }
+    }
+
     botaoAvancarSegundaTela.addEventListener('click', () => {
         const radioButtonsTerceiraTela = document.querySelectorAll('input[name="dadosPessoais"]');
         const radioButtonsTerceiraTelaPJ = document.querySelectorAll('input[name="porteEmpresa"]');
 
         const inputs = document.querySelectorAll('input:not([type="checkbox"]):not([type="radio"])');
-        
+
         // Aplicar as máscaras de jQuery aqui, uma vez que os campos devem agora estar presentes
         $('input[name="cpf"]').mask('000.000.000-00');
         $('input[name="cnpj"]').mask('00.000.000/0000-00');
@@ -80,25 +93,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const cepInput = document.querySelector('input[name="cep"]');
         const telInput = document.querySelector('input[name="telefone"]');
 
-        function toggleErrorMessage(inputElement, isValid) {
-            const errorMessageElement = inputElement.nextElementSibling;
-            if (inputElement.classList.contains('touched')) {
-                if (isValid) {
-                    inputElement.setCustomValidity("");
-                    errorMessageElement.style.display = 'none'; // Oculta a mensagem de erro
-                } else {
-                    inputElement.setCustomValidity("Campo inválido");
-                    errorMessageElement.style.display = 'block'; // Mostra a mensagem de erro
-                }
-            }
-        }
-
         function checarRadioSelecionadoTerceiraTela(array1, array2) {
             let isSelected = Array.from(array1).some(radio => radio.checked);
             let isSelectedPJ = Array.from(array2).some(radio => radio.checked);
             let textInputsFilled = true;
 
-            const textInputs = document.querySelectorAll('.contato-formulario__input[type="text"], .contato-formulario__input[type="number"], .contato-formulario__input[type="tel"], .contato-formulario__input[type="email"]');
+            const containerInputsTerceiraEscolha = document.querySelector('.carrinho__inputs-terceira-escolha');
+
+            const textInputs = containerInputsTerceiraEscolha.querySelectorAll('.contato-formulario__input[type="text"], .contato-formulario__input[type="number"], .contato-formulario__input[type="tel"], .contato-formulario__input[type="email"]');
 
 
             // Verificar se todos estão preenchidos
@@ -176,4 +178,93 @@ document.addEventListener("DOMContentLoaded", function () {
 
         checarRadioSelecionadoTerceiraTela(radioButtonsTerceiraTela, radioButtonsTerceiraTelaPJ);
     });
+
+    // ----------------------------------------------
+
+    // Funções e variáveis relacionadas à quarta tela
+    const textArea = document.querySelector('.contato-formulario__textarea');
+    const botaoAvancarQuartaTela = document.querySelector('.botao__avancar-quarta-tela');
+
+    function checarTextAreaQuartaTela() {
+        let textAreaFilled = true;
+
+        // Verificar se está preenchida
+        if (textArea.value.trim() === '') {
+            textAreaFilled = false;
+        }
+
+        // Verificar existência antes de validar
+        if (textArea) {
+            toggleErrorMessage(textArea, textArea.value.trim() !== '');
+        }
+
+        // Atualize a condição para habilitar o botão de avanço
+        botaoAvancarQuartaTela.disabled = !textAreaFilled;
+    }
+
+    // Adiciona eventos de 'blur' e 'input' para cada elemento de entrada
+    textArea.addEventListener('blur', function () {
+        this.classList.add('touched');
+        const isValid = this.value.trim() !== '';
+        toggleErrorMessage(this, isValid);
+    });
+
+    textArea.addEventListener('input', function () {
+        checarTextAreaQuartaTela();
+    });
+
+    checarTextAreaQuartaTela();
+
+    // Funções e variáveis relacionadas à quinta tela
+    const botaoPagarQuintaTela = document.querySelector('.botao__pagar-quinta-tela');
+    const radioButtonsComoMarcaUtilizada = document.querySelectorAll('input[name="comoMarcaUtilizada"]');
+    const radioButtonsLinguaEstrangeira = document.querySelectorAll('input[name="linguaEstrangeira"]');
+    
+    const traducaoInput = document.querySelector('#traducao');
+    
+
+    function checarRadioSelecionadoQuintaTela() {
+        const linguaEstrangeiraSim = document.querySelector('#temLingua').checked;
+        const nomeMarcaInput = document.querySelector('#nomeMarca');
+        const comoMarcaSelecionada = Array.from(radioButtonsComoMarcaUtilizada).some(radio => radio.checked);
+        const linguaEstrangeiraSelecionada = Array.from(radioButtonsLinguaEstrangeira).some(radio => radio.checked);
+        const traducaoPreenchida = !linguaEstrangeiraSim || (linguaEstrangeiraSim && traducaoInput.value.trim());
+    
+        // Se o usuário selecionar "Sim" para "linguaEstrangeira", torne "traducao" como obrigatório.
+        if (linguaEstrangeiraSim) {
+            traducaoInput.setAttribute('required', true);
+            toggleErrorMessage(traducaoInput, traducaoInput.value.trim() !== '');
+        } else {
+            traducaoInput.removeAttribute('required');
+            toggleErrorMessage(traducaoInput, true); // não exibe erro se não for obrigatório
+        }
+    
+        // Habilita ou desabilita o botão de pagamento
+        botaoPagarQuintaTela.disabled = !(nomeMarcaInput.value.trim() && comoMarcaSelecionada && linguaEstrangeiraSelecionada && traducaoPreenchida);
+    }
+    
+
+
+    // Adicione eventos de escuta aos radio buttons e aos outros campos
+    radioButtonsComoMarcaUtilizada.forEach((radio) => {
+        radio.addEventListener('change', checarRadioSelecionadoQuintaTela);
+    });
+    
+    radioButtonsLinguaEstrangeira.forEach((radio) => {
+        radio.addEventListener('change', checarRadioSelecionadoQuintaTela);
+    });
+    
+
+    document.querySelector('#nomeMarca').addEventListener('input', function() {
+        toggleErrorMessage(this, this.value.trim() !== '');
+        checarRadioSelecionadoQuintaTela();
+    });
+
+    traducaoInput.addEventListener('input', function() {
+        toggleErrorMessage(this, this.value.trim() !== '');
+        checarRadioSelecionadoQuintaTela();
+    });
+
+    // Verificar o estado inicial da quinta tela
+    checarRadioSelecionadoQuintaTela();
 });

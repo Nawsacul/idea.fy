@@ -31,7 +31,7 @@
     height: 1rem;
     width: 1rem;
     background-color: transparent;
-    border: 3px solid var(--cor-secundaria, #FDFCF4);
+    border: 3px solid var(--cor-secundaria, #fdfcf4);
     border-radius: 4px;
   }
 
@@ -63,7 +63,7 @@
     top: 1.3px;
     width: 5px;
     height: 8px;
-    border: solid var(--cor-secundaria, #FDFCF4);
+    border: solid var(--cor-secundaria, #fdfcf4);
     border-radius: 1px;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
@@ -76,7 +76,6 @@
 .carrinho__opcao-label {
   cursor: pointer;
 }
-
 
 /* Esconder o input padrão */
 .carrinho__opcao-label input {
@@ -100,7 +99,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  border: 1.75px var(--cor-secundaria, #FDFCF4) solid;
+  border: 1.75px var(--cor-secundaria, #fdfcf4) solid;
   height: calc(1.5rem - 3.2px);
   width: calc(1.5rem - 3.2px);
   background-color: transparent;
@@ -120,7 +119,9 @@
 }
 
 /* Mostrar o indicador interno quando marcado */
-.carrinho__opcao-label input:checked ~ .carrinho__opcao-radio-personalizado:after {
+.carrinho__opcao-label
+  input:checked
+  ~ .carrinho__opcao-radio-personalizado:after {
   display: block;
 }
 
@@ -135,7 +136,10 @@
   background: white;
 }
 
-.carrinho__opcao-label input:focus-visible + .carrinho__opcao-radio-personalizado, .termos__label input:focus-visible + .termos__checkbox-customizado {
+.carrinho__opcao-label
+  input:focus-visible
+  + .carrinho__opcao-radio-personalizado,
+.termos__label input:focus-visible + .termos__checkbox-customizado {
   /* Adicione seu estilo de foco aqui, como uma borda ou uma sombra */
   box-shadow: 0 0 0 2px var(--cor-terciaria, #ffde00);
 }
@@ -144,13 +148,44 @@
   display: none; /* inicialmente oculto */
   align-items: center;
   border-radius: 0.5rem;
-  border: 1px solid var(--cor-vermelha, #EB5757);
-  background: var(--cor-vermelha, #EB5757);
+  border: 1px solid var(--cor-vermelha, #eb5757);
+  background: var(--cor-vermelha, #eb5757);
   width: fit-content;
   font-family: Poppins;
   padding: 0.5rem 1.5rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--cor-secundaria, #FDFCF4);
-  
+  color: var(--cor-secundaria, #fdfcf4);
+}
+
+input[type="file"] {
+  max-width: fit-content;
+}
+
+.hidden {
+  display: none;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.contato-formulario__input--upload {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.62rem;
+  font-size: 0.75rem;
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.contato-formulario__input--upload:hover {
+  background: var(--cor-primaria-600, #23A4B8);
+}
+
+.contato-formulario__input--upload-arquivo {
+  background: var(--cor-primaria-900, #18595D);
 }

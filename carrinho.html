@@ -278,6 +278,251 @@
             </div>
           </div>
         </section>
+
+        <section
+          class="carrinho__secao carrinho__secao--quarta-escolha duvidas esconder"
+          style="display: flex"
+        >
+          <div class="carrinho__secao-container duvidas__perguntas">
+            <h2
+              class="carrinho__titulo-secao carrinho__titulo-secao--quarta-escolha"
+            >
+              O que a sua empresa faz?
+            </h2>
+
+            <div class="carrinho__pergunta-container">
+              <div
+                class="contato-formulario__campo contato-formulario__campo--quarta-escolha"
+              >
+                <label class="contato-formulario__label" for="atividades"
+                  >Quais são as atividades que sua marca / empresa faz?</label
+                >
+                <textarea
+                  name="atividades"
+                  id="atividades"
+                  class="contato-formulario__textarea"
+                  cols="30"
+                  rows="10"
+                  placeholder="A empresa fabrica e vende produtos? Só fabrica ou só vende? Quais produtos? Presta serviços? Quais serviços? 
+Nesta etapa é importante ter o máximo de detalhes. Então explique bem o que a empresa faz."
+                  required
+                ></textarea>
+                <div class="error-message">Campo Obrigatório</div>
+              </div>
+            </div>
+
+            <div class="botoes__container">
+              <a
+                href="#"
+                class="link botao__voltar-quarta-tela"
+                id="linkVoltarTela"
+              >
+                <span class="link__texto">Voltar</span>
+              </a>
+
+              <button class="botao botao__avancar-quarta-tela" type="button">
+                Avançar
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="carrinho__secao carrinho__secao--quinta-escolha duvidas esconder"
+          style="display: flex"
+        >
+          <div class="carrinho__secao-container duvidas__perguntas">
+            <h2
+              class="carrinho__titulo-secao carrinho__titulo-secao--quinta-escolha"
+            >
+              Sobre a sua marca
+            </h2>
+
+            <div
+              class="carrinho__pergunta-container carrinho__pergunta-container--quinta-escolha carrinho__inputs-terceira-escolha"
+            >
+              <div
+                class="contato-formulario__campo contato-formulario__campo--quinta-escolha"
+              >
+                <label class="contato-formulario__label" for="nomeMarca">
+                  Nome da sua marca</label
+                >
+                <input
+                  class="contato-formulario__input"
+                  type="text"
+                  name="nomeMarca"
+                  id="nomeMarca"
+                  placeholder="Nome da sua marca"
+                  required
+                />
+                <div class="error-message">Campo Obrigatório</div>
+              </div>
+
+              <div
+                class="contato-formulario__campo contato-formulario__campo--quinta-escolha custom-file-upload"
+              >
+                <label class="custom-file-label" for="fileInput">
+                  <div class="contato-formulario__label">
+                    Você possui logo?<span
+                      class="contato-formulario__label-letra-pequena"
+                      > Se sim, fazer upload do arquivo 8x8 cm, logo preto com
+                      fundo branco, em JPEG.</span
+                    >
+                  </div>
+                  <div
+                    class="contato-formulario__input contato-formulario__input--upload"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.5 14C3.0875 14 2.73425 13.853 2.44025 13.559C2.14625 13.265 1.9995 12.912 2 12.5V10.25H3.5V12.5H12.5V10.25H14V12.5C14 12.9125 13.853 13.2657 13.559 13.5597C13.265 13.8537 12.912 14.0005 12.5 14H3.5ZM7.25 11V4.8875L5.3 6.8375L4.25 5.75L8 2L11.75 5.75L10.7 6.8375L8.75 4.8875V11H7.25Z"
+                        fill="#FDFCF4"
+                      />
+                    </svg>
+                    <span class="file-name">Adicionar arquivo</span>
+                  </div>
+                </label>
+
+                <input
+                  class="hidden"
+                  type="file"
+                  id="fileInput"
+                  name="fileInput"
+                />
+              </div>
+
+              <div class="carrinho__pergunta-container">
+                <h3 class="contato-formulario__label">
+                  Sua marca tem algum elemento em língua estrangeira?
+                </h3>
+                <label
+                  for="temLingua"
+                  class="carrinho__opcao-label carrinho__opcao-label--quinta-escolha"
+                >
+                  <div>
+                    <input
+                      type="radio"
+                      name="linguaEstrangeira"
+                      value="Sim"
+                      id="temLingua"
+                      class="radio__quinta-tela"
+                      required
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  Sim
+                </label>
+
+                <label
+                  for="naoTemLingua"
+                  class="carrinho__opcao-label carrinho__opcao-label--quinta-escolha"
+                >
+                  <div>
+                    <input
+                      type="radio"
+                      name="linguaEstrangeira"
+                      value="Não"
+                      id="naoTemLingua"
+                      class="radio__quinta-tela"
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  Não
+                </label>
+              </div>
+
+              <div class="contato-formulario__campo contato-formulario__campo--quinta-escolha">
+                <label class="contato-formulario__label" for="traducao">
+                  Se sim, qual a tradução?</label
+                >
+                <input
+                  class="contato-formulario__input"
+                  type="text"
+                  name="traducao"
+                  id="traducao"
+                  placeholder="Tradução"
+                />
+                <div class="error-message">Campo Obrigatório</div>
+              </div>
+
+              <div class="carrinho__pergunta-container">
+                <h3 class="contato-formulario__label">
+                  Como a sua marca é utilizada?
+                </h3>
+                <label
+                  for="servico"
+                  class="carrinho__opcao-label carrinho__opcao-label--quinta-escolha"
+                >
+                  <div>
+                    <input
+                      type="radio"
+                      name="comoMarcaUtilizada"
+                      value="Serviço"
+                      id="servico"
+                      class="radio__quinta-tela"
+                      required
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  Serviço
+                </label>
+
+                <label
+                  for="produto"
+                  class="carrinho__opcao-label carrinho__opcao-label--quinta-escolha"
+                >
+                  <div>
+                    <input
+                      type="radio"
+                      name="comoMarcaUtilizada"
+                      value="Produto"
+                      id="produto"
+                      class="radio__quinta-tela"
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  Produto
+                </label>
+
+                <label
+                  for="produtoServico"
+                  class="carrinho__opcao-label carrinho__opcao-label--quinta-escolha"
+                >
+                  <div>
+                    <input
+                      type="radio"
+                      name="comoMarcaUtilizada"
+                      value="Produto / Serviço"
+                      id="produtoServico"
+                      class="radio__quinta-tela"
+                    />
+                    <span class="carrinho__opcao-radio-personalizado"></span>
+                  </div>
+                  Produto / Serviço
+                </label>
+              </div>
+            </div>
+
+            <div class="botoes__container botoes__container--quinta-tela">
+              <a
+                href="#"
+                class="link botao__voltar-quinta-tela"
+                id="linkVoltarTela"
+              >
+                <span class="link__texto">Voltar</span>
+              </a>
+
+              <button class="botao botao__pagar-quinta-tela" type="button">
+                Efetuar pagamento
+              </button>
+            </div>
+          </div>
+        </section>
       </form>
     </main>
 
@@ -394,5 +639,6 @@
     <script defer src="assets/js/carrinho/trocaDeTelas.js"></script>
     <script defer src="assets/js/carrinho/validacao.js"></script>
     <script defer src="assets/js/carrinho/terceiraTelaCarrinho.js"></script>
+    <script defer src="assets/js/carrinho/inputUploadPersonalizado.js"></script>
   </body>
 </html>

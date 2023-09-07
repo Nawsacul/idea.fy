@@ -76,12 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
             barraVoltar: 1
         },
         {
-            avancar: null,
+            avancar: '.botao__avancar-terceira-tela',
             voltar: '.botao__voltar-terceira-tela',
             telas: ['carrinho__secao--segunda-escolha', 'carrinho__secao--terceira-escolha', 'carrinho__secao--quarta-escolha'],
             barraAvancar: 3,
             barraVoltar: 2
+        },
+        {
+            avancar: '.botao__avancar-quarta-tela',
+            voltar: '.botao__voltar-quarta-tela',
+            telas: ['carrinho__secao--terceira-escolha', 'carrinho__secao--quarta-escolha', 'carrinho__secao--quinta-escolha'],
+            barraAvancar: 4,
+            barraVoltar: 3
+        },
+        {
+            avancar: null,
+            voltar: '.botao__voltar-quinta-tela',
+            telas: ['carrinho__secao--quarta-escolha', 'carrinho__secao--quinta-escolha', 'carrinho__secao--sexta-escolha'],
+            barraAvancar: 5,
+            barraVoltar: 4
         }
+
     ];
 
     // Loop para adicionar os eventos de clique para cada botão.
