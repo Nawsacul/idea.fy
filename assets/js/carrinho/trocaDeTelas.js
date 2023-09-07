@@ -1,5 +1,17 @@
 // Adiciona um evento que será disparado quando todo o conteúdo da página for carregado.
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
+        // Oculte a segunda tela usando display: none
+        // Desative os campos de formulário nas seções que serão ocultadas
+        const camposSegundaTela = document.querySelectorAll('.carrinho__secao--segunda-escolha input, .carrinho__secao--segunda-escolha select, .carrinho__secao--segunda-escolha textarea');
+        camposSegundaTela.forEach(campo => campo.disabled = true);
+
+        const camposQuartaTela = document.querySelectorAll('.carrinho__secao--quarta-escolha input, .carrinho__secao--quarta-escolha select, .carrinho__secao--quarta-escolha textarea');
+        camposQuartaTela.forEach(campo => campo.disabled = true);
+
+        const camposQuintaTela = document.querySelectorAll('.carrinho__secao--quinta-escolha input, .carrinho__secao--quinta-escolha select, .carrinho__secao--quinta-escolha textarea');
+        camposQuintaTela.forEach(campo => campo.disabled = true);
+    }
 
     const ESPECIFICAR = {
         mostrar: 'mostrar',
@@ -20,6 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const elementoNovo = document.querySelector(`.${telaNova}`);
 
         if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado')) && telaNova === 'carrinho__secao--segunda-escolha') {
+            // Se plano avulso colocar display none na quarta e quinta tela
+            document.querySelector('.carrinho__secao--quarta-escolha').style.display = 'none';
+            document.querySelector('.carrinho__secao--quinta-escolha').style.display = 'none';
+
             // Se um plano avulso for selecionado, pule a tela de seleção de tipo de pessoa e vá diretamente para a terceira tela
             const telaTerceira = 'carrinho__secao--terceira-escolha';
             const elementoTerceiraTela = document.querySelector(`.${telaTerceira}`);
@@ -113,6 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (botao.avancar) {
             const btnAvancar = document.querySelector(botao.avancar);
             btnAvancar.addEventListener('click', () => {
+                if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado')) && botao.avancar === '.botao__avancar-terceira-tela') {
+                    return;
+                }
+
                 if (botao.avancar === '.botao__avancar-primeira-tela') {
                     trocaTela(botao.telas[0], botao.telas[1]);
                 } else {
@@ -171,4 +191,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function mostrarTelaCarregamento() {
+        const telaCarregamento = document.querySelector('#preloader');
+        telaCarregamento.style.display = 'flex';
+
+        setTimeout(() => {
+            window.location.href = 'https://github.com/Nawsacul'; // Redirecionar para o Mercado Pago
+        }, 5000); // Esperar 5 segundos (5000 milissegundos)
+    }
+
+    if (planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
+        botaoAvancarTerceiraTela.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevenir a ação padrão do botão
+            mostrarTelaCarregamento(); // Mostrar a tela de carregamento
+        });
+    } else {
+        const botaoPagarQuintaTela = document.querySelector('.botao__pagar-quinta-tela');
+
+        botaoPagarQuintaTela.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevenir a ação padrão do botão
+            mostrarTelaCarregamento(); // Mostrar a tela de carregamento
+        });
+    }
 });

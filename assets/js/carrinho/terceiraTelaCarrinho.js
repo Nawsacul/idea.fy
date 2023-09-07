@@ -201,8 +201,8 @@ function generatePessoaJuridicaInputs() {
   `;
 }
 
-const botaoAvancarTerceiraTela = document.querySelector('.botao__avancar-terceira-tela');
 const secaoTerceiraTela = document.querySelector('.carrinho__secao--terceira-escolha');
+const botaoAvancarTerceiraTela = document.querySelector('.botao__avancar-terceira-tela');
 const containerBotoesTerceiraEscolha = secaoTerceiraTela.querySelector('.botoes__container');
 
 if (planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
@@ -225,13 +225,13 @@ function handleSelection(event) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Se um plano avulso for selecionado, gere automaticamente os inputs para "pessoa física"
   if (window.planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
-      const inputsPessoaFisica = generatePessoaFisicaInputs();
-      // Supondo que haja um contêiner onde você deseja anexar esses inputs
-      const container = document.querySelector('.carrinho__inputs-terceira-escolha');
-      container.innerHTML = inputsPessoaFisica;
+    const inputsPessoaFisica = generatePessoaFisicaInputs();
+    // Supondo que haja um contêiner onde você deseja anexar esses inputs
+    const container = document.querySelector('.carrinho__inputs-terceira-escolha');
+    container.innerHTML = inputsPessoaFisica;
   }
 });
 

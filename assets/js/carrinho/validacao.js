@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    botaoAvancarSegundaTela.addEventListener('click', () => {
+    function validarTerceiraTela() {
         const radioButtonsTerceiraTela = document.querySelectorAll('input[name="dadosPessoais"]');
         const radioButtonsTerceiraTelaPJ = document.querySelectorAll('input[name="porteEmpresa"]');
 
@@ -161,8 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 botaoAvancarTerceiraTela.disabled = !(isSelected && textInputsFilled && isCpfValid && isCnpjValid && isEmailValid && isTelValid && isCepValid);
             }
-
-            console.log('isSelected:', isSelected, 'isSelectedPJ:', isSelectedPJ, 'textInputsFilled:', textInputsFilled, 'isCpfValid:', isCpfValid, 'isCnpjValid:', isCnpjValid, 'isEmailValid:', isEmailValid, 'isTelValid:', isTelValid, 'isCepValid:', isCepValid);
         }
 
         if (radioButtonsTerceiraTelaPJ.length != 0) {
@@ -177,6 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         checarRadioSelecionadoTerceiraTela(radioButtonsTerceiraTela, radioButtonsTerceiraTelaPJ);
+    }
+
+    botaoAvancarPrimeiraTela.addEventListener('click', () => {
+        validarTerceiraTela();
+    });
+
+    botaoAvancarSegundaTela.addEventListener('click', () => {
+        validarTerceiraTela();
     });
 
     // ----------------------------------------------
@@ -222,9 +228,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const botaoPagarQuintaTela = document.querySelector('.botao__pagar-quinta-tela');
     const radioButtonsComoMarcaUtilizada = document.querySelectorAll('input[name="comoMarcaUtilizada"]');
     const radioButtonsLinguaEstrangeira = document.querySelectorAll('input[name="linguaEstrangeira"]');
-    
+
     const traducaoInput = document.querySelector('#traducao');
-    
+
 
     function checarRadioSelecionadoQuintaTela() {
         const linguaEstrangeiraSim = document.querySelector('#temLingua').checked;
@@ -232,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const comoMarcaSelecionada = Array.from(radioButtonsComoMarcaUtilizada).some(radio => radio.checked);
         const linguaEstrangeiraSelecionada = Array.from(radioButtonsLinguaEstrangeira).some(radio => radio.checked);
         const traducaoPreenchida = !linguaEstrangeiraSim || (linguaEstrangeiraSim && traducaoInput.value.trim());
-    
+
         // Se o usuário selecionar "Sim" para "linguaEstrangeira", torne "traducao" como obrigatório.
         if (linguaEstrangeiraSim) {
             traducaoInput.setAttribute('required', true);
@@ -241,29 +247,29 @@ document.addEventListener("DOMContentLoaded", function () {
             traducaoInput.removeAttribute('required');
             toggleErrorMessage(traducaoInput, true); // não exibe erro se não for obrigatório
         }
-    
+
         // Habilita ou desabilita o botão de pagamento
         botaoPagarQuintaTela.disabled = !(nomeMarcaInput.value.trim() && comoMarcaSelecionada && linguaEstrangeiraSelecionada && traducaoPreenchida);
     }
-    
+
 
 
     // Adicione eventos de escuta aos radio buttons e aos outros campos
     radioButtonsComoMarcaUtilizada.forEach((radio) => {
         radio.addEventListener('change', checarRadioSelecionadoQuintaTela);
     });
-    
+
     radioButtonsLinguaEstrangeira.forEach((radio) => {
         radio.addEventListener('change', checarRadioSelecionadoQuintaTela);
     });
-    
 
-    document.querySelector('#nomeMarca').addEventListener('input', function() {
+
+    document.querySelector('#nomeMarca').addEventListener('input', function () {
         toggleErrorMessage(this, this.value.trim() !== '');
         checarRadioSelecionadoQuintaTela();
     });
 
-    traducaoInput.addEventListener('input', function() {
+    traducaoInput.addEventListener('input', function () {
         toggleErrorMessage(this, this.value.trim() !== '');
         checarRadioSelecionadoQuintaTela();
     });
