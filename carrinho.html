@@ -13,19 +13,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   </head>
   <body>
-    <div id="preloader" style="display: none;">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="124"
-        height="124"
-        viewBox="0 0 124 124"
-        fill="none"
-      >
-        <path
-          d="M114.334 62C119.672 62 124.077 57.6465 123.248 52.3727C122.489 47.5439 121.16 42.8105 119.281 38.2736C116.165 30.7514 111.598 23.9166 105.841 18.1594C100.083 12.4021 93.2486 7.83526 85.7264 4.71947C81.1895 2.84022 76.4561 1.51104 71.6273 0.752015C66.3535 -0.076954 62 4.32776 62 9.66632C62 15.0049 66.3818 19.2238 71.5839 20.4229C73.8825 20.9528 76.1385 21.6736 78.3281 22.5805C83.5047 24.7247 88.2083 27.8676 92.1704 31.8296C96.1324 35.7917 99.2753 40.4953 101.419 45.6719C102.326 47.8615 103.047 50.1175 103.577 52.4161C104.776 57.6182 108.995 62 114.334 62Z"
-          fill="#FFDE00"
-        />
-      </svg>
+    <div id="preloader" style="display: none">
+      <div class="preloader__container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="124"
+          height="124"
+          viewBox="0 0 124 124"
+          fill="none"
+        >
+          <path
+            d="M114.334 62C119.672 62 124.077 57.6465 123.248 52.3727C122.489 47.5439 121.16 42.8105 119.281 38.2736C116.165 30.7514 111.598 23.9166 105.841 18.1594C100.083 12.4021 93.2486 7.83526 85.7264 4.71947C81.1895 2.84022 76.4561 1.51104 71.6273 0.752015C66.3535 -0.076954 62 4.32776 62 9.66632C62 15.0049 66.3818 19.2238 71.5839 20.4229C73.8825 20.9528 76.1385 21.6736 78.3281 22.5805C83.5047 24.7247 88.2083 27.8676 92.1704 31.8296C96.1324 35.7917 99.2753 40.4953 101.419 45.6719C102.326 47.8615 103.047 50.1175 103.577 52.4161C104.776 57.6182 108.995 62 114.334 62Z"
+            fill="#FFDE00"
+          />
+        </svg>
+
+        <h3 class="preloader__titulo">
+          Redirecionando para a nossa página de pagamento do Mercado Pago. Ao
+          final, você vai retornar para cá!
+          <br />
+          <br />
+          Ah, a transação é segura e dá para parcelar, ok?
+        </h3>
+      </div>
     </div>
 
     <div id="overlay"></div>
@@ -204,7 +214,9 @@
               Quem é a pessoa dona da marca?
             </h2>
 
-            <div class="carrinho__pergunta-container carrinho__pergunta-container--radio">
+            <div
+              class="carrinho__pergunta-container carrinho__pergunta-container--radio"
+            >
               <div class="carrinho__inputs-terceira-escolha"></div>
 
               <div class="carrinho__pergunta-container">
@@ -368,9 +380,9 @@ Nesta etapa é importante ter o máximo de detalhes. Então explique bem o que a
               >
                 <label class="custom-file-label" for="fileInput">
                   <div class="contato-formulario__label">
-                    <p>Você possui logo?</p><span
-                      class="contato-formulario__label-letra-pequena"
-                      > Se sim, fazer upload do arquivo 8x8 cm, logo preto com
+                    <p>Você possui logo?</p>
+                    <span class="contato-formulario__label-letra-pequena">
+                      Se sim, fazer upload do arquivo 8x8 cm, logo preto com
                       fundo branco, em JPEG.</span
                     >
                   </div>
@@ -441,7 +453,9 @@ Nesta etapa é importante ter o máximo de detalhes. Então explique bem o que a
                 </label>
               </div>
 
-              <div class="contato-formulario__campo contato-formulario__campo--quinta-escolha">
+              <div
+                class="contato-formulario__campo contato-formulario__campo--quinta-escolha"
+              >
                 <label class="contato-formulario__label" for="traducao">
                   Se sim, qual a tradução?</label
                 >
