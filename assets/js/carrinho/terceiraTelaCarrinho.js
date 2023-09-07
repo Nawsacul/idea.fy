@@ -5,32 +5,38 @@ function generatePessoaFisicaInputs() {
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="nomeCompleto">
     Nome completo da pessoa física</label>
-    <input class="contato-formulario__input" type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Seu nome como no CPF">
+    <input class="contato-formulario__input" type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Seu nome como no CPF" required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="cpf">CPF da pessoa</label>
-    <input class="contato-formulario__input" type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
+    <input class="contato-formulario__input" type="text" name="cpf" id="cpf" placeholder="000.000.000-00" required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="cep">CEP</label>
-    <input class="contato-formulario__input" type="text" name="cep" id="cep" placeholder="CEP de onde você mora">
+    <input class="contato-formulario__input" type="text" name="cep" id="cep" placeholder="CEP de onde você mora" required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="endereco">Endereço completo</label>
-    <input class="contato-formulario__input" type="text" name="endereco" id="endereco" placeholder="Endereço onde você mora">
+    <input class="contato-formulario__input" type="text" name="endereco" id="endereco" placeholder="Endereço onde você mora" required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="telefone">Telefone com DDD</label>
-    <input class="contato-formulario__input" type="text" name="telefone" id="telefone" placeholder="Ex. 00 99999-9999">
+    <input class="contato-formulario__input" type="text" name="telefone" id="telefone" placeholder="Ex. 00 99999-9999" required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="email">E-mail para contato</label>
-    <input class="contato-formulario__input" type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="off">
+    <input class="contato-formulario__input" type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="on" required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   `;
@@ -43,6 +49,7 @@ function generatePessoaJuridicaInputs() {
     <label class="contato-formulario__label" for="razaoSocial">
     Razão Social da empresa</label>
     <input class="contato-formulario__input" type="text" name="razaoSocial" id="razaoSocial" placeholder="O nome que vem no cartão do CNPJ" required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="carrinho__pergunta-container">
@@ -165,26 +172,31 @@ function generatePessoaJuridicaInputs() {
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="cnpj">CNPJ</label>
     <input class="contato-formulario__input" type="text" name="cnpj" id="cnpj" placeholder="000.000.000/0000-00" title="Por favor, insira um CNPJ válido no formato 00.000.000/0000-00." required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="cep">CEP</label>
-    <input class="contato-formulario__input" type="text" name="cep" id="cep" placeholder="CEP do cartão do CNPJ" pattern="[0-9]{5}-[0-9]{3}" title="Por favor, insira um CEP válido no formato 00000-000." required>
+    <input class="contato-formulario__input" type="text" name="cep" id="cep" placeholder="CEP do cartão do CNPJ" title="Por favor, insira um CEP válido no formato 00000-000." required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="endereco">Endereço da empresa</label>
     <input class="contato-formulario__input" type="text" name="endereco" id="endereco" placeholder="Endereço no cartão do CNPJ" title="Por favor, insira o endereço da empresa conforme consta no cartão do CNPJ." required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="telefone">Telefone com DDD</label>
-    <input class="contato-formulario__input" type="tel" name="telefone" id="telefone" placeholder="Ex. 00 99999-9999" pattern="[0-9]{2} [9]{1}[0-9]{4}-[0-9]{4}" title="Por favor, insira um número de telefone válido com DDD no formato 00 99999-9999." required>
+    <input class="contato-formulario__input" type="tel" name="telefone" id="telefone" placeholder="Ex. 00 99999-9999" title="Por favor, insira um número de telefone válido com DDD no formato 00 99999-9999." required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
 
   <div class="contato-formulario__campo">
     <label class="contato-formulario__label" for="email">E-mail para contato</label>
     <input class="contato-formulario__input" type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="on" title="Por favor, insira um endereço de e-mail válido." required>
+    <div class="error-message">Campo Obrigatório</div>
   </div>
   `;
 }
