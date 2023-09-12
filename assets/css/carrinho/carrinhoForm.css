@@ -93,6 +93,8 @@
   .botoes__container--sugerido {
     margin-top: 1rem;
     justify-content: center;
+    width: unset;
+    max-width: unset;
   }
 
   .carrinho__divisoria {
