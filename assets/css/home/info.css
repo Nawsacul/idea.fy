@@ -147,7 +147,7 @@
   }
 
   .info__conteudo {
-    width: 28.3125rem;
+    width: unset;
   }
 
   .info__item {

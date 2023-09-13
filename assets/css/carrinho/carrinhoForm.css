@@ -10,6 +10,10 @@
     gap: 2.5rem;
   }
 
+  .carrinho__item-escolhido {
+    gap: 2.5rem;
+  }
+
   .carrinho__secao {
     padding: 2.5rem 0;
     align-items: flex-start;
@@ -161,6 +165,16 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .descricao-plano {
+    padding-left: 0;
+  }
+
+  .descricao-plano--sugerido {
+    padding-left: 1rem;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .carrinho {
     padding: 7.5rem var(--padding-1440) 1.5rem;
@@ -174,10 +188,6 @@
   .carrinho__titulo-primeira-escolha {
     font-size: 1.9375rem;
     padding: 0.625rem 1rem;
-  }
-
-  .descricao-plano {
-    padding-left: 0;
   }
 
   .descricao-plano--sugerido {

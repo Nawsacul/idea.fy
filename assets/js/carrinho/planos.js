@@ -5,11 +5,12 @@ export const planos = {
         descricao: [
             "Identificação de classes",
             "Protocolo de pedido de registro",
-            "Acompanhamento de marca até o indeferimento",
+            "Acompanhamento de marca até o deferimento",
             "Cumprimento de exigência a apresentação de documentos",
             "Emissão de certificado",
             "01 (uma) pesquisa de viabilidade"
         ],
+        termo: 'Estou ciente que meu plano é mais básico e que se precisar de outros serviços, comprarei avulso.',
         preco: 849.90
     },
 
@@ -19,13 +20,14 @@ export const planos = {
         descricao: [
             "Identificação de classes",
             "Protocolo de pedido de registro",
-            "Acompanhamento de marca até o indeferimento",
+            "Acompanhamento de marca até o deferimento",
             "Cumprimento de exigência a apresentação de documentos",
             "Emissão de certificado",
             "02 (duas) pesquisas de viabilidade",
             "Adequação da logo às especificações do INPI",
             "Garantia de registro"
         ],
+        termo: 'Estou ciente que meu plano é mais básico e que se precisar de outros serviços, comprarei avulso.',
         preco: 1252.00
     },
 
@@ -35,7 +37,7 @@ export const planos = {
         descricao: [
             "Identificação de classes",
             "Protocolo de pedido de registro",
-            "Acompanhamento de marca até o indeferimento",
+            "Acompanhamento de marca até o deferimento",
             "Cumprimento de exigência a apresentação de documentos",
             "Emissão de certificado",
             "04 (quatro) pesquisas de viabilidade",
@@ -43,8 +45,9 @@ export const planos = {
             "Garantia de registro",
             "Oposição à outras marcas",
             "Manifestação à oposição",
-            "Recurso contra indeferimento"
+            "Recurso contra deferimento"
         ],
+        termo: 'Estou ciente que meu plano não tem notificações e contranotificações. Caso eu precise, comprarei avulso.',
         preco: 1657.00
     },
 
@@ -54,7 +57,7 @@ export const planos = {
         descricao: [
             "Identificação de classes",
             "Protocolo de pedido de registro",
-            "Acompanhamento de marca até o indeferimento",
+            "Acompanhamento de marca até o deferimento",
             "Cumprimento de exigência a apresentação de documentos",
             "Emissão de certificado",
             "06 (seis) pesquisas de viabilidade",
@@ -62,7 +65,7 @@ export const planos = {
             "Garantia de registro",
             "Oposição à outras marcas",
             "Manifestação à oposição",
-            "Recurso contra indeferimento",
+            "Recurso contra deferimento",
             "Notificações e contranotificações"
         ],
         preco: 1984.00

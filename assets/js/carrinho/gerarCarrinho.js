@@ -1,7 +1,7 @@
 import { planos } from './planos.js';
 
 const planosSugeridos = {
-  basic: 'standard',
+  basic: 'plus',
   standard: 'plus',
   plus: 'premium',
   premium: null
@@ -214,10 +214,8 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
     }
 
-
-
+    const termo = planoInfo.termo;
     const divTermos = document.querySelector('.termos');
-
     const termoAdicional = `
     <div class="termos__termo">
       <label for="termo_avulso" class="termos__label"
@@ -227,14 +225,12 @@ document.addEventListener('DOMContentLoaded', function () {
           id="termo_avulso"
           class="termos__checkbox"
           required
-        /><span class="termos__checkbox-customizado"></span>Estou ciente que
-        meu plano é mais básico e que se precisar de outros serviços,
-        comprarei avulso.</label
+        /><span class="termos__checkbox-customizado"></span>${termo}</label
       >
     </div>
     `;
 
-    if (planoSelecionado === 'basic') {
+    if (planoSelecionado === 'basic' || planoSelecionado === 'standard' || planoSelecionado === 'plus') {
       divTermos.insertAdjacentHTML('beforeend', termoAdicional);
     }
 

@@ -42,11 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const errorMessageElement = inputElement.nextElementSibling;
         if (inputElement.classList.contains('touched')) {
             if (isValid) {
-                inputElement.setCustomValidity("");
-                errorMessageElement.style.display = 'none'; // Oculta a mensagem de erro
+                if (inputElement === uploadInputReal) {
+                    uploadInput.classList.remove('touched');
+                    errorMessageElement.style.display = 'none'; // Oculta a mensagem de erro
+                } else {
+                    inputElement.setCustomValidity("");
+                    errorMessageElement.style.display = 'none'; // Oculta a mensagem de erro
+                }
             } else {
-                inputElement.setCustomValidity("Campo inválido");
-                errorMessageElement.style.display = 'block'; // Mostra a mensagem de erro
+                if (inputElement === uploadInputReal) {
+                    uploadInput.classList.add('touched');
+                    errorMessageElement.style.display = 'block'; // Mostra a mensagem de erro
+                } else {
+                    inputElement.setCustomValidity("Campo inválido");
+                    errorMessageElement.style.display = 'block'; // Mostra a mensagem de erro
+                }
             }
         }
     }
@@ -225,12 +235,49 @@ document.addEventListener("DOMContentLoaded", function () {
     checarTextAreaQuartaTela();
 
     // Funções e variáveis relacionadas à quinta tela
+    let filesFullyLoaded = 0;
     const botaoPagarQuintaTela = document.querySelector('.botao__pagar-quinta-tela');
     const radioButtonsComoMarcaUtilizada = document.querySelectorAll('input[name="comoMarcaUtilizada"]');
     const radioButtonsLinguaEstrangeira = document.querySelectorAll('input[name="linguaEstrangeira"]');
-
     const traducaoInput = document.querySelector('#traducao');
+    const uploadInput = document.querySelector('.contato-formulario__input--upload');
+    const uploadInputReal = document.querySelector('#fileInput');
+    let fileInput = document.getElementById("fileInput");
+    const MAX_WIDTH = 944; // Supondo 300 DPI
+    const MAX_HEIGHT = 944; // Supondo 300 DPI
+    let isImageValid = false;  // Inicialmente definido como false
 
+
+    fileInput.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+            // Verifique o tipo MIME do arquivo
+            if (file.type !== "image/jpeg") {
+                alert("Por favor, selecione uma imagem JPEG válida.");
+                fileInput.value = '';  // Limpa o input
+                isImageValid = false;  // Define como imagem inválida
+                checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
+                return;  // Saia do evento
+            }
+
+            const image = new Image();
+            image.src = URL.createObjectURL(file);
+            image.onload = function () {
+                if (image.width > MAX_WIDTH || image.height > MAX_HEIGHT) {
+                    alert("A imagem possui dimensões superiores a 8x8 cm.");
+                    fileInput.value = '';  // Limpa o input
+                    isImageValid = false;  // Define como imagem inválida
+                } else {
+                    isImageValid = true;  // Define como imagem válida
+                }
+                checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação para habilitar/desabilitar o botão
+            };
+        } else {
+            isImageValid = false;  // Se nenhum arquivo for selecionado, defina como inválido
+            toggleErrorMessage(uploadInput, isImageValid)
+            checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
+        }
+    });
 
     function checarRadioSelecionadoQuintaTela() {
         const linguaEstrangeiraSim = document.querySelector('#temLingua').checked;
@@ -248,11 +295,150 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleErrorMessage(traducaoInput, true); // não exibe erro se não for obrigatório
         }
 
+        // Verifique se todos os arquivos foram carregados
+        const allFilesLoaded = filesFullyLoaded === allFiles.length;
+
+        // Verifique se pelo menos um arquivo foi adicionado
+        const hasFilesAdded = allFiles.length > 0;
+
         // Habilita ou desabilita o botão de pagamento
-        botaoPagarQuintaTela.disabled = !(nomeMarcaInput.value.trim() && comoMarcaSelecionada && linguaEstrangeiraSelecionada && traducaoPreenchida);
+        botaoPagarQuintaTela.disabled = !(
+            nomeMarcaInput.value.trim() &&
+            comoMarcaSelecionada &&
+            linguaEstrangeiraSelecionada &&
+            traducaoPreenchida &&
+            allFilesLoaded &&
+            hasFilesAdded
+        );
+
+        // Se nenhum arquivo foi adicionado, mostre a mensagem de erro
+        if (!hasFilesAdded) {
+            toggleErrorMessage(uploadInputReal, false);
+        } else {
+            toggleErrorMessage(uploadInputReal, true);
+        }
     }
 
 
+
+    // function uploadFiles(files) {
+    //     const formData = new FormData();
+    //     for (let file of files) {
+    //         formData.append("files[]", file);
+    //     }
+
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.open("POST", "https://jsonplaceholder.typicode.com/todos/1", true);
+
+    //     // Adicionar evento de progresso
+    //     xhr.upload.addEventListener("progress", function (e) {
+    //         if (e.lengthComputable) {
+    //             const percentage = Math.round((e.loaded * 100) / e.total);
+    //             document.getElementById("loadingPercentage").textContent = `${percentage}%`;
+    //             document.getElementById("loadingBar").style.display = 'block';
+    //         }
+    //     });
+
+    //     // Evento ao finalizar o upload
+    //     xhr.addEventListener("load", function () {
+    //         if (xhr.status === 200) {
+    //             console.log("Upload concluído!");
+    //         } else {
+    //             console.error("Erro no upload.");
+    //         }
+    //         document.getElementById("loadingBar").style.display = 'none';
+    //     });
+
+    //     // Iniciar o upload
+    //     xhr.send(formData);
+    // }
+
+    function simulateIndividualUpload(file, loadingBarFile, fileDiv, callback) {
+        let progress = 0;
+        const percentageElement = loadingBarFile.querySelector(".loading-percentage");
+
+        const progressInterval = setInterval(function () {
+            progress += 5;
+            percentageElement.textContent = `${progress}%`;
+
+            if (progress >= 100) {
+                clearInterval(progressInterval);
+                loadingBarFile.style.display = 'none';
+                filesFullyLoaded++;  // Incrementa o contador de arquivos carregados
+                console.log(`Simulação de upload concluída para ${file.name}!`);
+                callback(fileDiv);
+
+                // Se todos os arquivos foram carregados, chame checarRadioSelecionadoQuintaTela
+                if (filesFullyLoaded === allFiles.length) {
+                    checarRadioSelecionadoQuintaTela();
+                }
+            }
+        }, 200);
+    }
+
+    const fileNameSpan = document.querySelector(".file-name");
+    const fileListContainer = document.querySelector(".custom-file-upload__container-arquivos");
+
+    let allFiles = [];  // Armazene todos os arquivos selecionados aqui
+
+    fileInput.addEventListener("change", function () {
+        console.log("Arquivos selecionados:", fileInput.files);
+        filesFullyLoaded = 0;  // Redefina o contador de arquivos carregados
+
+        // Filtrar arquivos novos que não estão na lista 'allFiles'
+        const newFiles = Array.from(fileInput.files).filter(file => !allFiles.some(f => f.name === file.name));
+
+        newFiles.forEach(file => {
+            const fileDiv = document.createElement("div");
+            fileDiv.classList.add('file-upload-item');
+
+            const fileNameSpanDiv = document.createElement("div");
+            fileNameSpanDiv.classList.add('file-name__container');
+
+            const fileNameSpan = document.createElement("span");
+            fileNameSpan.textContent = file.name;
+            fileNameSpan.classList.add('file-name');
+            fileNameSpanDiv.appendChild(fileNameSpan);
+
+            const removeBtn = document.createElement("span");
+            removeBtn.textContent = "X";
+            removeBtn.classList.add('remove-file-btn');
+            removeBtn.onclick = function () {
+                allFiles = allFiles.filter(f => f.name !== file.name);
+                fileDiv.remove();
+                if (allFiles.length === 0) {
+                    fileNameSpan.textContent = "Adicionar arquivo";
+                    fileListContainer.style.display = 'none';
+                    checarRadioSelecionadoQuintaTela();
+                }
+            }
+            fileNameSpanDiv.appendChild(removeBtn);
+
+            const loadingBarFile = document.createElement("div");
+            loadingBarFile.classList.add("loading-bar-file");
+            loadingBarFile.innerHTML = `Carregando... <span class="loading-percentage">0%</span>`;
+
+            fileListContainer.style.display = 'flex';
+            fileDiv.appendChild(loadingBarFile);
+            fileListContainer.appendChild(fileDiv);
+
+            // Inicia a simulação de upload para esse arquivo
+            simulateIndividualUpload(file, loadingBarFile, fileDiv, function (divElement) {
+                // Esta função será chamada após a simulação do upload ser concluída
+                divElement.appendChild(fileNameSpanDiv);
+            });
+        });
+
+        allFiles.push(...newFiles);
+
+        if (allFiles.length > 0) {
+            fileNameSpan.textContent = "Adicionar mais arquivos";
+        } else {
+            fileNameSpan.textContent = "Adicionar arquivo";
+        }
+
+        fileInput.value = '';  // Limpa a seleção atual do input
+    });
 
     // Adicione eventos de escuta aos radio buttons e aos outros campos
     radioButtonsComoMarcaUtilizada.forEach((radio) => {
@@ -272,6 +458,15 @@ document.addEventListener("DOMContentLoaded", function () {
     traducaoInput.addEventListener('input', function () {
         toggleErrorMessage(this, this.value.trim() !== '');
         checarRadioSelecionadoQuintaTela();
+    });
+
+    uploadInput.addEventListener('click', function () {
+        if (allFiles.length === 0) {
+            uploadInputReal.classList.add('touched');  // Certifique-se de que o input esteja marcado como "tocado"
+            toggleErrorMessage(uploadInputReal, false);
+        } else {
+            toggleErrorMessage(uploadInputReal, true);
+        }
     });
 
     // Verificar o estado inicial da quinta tela

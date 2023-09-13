@@ -183,9 +183,48 @@ input[type="file"] {
 }
 
 .contato-formulario__input--upload:hover {
-  background: var(--cor-primaria-600, #23A4B8);
+  background: var(--cor-primaria-600, #23a4b8);
 }
 
-.contato-formulario__input--upload-arquivo {
-  background: var(--cor-primaria-900, #18595D);
+.contato-formulario__input--upload:active {
+  background: var(--cor-primaria-900, #18595d);
+}
+
+.custom-file-upload__container-arquivos {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loading-bar-file {
+  background: var(--cor-terciaria, #ffde00);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+
+  color: var(--cor-primaria-900, #18595d);
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 0.9rem */
+}
+
+.file-name__container {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--cor-secundaria, #fdfcf4);
+  width: fit-content;
+
+  color: var(--cor-primaria-900, #18595d);
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 0.9rem */
+}
+
+.remove-file-btn {
+  cursor: pointer;
 }
