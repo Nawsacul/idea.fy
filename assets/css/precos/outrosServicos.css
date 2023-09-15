@@ -114,7 +114,6 @@
 
   .outros-servicos__plan {
     width: calc(33.3% - 1rem);
-    min-width: 12.333rem;
   }
 
   .outros-servicos__plan-container-titulo {
@@ -131,10 +130,6 @@
   .outros-servicos__plan:nth-child(n + 4)
     > .outros-servicos__plan-container-titulo {
     height: 2.375rem;
-  }
-
-  .outros-servicos__plan-container-descricao {
-    height: 7.313rem;
   }
 }
 
@@ -161,10 +156,6 @@
 
   .outros-servicos__plan-container-titulo {
     padding: 1.5rem 1.5rem 1rem;
-  }
-
-  .outros-servicos__plan-container-descricao {
-    height: 4.875rem;
   }
 }
 
