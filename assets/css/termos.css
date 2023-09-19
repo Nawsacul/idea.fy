@@ -27,6 +27,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-self: flex-start;
   }
 
   .termos__subtitulo {
@@ -35,14 +36,14 @@
 
   .termos__paragrafo,
   .termos__item {
-      font-size: 0.875rem;
-      color: var(--cor-secundaria, #FDFCF4);
+    font-size: 0.875rem;
+    color: var(--cor-secundaria, #fdfcf4);
   }
 
   .termos__item {
-      font-family: Poppins;
-      line-height: 125%;
-      color: var(--cor-secundaria, #FDFCF4);
+    font-family: Poppins;
+    line-height: 125%;
+    color: var(--cor-secundaria, #fdfcf4);
   }
 }
 
@@ -61,11 +62,14 @@
 @media screen and (min-width: 1024px) {
   .termos {
     padding: 7.5rem var(--padding-1024) 1rem;
+    width: 59rem;
+    margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .termos {
     padding: 7.5rem var(--padding-1440) 1rem;
+    width: unset;
   }
 }

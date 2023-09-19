@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
 
 @font-face {
-  font-family: 'Century Gothic', sans-serif;
   src: url(../fonts/GOTHICB.TTF);
+  font-family: 'Century Gothic', 'Lexend';
 }
 
 h1,
@@ -34,5 +35,5 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Century Gothic', 'Lexend';
 }
