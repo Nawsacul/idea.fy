@@ -152,6 +152,7 @@ input:-webkit-autofill:focus {
 
   .contato-formulario__mensagem-sucesso-container {
     max-width: 33.938rem;
+    padding: 1rem 4.5rem;
   }
 }
 
@@ -164,11 +165,20 @@ input:-webkit-autofill:focus {
   .contato-formulario__container {
     max-width: 18.3125rem;
   }
+
+  .contato-formulario__mensagem-sucesso-container {
+    max-width: 38.5rem;
+    padding: 1rem 7rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .contato-formulario {
     padding: 4rem var(--padding-1440);
     width: unset;
+  }
+  .contato-formulario__mensagem-sucesso-container {
+    max-width: 39.188rem;
+    padding: 1rem 7.4rem;
   }
 }
