@@ -6,3 +6,66 @@
 @import url(geral/footer.css);
 @import url(geral/links.css);
 @import url(geral/navbar.css);
+
+@media screen and (min-width: 320px) {
+  .termos {
+    padding: 7.5rem var(--padding-320) 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .termos__titulo {
+    font-size: 1.9375rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .termos__secao {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .termos__subtitulo {
+    font-size: 1.5625rem;
+  }
+
+  .termos__paragrafo,
+  .termos__item {
+      font-size: 0.875rem;
+      color: var(--cor-secundaria, #FDFCF4);
+  }
+
+  .termos__item {
+      font-family: Poppins;
+      line-height: 125%;
+      color: var(--cor-secundaria, #FDFCF4);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .termos {
+    padding: 7.5rem var(--padding-768) 1rem;
+  }
+}
+
+@media screen and (min-width: 989px) {
+  .termos {
+    padding: 7.5rem var(--padding-989) 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .termos {
+    padding: 7.5rem var(--padding-1024) 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .termos {
+    padding: 7.5rem var(--padding-1440) 1rem;
+  }
+}

@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com os
-              <a class="termos__texto-destaque" href="#"> Termos e Condições</a> do
+              <a class="termos__texto-destaque" href="termos-e-condicoes.html"> Termos e Condições</a> do
               site.</label
             >
           </div>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com o
-              <a class="termos__texto-destaque" href="#">Termo de Privacidade</a> do
+              <a class="termos__texto-destaque" href="termo-de-privacidade.html">Termo de Privacidade</a> do
               site.</label
             >
           </div>
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com os
-              <a class="termos__texto-destaque" href="#"> Termos e Condições</a> do
+              <a class="termos__texto-destaque" href="termos-e-condicoes.html"> Termos e Condições</a> do
               site.</label
             >
           </div>
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com o
-              <a class="termos__texto-destaque" href="#">Termo de Privacidade</a> do
+              <a class="termos__texto-destaque" href="termo-de-privacidade.html">Termo de Privacidade</a> do
               site.</label
             >
           </div>

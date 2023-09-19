@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Idea.fy - Termo de Privacidade</title>
+    <title>Idea.fy - Pagamento Realizado</title>
+    <link rel="stylesheet" href="assets/css/carrinho.css" />
+    <link rel="stylesheet" href="assets/css/carrinho/carrinhoPago.css">
   </head>
   <body>
     <div id="overlay"></div>
@@ -24,7 +26,7 @@
         <nav class="navbar__nav">
           <ul>
             <li class="navbar__item">
-              <a class="navbar__link navbar__link--active" href="index.html"
+              <a class="navbar__link" href="index.html"
                 ><span class="navbar__link-texto">Início</span></a
               >
             </li>
@@ -66,88 +68,46 @@
       </div>
     </header>
 
-    <main class="termos">
-        <h1 class="termos__titulo">Termo de privacidade</h1>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo">APRESENTAÇÃO</h2>
-            <p class="termos__paragrafo">Somos a IDEA.FY. oferece um ambiente virtual para comercializar seus próprios serviços relacionados à proteção aos bens de propriedade intelectual de seus clientes, sem prejuízo de outros serviços adicionais e agregados a respeito dos quais se falará oportunamente nestes T&C.</p>
+    <main>
+      <section class="carrinho carrinho-pago">
+        <div
+          class="carrinho__barra-progresso carrinho__barra-progresso--carrinho-pago"
+        >
+          <div class="carrinho__barra-item carrinho__barra-item--ativo">
+            <div class="carrinho__barra-preenchimento"></div>
+          </div>
+          <div class="carrinho__barra-item carrinho__barra-item--ativo">
+            <div class="carrinho__barra-preenchimento"></div>
+          </div>
+          <div class="carrinho__barra-item carrinho__barra-item--ativo">
+            <div class="carrinho__barra-preenchimento"></div>
+          </div>
+          <div class="carrinho__barra-item carrinho__barra-item--ativo">
+            <div class="carrinho__barra-preenchimento"></div>
+          </div>
+          <div class="carrinho__barra-item carrinho__barra-item--ativo">
+            <div class="carrinho__barra-preenchimento"></div>
+          </div>
+          <div class="carrinho__barra-item">
+            <div class="carrinho__barra-preenchimento"></div>
+          </div>
         </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <p class="termos__paragrafo"></p>
+
+        <div class="carrinho-pago__container">
+          <div class="carrinho-pago__container-texto">
+            <h1 class="carrinho-pago__titulo">Recebemos seu pedido!</h1>
+            <p class="carrinho-pago__texto">
+              Assim que o pagamento for confirmado, entraremos em contato para
+              dar seguimento ao
+              <span class="carrinho-pago__texto-modificavel"
+                >seu serviço avulso!</span
+              >
+            </p>
+          </div>
+
+          <a href="index.html" class="botao">Voltar para o início</a>
         </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <ol class="termos__lista">
-                <li class="termos__item"></li>
-            </ol>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <p class="termos__paragrafo"></p>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <p class="termos__paragrafo"></p>
-        </div>
-        <div class="termos__secao">
-            <h2 class="termos__subtitulo"></h2>
-            <p class="termos__paragrafo"></p>
-        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -231,10 +191,10 @@
             <a href="sobre.html" class="footer__nav-link">Sobre</a>
           </li>
           <li class="footer__nav-item">
-            <a href="#" class="footer__nav-link">Termo de privacidade</a>
+            <a href="termo-de-privacidade.html" class="footer__nav-link">Termo de privacidade</a>
           </li>
           <li class="footer__nav-item">
-            <a href="#" class="footer__nav-link">Termos e condições</a>
+            <a href="termos-e-condicoes.html" class="footer__nav-link">Termos e condições</a>
           </li>
         </ul>
 
@@ -250,5 +210,8 @@
         </div>
       </div>
     </footer>
+
+    <script defer src="assets/js/navbarMenu.js"></script>
+    <script defer src="assets/js/carrinho/carrinhoPago.js"></script>
   </body>
 </html>
