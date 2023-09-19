@@ -6,6 +6,12 @@
     <title>Idea.fy - Contato</title>
     <meta name="description" content="Insira aqui a descrição da sua página." />
     <link rel="stylesheet" href="assets/css/contato.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   </head>
   <body>
     <!-- <div id="preloader">
@@ -90,7 +96,10 @@
           Pode mandar whatsapp, ligar ou mandar e-mail!<br />
           Estaremos aqui para te atender!
         </p>
-        <a href="https://wa.me/5511911462020" class="botao contato__botao-whatsapp">
+        <a
+          href="https://wa.me/5511911462020"
+          class="botao contato__botao-whatsapp"
+        >
           <svg
             class="social-link"
             xmlns="http://www.w3.org/2000/svg"
@@ -133,55 +142,59 @@
 
         <form id="contact-form" class="contato-formulario__form" action="">
           <div class="contato-formulario__campo">
-            <label for="nome" class="contato-formulario__label">Seu nome</label>
+            <label class="contato-formulario__label" for="nome">
+              Seu nome</label
+            >
             <input
-              type="text"
-              id="nome"
               class="contato-formulario__input"
+              type="text"
+              name="nome"
+              id="nome"
               placeholder="Seu nome"
               required
             />
+            <div class="error-message">Campo Obrigatório</div>
           </div>
 
           <div class="contato-formulario__campo">
-            <label for="email" class="contato-formulario__label"
-              >Seu e-mail</label
+            <label class="contato-formulario__label" for="email">Seu e-mail</label>
+            <input class="contato-formulario__input" type="email" name="email" id="email" placeholder="Seu e-mail" autocomplete="on" required>
+            <div class="error-message">Campo Obrigatório</div>
+          </div>
+
+          <div class="contato-formulario__campo">
+            <label class="contato-formulario__label" for="telefone"
+              >Telefone com DDD</label
             >
             <input
-              type="email"
-              id="email"
               class="contato-formulario__input"
-              placeholder="Seu e-mail"
-              required
-            />
-          </div>
-
-          <div class="contato-formulario__campo">
-            <label for="telefone" class="contato-formulario__label"
-              >Seu telefone</label
-            >
-            <input
-              type="tel"
+              type="text"
+              name="telefone"
               id="telefone"
-              class="contato-formulario__input"
               placeholder="00 99999-9999"
               required
             />
+            <div class="error-message">Campo Obrigatório</div>
           </div>
 
-          <div class="contato-formulario__campo">
-            <label for="mensagem" class="contato-formulario__label"
-              >Sua mensagem</label
+          <div class="carrinho__pergunta-container">
+            <div
+              class="contato-formulario__campo"
             >
-            <textarea
-              name="mensagem"
-              id="mensagem"
-              cols="30"
-              rows="7"
-              class="contato-formulario__textarea"
-              placeholder="Escreva aqui sua mensagem"
-              required
-            ></textarea>
+              <label class="contato-formulario__label" for="mensagem"
+                >Sua mensagem</label
+              >
+              <textarea
+                name="mensagem"
+                id="mensagem"
+                class="contato-formulario__textarea"
+                cols="30"
+                rows="7"
+                placeholder="Escreva aqui sua mensagem"
+                required
+              ></textarea>
+              <div class="error-message">Campo Obrigatório</div>
+            </div>
           </div>
 
           <button class="botao contato-formulario__botao" type="submit">
@@ -290,7 +303,9 @@
           </p>
 
           <p class="footer__copyright">
-            &copy; Copyright <span class="footer__copyright-ano">2023</span> Idea.fy. Todos os direitos reservados.
+            &copy; Copyright
+            <span class="footer__copyright-ano">2023</span> Idea.fy. Todos os
+            direitos reservados.
           </p>
         </div>
       </div>
@@ -298,7 +313,8 @@
 
     <script src="assets/js/atualizaAno.js"></script>
     <!-- <script src="assets/js/preloader.js"></script> -->
-    <script src="assets/js/contatoForm.js"></script>
-    <script src="assets/js/navbarMenu.js"></script>
+    <script defer src="assets/js/formularios/validacaoContato.js"></script>
+    <script defer src="assets/js/contatoForm.js"></script>
+    <script defer src="assets/js/navbarMenu.js"></script>
   </body>
 </html>

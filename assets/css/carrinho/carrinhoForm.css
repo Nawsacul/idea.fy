@@ -14,6 +14,10 @@
     gap: 2.5rem;
   }
 
+  .carrinho__item-sugerido {
+    gap: 2.5rem;
+  }
+
   .carrinho__secao {
     padding: 2.5rem 0;
     align-items: flex-start;
