@@ -176,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     // Pegue o elemento do botão "Voltar"
     const botaoVoltarTerceiraTela = document.querySelector('.botao__voltar-terceira-tela');
 
@@ -190,27 +189,4 @@ document.addEventListener('DOMContentLoaded', () => {
             trocaTela('carrinho__secao--terceira-escolha', 'carrinho__secao--segunda-escolha');
         }
     });
-
-    function mostrarTelaCarregamento() {
-        const telaCarregamento = document.querySelector('#preloader');
-        telaCarregamento.style.display = 'flex';
-
-        setTimeout(() => {
-            window.location.href = 'https://github.com/Nawsacul'; // Redirecionar para o Mercado Pago
-        }, 5000); // Esperar 5 segundos (5000 milissegundos)
-    }
-
-    if (planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
-        botaoAvancarTerceiraTela.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevenir a ação padrão do botão
-            mostrarTelaCarregamento(); // Mostrar a tela de carregamento
-        });
-    } else {
-        const botaoPagarQuintaTela = document.querySelector('.botao__pagar-quinta-tela');
-
-        botaoPagarQuintaTela.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevenir a ação padrão do botão
-            mostrarTelaCarregamento(); // Mostrar a tela de carregamento
-        });
-    }
 });
