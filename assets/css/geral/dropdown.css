@@ -63,7 +63,7 @@
 
   .dropdown__texto,
   .dropdown__li {
-    line-height: 125%;
+    line-height: 140%;
     font-size: 1rem;
     font-weight: 400;
     color: var(--cor-secundaria, #fdfcf4);
