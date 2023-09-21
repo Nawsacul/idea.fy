@@ -1,0 +1,62 @@
+/* The switch - the box around the slider */
+.notificacao-cookies__opcao {
+  position: relative;
+  display: inline-block;
+  width: 2.25rem;
+  height: 1.375rem;
+}
+
+/* Hide default HTML checkbox */
+.notificacao-cookies__opcao input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.notificacao-cookies__slider  {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--cor-secundaria-700, #5a5953);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.notificacao-cookies__slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--cor-secundaria-700, #5a5953);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .notificacao-cookies__slider  {
+  border-color: var(--cor-primaria, #1D7C87);
+}
+
+input:checked + .notificacao-cookies__slider:before {
+  background-color: var(--cor-primaria, #1D7C87);
+}
+
+input:checked + .notificacao-cookies__slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.notificacao-cookies__slider--redondo {
+  border-radius: 34px;
+}
+
+.notificacao-cookies__slider--redondo:before {
+  border-radius: 50%;
+}
