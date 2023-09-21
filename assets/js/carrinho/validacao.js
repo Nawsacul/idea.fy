@@ -330,9 +330,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(progressInterval);
                 loadingBarFile.style.display = 'none';
                 filesFullyLoaded++;  // Incrementa o contador de arquivos carregados
-                console.log(`Simulação de upload concluída para ${file.name}!`);
-                callback(fileDiv);
-                console.log(allFiles);
 
                 // Se todos os arquivos foram carregados, chame checarRadioSelecionadoQuintaTela
                 if (filesFullyLoaded === allFiles.length) {
@@ -348,7 +345,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let allFiles = [];  // Armazene todos os arquivos selecionados aqui
 
     fileInput.addEventListener("change", function () {
-        console.log("Arquivos selecionados:", fileInput.files);
         filesFullyLoaded = 0;  // Redefina o contador de arquivos carregados
 
         // Filtrar arquivos novos que não estão na lista 'allFiles'
