@@ -35,14 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const secaoPreferencias = notificacaoCookies.querySelector('.notificacao-cookies__preferencias');
     const cookiesContainer = notificacaoCookies.querySelector('.notificacao-cookies__container');
 
-    // Ao carregar a página aparecer os cookies
-    setTimeout(function() {
-        notificacaoCookies.style.display = 'flex';
-      }, 2000);
+
 
     // Se o usuário já aceitou os cookies, esconda a notificação
     if (cookieExiste('cookiesAceitos')) {
         notificacaoCookies.style.display = 'none';
+    } else {
+        // Ao carregar a página aparecer os cookies
+        setTimeout(function () {
+            notificacaoCookies.style.display = 'flex';
+        }, 2000);
     }
 
     botaoPreferencias.addEventListener('click', function () {
