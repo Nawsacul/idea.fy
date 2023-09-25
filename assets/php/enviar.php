@@ -67,7 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Endereço de email para o qual a mensagem será enviada
     $to = "lucaswan09@gmail.com";
     $subject = "Nova mensagem do formulário";
-    $headers = "De: carrinho@ideafy.com.br"; // Substitua pelo email de origem válido no seu domínio
+
+    //Este sempre deverá existir para garantir a exibição correta dos caracteres
+    $headers = "MIME-Version: 1.0\n";
+    $headers .= "Content-type: text/html; charset=iso-8859-1\n";
+    $headers .= "From: <$email>";
 
     // Verifica se o email foi enviado com sucesso
     if (mail($to, $subject, $mensagem, $headers)) {
