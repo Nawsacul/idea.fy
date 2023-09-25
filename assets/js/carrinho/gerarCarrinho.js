@@ -302,18 +302,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function mostrarTelaCarregamento() {
       const telaCarregamento = document.querySelector('#preloader');
-      // telaCarregamento.style.display = 'flex';
+      telaCarregamento.style.display = 'flex';
 
-      // setTimeout(() => {
-      //   window.location.href = `${planoInfo.pagamento}`; // Redirecionar para o Mercado Pago
-      // }, 5000); // Esperar 5 segundos (5000 milissegundos)
+      setTimeout(() => {
+        window.location.href = `${planoInfo.pagamento}`; // Redirecionar para o Mercado Pago
+      }, 5000); // Esperar 5 segundos (5000 milissegundos)
     }
 
     if (planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
       // const botaoAvancarTerceiraTela = document.querySelector('.botao__avancar-terceira-tela');
       
       botaoAvancarTerceiraTela.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevenir a ação padrão do botão
+        // event.preventDefault(); // Prevenir a ação padrão do botão
         mostrarTelaCarregamento(); // Mostrar a tela de carregamento
       });
     } else {
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       botaoPagarQuintaTela.addEventListener('click', function (event) {
         // event.preventDefault(); // Prevenir a ação padrão do botão
-        // mostrarTelaCarregamento(); // Mostrar a tela de carregamento
+        mostrarTelaCarregamento(); // Mostrar a tela de carregamento
       });
     }
 
