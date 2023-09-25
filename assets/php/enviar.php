@@ -72,11 +72,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se o email foi enviado com sucesso
     if (mail($to, $subject, $mensagem, $headers)) {
         // Redireciona para a página de sucesso
-        header("Location: envio-sucesso.html");
+        header("Location: ../../envio-sucesso.html");
         exit;
     } else {
         // Redireciona para a página de erro
-        header("Location: 404.shtml");
+        header("Location: ../../404.shtml");
         exit;
     }
 } else {
