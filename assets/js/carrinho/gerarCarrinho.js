@@ -320,8 +320,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const botaoPagarQuintaTela = document.querySelector('.botao__pagar-quinta-tela');
 
       botaoPagarQuintaTela.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevenir a ação padrão do botão
-        mostrarTelaCarregamento(); // Mostrar a tela de carregamento
+        // event.preventDefault(); // Prevenir a ação padrão do botão
+        // mostrarTelaCarregamento(); // Mostrar a tela de carregamento
       });
     }
 
