@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se o email foi enviado com sucesso
     if (mail($to, $subject, $mensagem, $headers)) {
         // Redireciona para a página de sucesso
-        header("Location: https://www.google.com/");
+        echo "Sucesso";
         exit;
     } else {
         // Redireciona para a página de erro
