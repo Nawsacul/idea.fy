@@ -300,29 +300,10 @@ document.addEventListener('DOMContentLoaded', function () {
       planoPrimeiraTela.appendChild(planoSugeridoDiv);
     }
 
-    function mostrarTelaCarregamento() {
-      const telaCarregamento = document.querySelector('#preloader');
-      telaCarregamento.style.display = 'flex';
-
-      setTimeout(() => {
-        window.location.href = `${planoInfo.pagamento}`; // Redirecionar para o Mercado Pago
-      }, 5000); // Esperar 5 segundos (5000 milissegundos)
-    }
-
     if (planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {
-      // const botaoAvancarTerceiraTela = document.querySelector('.botao__avancar-terceira-tela');
+      const botaoAvancarTerceiraTela = document.querySelector('.botao__avancar-terceira-tela');
       
-      botaoAvancarTerceiraTela.addEventListener('click', function (event) {
-        // event.preventDefault(); // Prevenir a ação padrão do botão
-        mostrarTelaCarregamento(); // Mostrar a tela de carregamento
-      });
-    } else {
-      const botaoPagarQuintaTela = document.querySelector('.botao__pagar-quinta-tela');
-
-      botaoPagarQuintaTela.addEventListener('click', function (event) {
-        // event.preventDefault(); // Prevenir a ação padrão do botão
-        mostrarTelaCarregamento(); // Mostrar a tela de carregamento
-      });
+      botaoAvancarTerceiraTela.type = "submit";
     }
 
   } else {
