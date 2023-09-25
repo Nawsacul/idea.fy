@@ -302,11 +302,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function mostrarTelaCarregamento() {
       const telaCarregamento = document.querySelector('#preloader');
-      telaCarregamento.style.display = 'flex';
+      // telaCarregamento.style.display = 'flex';
 
-      setTimeout(() => {
-        window.location.href = `${planoInfo.pagamento}`; // Redirecionar para o Mercado Pago
-      }, 5000); // Esperar 5 segundos (5000 milissegundos)
+      // setTimeout(() => {
+      //   window.location.href = `${planoInfo.pagamento}`; // Redirecionar para o Mercado Pago
+      // }, 5000); // Esperar 5 segundos (5000 milissegundos)
     }
 
     if (planosAvulsos.includes(localStorage.getItem('planoSelecionado'))) {

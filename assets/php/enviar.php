@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // Capturar e validar dados do formulário
     $termo_documento = isset($_POST["termo_documento"]) ? "Aceito" : "Não aceito";
     $termo_condicoes = isset($_POST["termo_condicoes"]) ? "Aceito" : "Não aceito";
@@ -69,11 +69,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = "Nova mensagem do formulário";
     $headers = "De: carrinho@ideafy.com.br"; // Substitua pelo email de origem válido no seu domínio
 
-    // Enviar email
+    // Verifica se o email foi enviado com sucesso
     if (mail($to, $subject, $mensagem, $headers)) {
-        echo "Mensagem enviada com sucesso!";
+        // Redireciona para a página de sucesso
+        header("Location: https://www.google.com/");
+        exit;
     } else {
-        echo "Erro ao enviar mensagem.";
+        // Redireciona para a página de erro
+        header("Location: https://www.exemplo.com/erro.html");
+        exit;
     }
 } else {
     echo "Método de requisição inválido.";
