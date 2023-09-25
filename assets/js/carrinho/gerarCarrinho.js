@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name="termo_documento"
                 id="termo_documento"
                 class="termos__checkbox"
+                value="Estou ciente de que
+                mais documentos podem ser solicitados e estarei atento ao meu e-mail,
+                caixa de spam ou WhatsApp."
                 required
               />
               <span class="termos__checkbox-customizado"></span>Estou ciente de que
@@ -97,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name="termo_condicoes"
                 id="termo_condicoes"
                 class="termos__checkbox"
+                value="Estou de acordo com os Termos e Condições do site."
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com os
@@ -112,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name="termo_privacidade"
                 id="termo_privacidade"
                 class="termos__checkbox"
+                value="Estou de acordo com o Termo de Privacidade do site."
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com o
@@ -163,6 +168,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name="termo_documento"
                 id="termo_documento"
                 class="termos__checkbox"
+                value="Estou ciente de que
+                mais documentos podem ser solicitados e estarei atento ao meu e-mail,
+                caixa de spam ou WhatsApp."
                 required
               />
               <span class="termos__checkbox-customizado"></span>Estou ciente de que
@@ -178,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name="termo_condicoes"
                 id="termo_condicoes"
                 class="termos__checkbox"
+                value="Estou de acordo com os Termos e Condições do site."
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com os
@@ -193,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name="termo_privacidade"
                 id="termo_privacidade"
                 class="termos__checkbox"
+                value="Estou de acordo com o Termo de Privacidade do site."
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com o
