@@ -77,12 +77,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n";
 
     // Lidar com o upload de arquivos
-    if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] == UPLOAD_ERR_OK) {
+    if (isset($_FILES['fileInput']) && $_FILES['fileInput']['error'] == UPLOAD_ERR_OK) {
         // Obter informações do arquivo
-        $fileTmpPath = $_FILES['arquivo']['tmp_name'];
-        $fileName = $_FILES['arquivo']['name'];
-        $fileSize = $_FILES['arquivo']['size'];
-        $fileType = $_FILES['arquivo']['type'];
+        $fileTmpPath = $_FILES['fileInput']['tmp_name'];
+        $fileName = $_FILES['fileInput']['name'];
+        $fileSize = $_FILES['fileInput']['size'];
+        $fileType = $_FILES['fileInput']['type'];
 
         // Ler o conteúdo do arquivo
         $fileContent = file_get_contents($fileTmpPath);
