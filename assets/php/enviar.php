@@ -76,11 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $mensagem .= "<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n";
 
-    // 3. Verificar Erros de Upload
-    if ($_FILES["fileInput"]["error"] !== UPLOAD_ERR_OK) {
-        die('Erro no upload do arquivo.');
-    }
-
     // Lidar com o upload de arquivos
     $mensagem .= "Arquivo Enviado: $filename\n";
 
