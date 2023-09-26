@@ -39,43 +39,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Construir mensagem de email
-    $mensagem = "<b>Termo de Documento:</b> $termo_documento\n";
-    $mensagem .= "<b>Termo de Condições:</b> $termo_condicoes\n";
-    $mensagem .= "<b>Termo de Privacidade:</b> $termo_privacidade\n";
-    $mensagem .= "<b>Termo Avulso:</b> $termo_avulso\n";
+    $mensagem = `<b>Termo de Documento:</b> $termo_documento\n`;
+    $mensagem .= `<b>Termo de Condições:</b> $termo_condicoes\n`;
+    $mensagem .= `<b>Termo de Privacidade:</b> $termo_privacidade\n`;
+    $mensagem .= `<b>Termo Avulso:</b> $termo_avulso\n`;
 
-    $mensagem .= "<b>Quem vai registrar a marca?:</b> $pessoaMarca\n";
+    $mensagem .= `<b>Quem vai registrar a marca?:</b> $pessoaMarca\n`;
 
     if (!empty($nomeCompleto) && !empty($cpf)) {
-        $mensagem .= "<b>Nome Completo:</b> $nomeCompleto\n";
-        $mensagem .= "<b>CPF:</b> $cpf\n";
+        $mensagem .= `<b>Nome Completo:</b> $nomeCompleto\n`;
+        $mensagem .= `<b>CPF:</b> $cpf\n`;
     }
 
     if (!empty($razaoSocial) && !empty($porteEmpresa) && !empty($cnpj)) {
-        $mensagem .= "<b>Razão Social:</b> $razaoSocial\n";
-        $mensagem .= "<b>Porte da Empresa:</b> $porteEmpresa\n";
-        $mensagem .= "<b>CNPJ:</b> $cnpj\n";
+        $mensagem .= `<b>Razão Social:</b> $razaoSocial\n`;
+        $mensagem .= `<b>Porte da Empresa:</b> $porteEmpresa\n`;
+        $mensagem .= `<b>CNPJ:</b> $cnpj\n`;
     }
 
-    $mensagem .= "<b>CEP:</b> $cep\n";
-    $mensagem .= "<b>Endereço:</b> $endereco\n";
-    $mensagem .= "<b>Telefone:</b> $telefone\n";
-    $mensagem .= "<b>Email:</b> $email\n";
-    $mensagem .= "<b>Como você prefere que a gente entre em contato?</b> $dadosPessoais\n";
+    $mensagem .= `<b>CEP:</b> $cep\n`;
+    $mensagem .= `<b>Endereço:</b> $endereco\n`;
+    $mensagem .= `<b>Telefone:</b> $telefone\n`;
+    $mensagem .= `<b>Email:</b> $email\n`;
+    $mensagem .= `<b>Como você prefere que a gente entre em contato?</b> $dadosPessoais\n`;
 
-    $mensagem .= "<b>Atividades:</b> $atividades\n";
+    $mensagem .= `<b>Atividades:</b> $atividades\n`;
 
-    $mensagem .= "<b>Nome da Marca:</b> $nomeMarca\n";
-    $mensagem .= "<b>Língua Estrangeira:</b> $linguaEstrangeira\n";
-    $mensagem .= "<b>Tradução:</b> $traducao\n";
-    $mensagem .= "<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n";
+    $mensagem .= `<b>Nome da Marca:</b> $nomeMarca\n`;
+    $mensagem .= `<b>Língua Estrangeira:</b> $linguaEstrangeira\n`;
+
+    if (!empty($traducao)) {
+        $mensagem .= `<b>Tradução:</b> $traducao\n`;
+    }
+    $mensagem .= `<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n`;
 
     // Lidar com o upload de arquivos
     if (isset($_FILES["fileInput"]) && $_FILES["fileInput"]["error"] == UPLOAD_ERR_OK) {
         $nomeArquivo = $_FILES["fileInput"]["name"];
-        $mensagem .= "Arquivo Enviado: $nomeArquivo\n";
+        $mensagem .= `Arquivo Enviado: $nomeArquivo\n`;
     } else {
-        $mensagem .= "Nenhum arquivo enviado.\n";
+        $mensagem .= `Nenhum arquivo enviado.\n`;
     }
 
     // Endereço de email para o qual a mensagem será enviada

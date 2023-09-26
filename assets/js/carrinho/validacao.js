@@ -237,30 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let fileInput = document.getElementById("fileInput");
     let isImageValid = false;  // Inicialmente definido como false
 
-
-    fileInput.addEventListener('change', function () {
-        const file = this.files[0];
-        if (file) {
-            // Verifique o tipo MIME do arquivo
-            if (file.type !== "image/jpeg") {
-                alert("Por favor, selecione uma imagem JPEG válida.");
-                fileInput.value = '';  // Limpa o input
-                isImageValid = false;  // Define como imagem inválida
-                checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
-                return;  // Saia do evento
-            }
-
-            const image = new Image();
-            image.src = URL.createObjectURL(file);
-            image.onload = function () {
-                isImageValid = true;  // Define como imagem válida
-            };
-        } else {
-            isImageValid = false;  // Se nenhum arquivo for selecionado, defina como inválido
-            checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
-        }
-    });
-
     function checarRadioSelecionadoQuintaTela() {
         const linguaEstrangeiraSim = document.querySelector('#temLingua').checked;
         const nomeMarcaInput = document.querySelector('#nomeMarca');
@@ -286,51 +262,21 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    // function uploadFiles(files) {
-    //     const formData = new FormData();
-    //     for (let file of files) {
-    //         formData.append("files[]", file);
-    //     }
-
-    //     const xhr = new XMLHttpRequest();
-    //     xhr.open("POST", "https://jsonplaceholder.typicode.com/todos/1", true);
-
-    //     // Adicionar evento de progresso
-    //     xhr.upload.addEventListener("progress", function (e) {
-    //         if (e.lengthComputable) {
-    //             const percentage = Math.round((e.loaded * 100) / e.total);
-    //             document.getElementById("loadingPercentage").textContent = `${percentage}%`;
-    //             document.getElementById("loadingBar").style.display = 'block';
-    //         }
-    //     });
-
-    //     // Evento ao finalizar o upload
-    //     xhr.addEventListener("load", function () {
-    //         if (xhr.status === 200) {
-    //             console.log("Upload concluído!");
-    //         } else {
-    //             console.error("Erro no upload.");
-    //         }
-    //         document.getElementById("loadingBar").style.display = 'none';
-    //     });
-
-    //     // Iniciar o upload
-    //     xhr.send(formData);
-    // }
-
     function simulateIndividualUpload(file, loadingBarFile, fileDiv, callback) {
         let progress = 0;
         const percentageElement = loadingBarFile.querySelector(".loading-percentage");
-
+    
         const progressInterval = setInterval(function () {
             progress += 5;
             percentageElement.textContent = `${progress}%`;
-
+    
             if (progress >= 100) {
                 clearInterval(progressInterval);
                 loadingBarFile.style.display = 'none';
                 filesFullyLoaded++;  // Incrementa o contador de arquivos carregados
-
+                
+                callback(fileDiv);  // Chama o callback
+    
                 // Se todos os arquivos foram carregados, chame checarRadioSelecionadoQuintaTela
                 if (filesFullyLoaded === allFiles.length) {
                     checarRadioSelecionadoQuintaTela();
@@ -345,27 +291,48 @@ document.addEventListener("DOMContentLoaded", function () {
     let allFiles = [];  // Armazene todos os arquivos selecionados aqui
 
     fileInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+            // Verifique o tipo MIME do arquivo
+            if (file.type !== "image/jpeg") {
+                alert("Por favor, selecione uma imagem JPEG válida.");
+                fileInput.value = '';  // Limpa o input
+                isImageValid = false;  // Define como imagem inválida
+                checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
+                return;  // Saia do evento
+            }
+    
+            const image = new Image();
+            image.src = URL.createObjectURL(file);
+            image.onload = function () {
+                isImageValid = true;  // Define como imagem válida
+            };
+        } else {
+            isImageValid = false;  // Se nenhum arquivo for selecionado, defina como inválido
+            checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
+        }
+        
         filesFullyLoaded = 0;  // Redefina o contador de arquivos carregados
-
+    
         // Filtrar arquivos novos que não estão na lista 'allFiles'
         const newFiles = Array.from(fileInput.files).filter(file => !allFiles.some(f => f.name === file.name));
-
+    
         newFiles.forEach(file => {
             const image = new Image();
             image.src = URL.createObjectURL(file);
-
+    
             image.onload = function () {
                 const fileDiv = document.createElement("div");
                 fileDiv.classList.add('file-upload-item');
-
+    
                 const fileNameSpanDiv = document.createElement("div");
                 fileNameSpanDiv.classList.add('file-name__container');
-
+    
                 const fileNameSpan = document.createElement("span");
                 fileNameSpan.textContent = file.name;
                 fileNameSpan.classList.add('file-name');
                 fileNameSpanDiv.appendChild(fileNameSpan);
-
+    
                 const removeBtn = document.createElement("span");
                 removeBtn.textContent = "X";
                 removeBtn.classList.add('remove-file-btn');
@@ -378,33 +345,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
                 fileNameSpanDiv.appendChild(removeBtn);
-
+    
                 const loadingBarFile = document.createElement("div");
                 loadingBarFile.classList.add("loading-bar-file");
                 loadingBarFile.innerHTML = `Carregando... <span class="loading-percentage">0%</span>`;
-
+    
                 fileListContainer.style.display = 'flex';
                 fileDiv.appendChild(loadingBarFile);
                 fileListContainer.appendChild(fileDiv);
-
+    
                 // Inicia a simulação de upload para esse arquivo
                 simulateIndividualUpload(file, loadingBarFile, fileDiv, function (divElement) {
                     // Esta função será chamada após a simulação do upload ser concluída
                     divElement.appendChild(fileNameSpanDiv);
                 });
-
+    
                 allFiles.push(...newFiles);
             };
         });
-
+    
         if (allFiles.length > 0) {
             fileNameSpan.textContent = "Adicionar mais arquivos";
         } else {
             fileNameSpan.textContent = "Adicionar arquivo";
         }
-
+    
         fileInput.value = '';  // Limpa a seleção atual do input
     });
+    
 
     // Adicione eventos de escuta aos radio buttons e aos outros campos
     radioButtonsComoMarcaUtilizada.forEach((radio) => {
