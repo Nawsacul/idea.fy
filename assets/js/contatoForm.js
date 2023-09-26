@@ -3,9 +3,7 @@ const botaoSubmit = document.querySelector('.contato-formulario__botao');
 contactForm.addEventListener('submit', function (e) {
   e.preventDefault(); // Impede a atualização da página
 
-  console.log('Desativando o botão...');
   botaoSubmit.disabled = true;
-  console.log('Botão desativado.');
 
   const formData = new FormData(contactForm);
 
