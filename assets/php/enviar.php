@@ -127,7 +127,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
     } else {
-        echo "Erro no upload do arquivo.";
+        if (isset($_FILES['fileInput'])) {
+            // Mostrar mensagem de erro baseada no código de erro de upload
+            echo 'Código de Erro de Upload: ' . $_FILES['fileInput']['error'];
+        } else {
+            echo "Nenhum arquivo foi enviado.";
+        }
+        exit;
     }
 } else {
     echo "Método de requisição inválido.";
