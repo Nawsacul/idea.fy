@@ -40,12 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mensagem .= "<b>Quem vai registrar a marca?:</b> $pessoaMarca\n";
 
-    if (empty($nomeCompleto) && empty($cpf)) {
+    if (!empty($nomeCompleto) && !empty($cpf)) {
         $mensagem .= "<b>Nome Completo:</b> $nomeCompleto\n";
         $mensagem .= "<b>CPF:</b> $cpf\n";
     }
 
-    if (empty($razaoSocial) && empty($porteEmpresa) && empty($cnpj)) {
+    if (!empty($razaoSocial) && !empty($porteEmpresa) && !empty($cnpj)) {
         $mensagem .= "<b>Razão Social:</b> $razaoSocial\n";
         $mensagem .= "<b>Porte da Empresa:</b> $porteEmpresa\n";
         $mensagem .= "<b>CNPJ:</b> $cnpj\n";
