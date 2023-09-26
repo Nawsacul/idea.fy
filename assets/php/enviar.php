@@ -77,27 +77,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n";
 
     // Lidar com o upload de arquivos
-    $mensagem .= "Arquivo Enviado: $filename\n";
+    if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] == UPLOAD_ERR_OK) {
+        // Obter informações do arquivo
+        $fileTmpPath = $_FILES['arquivo']['tmp_name'];
+        $fileName = $_FILES['arquivo']['name'];
+        $fileSize = $_FILES['arquivo']['size'];
+        $fileType = $_FILES['arquivo']['type'];
 
-    // Endereço de email para o qual a mensagem será enviada
-    $to = "lucaswan09@gmail.com";
-    $subject = "Novo pedido - Pacote" . $planoSelecionado;
-    $headers = "De: carrinho@ideafy.com.br"; // Substitua pelo email de origem válido no seu domínio
-    // Adicionar cabeçalho de conteúdo HTML
-    $headers = "MIME-Version: 1.0\n";
-    $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
+        // Ler o conteúdo do arquivo
+        $fileContent = file_get_contents($fileTmpPath);
+        $encodedContent = chunk_split(base64_encode($fileContent));
 
-    // Verifica se o email foi enviado com sucesso
-    if (mail($to, $subject, $mensagem, $headers)) {
-        // Redireciona para a página de sucesso
-        header("Location: ../../envio-sucesso.html");
-        exit;
+        // Definir o limite
+        $separator = md5(time());
+        $eol = "\r\n";
+
+        // Headers do e-mail
+        $headers = "From: carrinho@ideafy.com.br" . $eol;
+        $headers .= "MIME-Version: 1.0" . $eol;
+        $headers .= "Content-Type: multipart/mixed; boundary=\"" . $separator . "\"" . $eol;
+
+        // Corpo do e-mail
+        $body = "--" . $separator . $eol;
+        $body .= "Content-Type: text/html; charset=\"iso-8859-1\"" . $eol;
+        $body .= "Content-Transfer-Encoding: 7bit" . $eol;
+        $body .= $mensagem . $eol;
+
+        // Anexar arquivo
+        $body .= "--" . $separator . $eol;
+        $body .= "Content-Type: " . $fileType . "; name=\"" . $fileName . "\"" . $eol;
+        $body .= "Content-Transfer-Encoding: base64" . $eol;
+        $body .= "Content-Disposition: attachment" . $eol;
+        $body .= $encodedContent . $eol;
+        $body .= "--" . $separator . "--";
+
+        // Endereço de email para o qual a mensagem será enviada
+        $to = "lucaswan09@gmail.com";
+        $subject = "Novo pedido - Pacote" . $planoSelecionado;
+        $headers = "De: carrinho@ideafy.com.br"; // Substitua pelo email de origem válido no seu domínio
+
+        // Verifica se o email foi enviado com sucesso
+        if (mail($to, $subject, $body, $headers)) {
+            // Redireciona para a página de sucesso
+            header("Location: ../../envio-sucesso.html");
+            exit;
+        } else {
+            // Redireciona para a página de erro
+            header("Location: ../../404.shtml");
+            exit;
+        }
     } else {
-        // Redireciona para a página de erro
-        header("Location: ../../404.shtml");
-        exit;
+        echo "Erro no upload do arquivo.";
     }
 } else {
     echo "Método de requisição inválido.";
 }
-?>
