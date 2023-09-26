@@ -1,14 +1,4 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'assets/php/PHPMailer-6.8.1/src/Exception.php';
-require 'assets/php/PHPMailer-6.8.1/src/PHPMailer.php';
-require 'assets/php/PHPMailer-6.8.1/src/SMTP.php';
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -105,38 +95,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Lidar com o upload de arquivos
     $mensagem .= "Arquivo Enviado: $filename\n";
 
-    $mail = new PHPMailer(true);
+    // Endereço de email para o qual a mensagem será enviada
+    $to = "lucaswan09@gmail.com";
+    $subject = "Novo pedido - Pacote" . $planoSelecionado;
+    $headers = "De: carrinho@ideafy.com.br"; // Substitua pelo email de origem válido no seu domínio
+    // Adicionar cabeçalho de conteúdo HTML
+    $headers = "MIME-Version: 1.0\n";
+    $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
 
-    try {
-        // Configurações do servidor
-        $mail->isSMTP();                                            
-        $mail->Host       = 'mail.ideafy.com.br';                    
-        $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'carrinho@ideafy.com.br';                     
-        $mail->Password   = 'TesteEmail123.';                              
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL           
-        $mail->Port       = 465;                                    
-
-        // Destinatários
-        $mail->setFrom('carrinho@ideafy.com.br', 'Mailer');
-        $mail->addAddress('lucaswan09@gmail.com');     
-
-        // Anexos
-        $mail->addAttachment($_FILES['fileInput']['tmp_name'], $filename);         
-
-        // Conteúdo
-        $mail->isHTML(true);                                  
-        $mail->Subject = "Novo pedido - $planoSelecionado";
-        $mail->Body    = nl2br($mensagem);
-        $mail->AltBody = strip_tags($mensagem);
-
-        $mail->send();
+    // Verifica se o email foi enviado com sucesso
+    if (mail($to, $subject, $mensagem, $headers)) {
+        // Redireciona para a página de sucesso
         header("Location: ../../envio-sucesso.html");
         exit;
-    } catch (Exception $e) {
+    } else {
+        // Redireciona para a página de erro
         header("Location: ../../404.shtml");
         exit;
     }
 } else {
     echo "Método de requisição inválido.";
 }
+?>
