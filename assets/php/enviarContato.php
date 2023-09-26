@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = filter_input(INPUT_POST, "telefone", FILTER_SANITIZE_STRING);
     $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_STRING);
 
-    $contato = "<p><b>Nome:</b></p> $nome\n";
-    $contato = "<p><b>Email:</b></p> $email\n";
-    $contato = "<p><b>Telefone:</b></p> $telefone\n";
-    $contato = "<p><b>Mensagem:</b></p> $mensagem\n";
+    $contato = "<p><b>Nome:</b> $nome</p>\n";
+    $contato .= "<p><b>Email:</b> $email</p>\n";
+    $contato .= "<p><b>Telefone:</b> $telefone</p>\n";
+    $contato .= "<p><b>Mensagem:</b> $mensagem</p>\n";
 
     // Cria uma instância do PHPMailer
     $mail = new PHPMailer(true);
