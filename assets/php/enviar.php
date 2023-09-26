@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     } catch (Exception $e) {
         // Retorna falha e a URL de redirecionamento
-        echo json_encode(['success' => false, 'redirectUrl' => '../../404.shtml']);
+        echo json_encode(['success' => false, 'redirectUrl' => '../../404']);
         exit;
     }
 } else {

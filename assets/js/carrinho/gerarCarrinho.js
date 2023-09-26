@@ -44,7 +44,7 @@ function configuraBarraProgresso(plano) {
 document.addEventListener('DOMContentLoaded', function () {
   const planoSelecionado = localStorage.getItem('planoSelecionado');  // Read the selected plan from localStorage
   configuraBarraProgresso(planoSelecionado);
-  const paginaOrigem = localStorage.getItem('paginaOrigem') || 'index.html';  // Use index.html como padrão
+  const paginaOrigem = localStorage.getItem('paginaOrigem') || 'index';  // Use index como padrão
 
   const planoPrimeiraTela = document.getElementById('carrinho-container-itens');
 
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com os
-              <a class="termos__texto-destaque" href="termos-e-condicoes.html"> Termos e Condições</a> do
+              <a class="termos__texto-destaque" href="termos-e-condicoes"> Termos e Condições</a> do
               site.</label
             >
           </div>
@@ -120,14 +120,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com o
-              <a class="termos__texto-destaque" href="termo-de-privacidade.html">Termo de Privacidade</a> do
+              <a class="termos__texto-destaque" href="termo-de-privacidade">Termo de Privacidade</a> do
               site.</label
             >
           </div>
         </div>
 
         <div class="botoes__container">
-          <a href="index.html" class="link" id="linkVoltar"
+          <a href="index" class="link" id="linkVoltar"
           >
             <span class="link__texto">Voltar</span>
           </a>
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com os
-              <a class="termos__texto-destaque" href="termos-e-condicoes.html"> Termos e Condições</a> do
+              <a class="termos__texto-destaque" href="termos-e-condicoes"> Termos e Condições</a> do
               site.</label
             >
           </div>
@@ -206,14 +206,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 required
               /><span class="termos__checkbox-customizado"></span>Estou de acordo
               com o
-              <a class="termos__texto-destaque" href="termo-de-privacidade.html">Termo de Privacidade</a> do
+              <a class="termos__texto-destaque" href="termo-de-privacidade">Termo de Privacidade</a> do
               site.</label
             >
           </div>
         </div>
 
         <div class="botoes__container">
-          <a href="index.html" class="link" id="linkVoltar"
+          <a href="index" class="link" id="linkVoltar"
           >
             <span class="link__texto">Voltar</span>
           </a>
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
     planoPrimeiraTela.innerHTML = `
     <div class="plano__nao-encontrado">
     <h2 class="plano__texto-nao-encontrado">Plano não encontrado.</h2>
-    <a href="index.html" class="botao plano__link-nao-encontrado"
+    <a href="index" class="botao plano__link-nao-encontrado"
     >Voltar</a>
     </div>
     `;

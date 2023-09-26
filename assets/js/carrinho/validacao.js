@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch((error) => {
                 console.error('Error:', error);
                 // Em caso de erro na requisição, redirecione para a página 404
-                window.location.href = '../../404.shtml';
+                window.location.href = '../../404';
             });
     });
 

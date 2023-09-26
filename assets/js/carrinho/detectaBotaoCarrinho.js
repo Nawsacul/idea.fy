@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('planoSelecionado', selectedPlan);  // Salvar o plano selecionado no localStorage
 
             // Salva a página de origem no localStorage se for diferente do carrinho
-            if (!window.location.pathname.includes('carrinho.html') === true) {
+            if (!window.location.pathname.includes('carrinho') === true) {
                 localStorage.setItem('paginaOrigem', window.location.pathname);
             }
 
-            window.location.href = 'carrinho.html';  // Redirecionar para a página do carrinho
+            window.location.href = 'carrinho';  // Redirecionar para a página do carrinho
         });
     });
 });

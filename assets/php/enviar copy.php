@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../../envio-sucesso.html");
         exit;
     } else {
-        header("Location: ../../404.shtml");
+        header("Location: ../../404");
         exit;
     }
 } else {
