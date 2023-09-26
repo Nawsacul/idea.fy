@@ -29,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $traducao = filter_input(INPUT_POST, "traducao", FILTER_SANITIZE_STRING) ?? '';
     $comoMarcaUtilizada = filter_input(INPUT_POST, "comoMarcaUtilizada", FILTER_SANITIZE_STRING) ?? '';
 
+    $planoSelecionado = filter_input(INPUT_POST, "planoSelecionado", FILTER_SANITIZE_STRING);
+
+
     // Construir mensagem de email
     $mensagem = "<b>Termo de Documento:</b> $termo_documento\n";
     $mensagem .= "<b>Termo de Condições:</b> $termo_condicoes\n";
@@ -71,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Endereço de email para o qual a mensagem será enviada
     $to = "lucaswan09@gmail.com";
-    $subject = "Nova mensagem do formulário";
+    $subject = "Novo pedido - Plano " . $planoSelecionado;
     $headers = "De: carrinho@ideafy.com.br"; // Substitua pelo email de origem válido no seu domínio
 
     // Verifica se o email foi enviado com sucesso
