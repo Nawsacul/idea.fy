@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Envia a formData usando AJAX
-        fetch('../../php/enviar.php', {
+        fetch('assets/php/enviar.php', {
             method: 'POST',
             body: formData,
         })
