@@ -42,36 +42,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     // Construir mensagem de email
-    $mensagem = "<b>Termo de Documento:</b> $termo_documento\n";
-    $mensagem .= "<b>Termo de Condições:</b> $termo_condicoes\n";
-    $mensagem .= "<b>Termo de Privacidade:</b> $termo_privacidade\n";
-    $mensagem .= "<b>Termo Avulso:</b> $termo_avulso\n";
+    $mensagem = "<p><b>Termo de Documento:</b></p> $termo_documento\n";
+    $mensagem .= "<p><b>Termo de Condições:</b></p> $termo_condicoes\n";
+    $mensagem .= "<p><b>Termo de Privacidade:</b></p> $termo_privacidade\n";
+    $mensagem .= "<p><b>Termo Avulso:</b></p> $termo_avulso\n";
 
-    $mensagem .= "<b>Quem vai registrar a marca?:</b> $pessoaMarca\n";
+    $mensagem .= "<p><b>Quem vai registrar a marca?:</b></p> $pessoaMarca\n";
 
     if (!empty($nomeCompleto) && !empty($cpf)) {
-        $mensagem .= "<b>Nome Completo:</b> $nomeCompleto\n";
-        $mensagem .= "<b>CPF:</b> $cpf\n";
+        $mensagem .= "<p><b>Nome Completo:</b></p> $nomeCompleto\n";
+        $mensagem .= "<p><b>CPF:</b></p> $cpf\n";
     }
 
     if (!empty($razaoSocial) && !empty($porteEmpresa) && !empty($cnpj)) {
-        $mensagem .= "<b>Razão Social:</b> $razaoSocial\n";
-        $mensagem .= "<b>Porte da Empresa:</b> $porteEmpresa\n";
-        $mensagem .= "<b>CNPJ:</b> $cnpj\n";
+        $mensagem .= "<p><b>Razão Social:</b></p> $razaoSocial\n";
+        $mensagem .= "<p><b>Porte da Empresa:</b></p> $porteEmpresa\n";
+        $mensagem .= "<p><b>CNPJ:</b></p> $cnpj\n";
     }
 
-    $mensagem .= "<b>CEP:</b> $cep\n";
-    $mensagem .= "<b>Endereço:</b> $endereco\n";
-    $mensagem .= "<b>Telefone:</b> $telefone\n";
-    $mensagem .= "<b>Email:</b> $email\n";
-    $mensagem .= "<b>Como você prefere que a gente entre em contato?</b> $dadosPessoais\n";
+    $mensagem .= "<p><b>CEP:</b></p> $cep\n";
+    $mensagem .= "<p><b>Endereço:</b></p> $endereco\n";
+    $mensagem .= "<p><b>Telefone:</b></p> $telefone\n";
+    $mensagem .= "<p><b>Email:</b></p> $email\n";
+    $mensagem .= "<p><b>Como você prefere que a gente entre em contato?</b></p> $dadosPessoais\n";
 
-    $mensagem .= "<b>Atividades:</b> $atividades\n";
+    $mensagem .= "<p><b>Atividades:</b></p> $atividades\n";
 
-    $mensagem .= "<b>Nome da Marca:</b> $nomeMarca\n";
-    $mensagem .= "<b>Língua Estrangeira:</b> $linguaEstrangeira\n";
-    $mensagem .= "<b>Tradução:</b> $traducao\n";
-    $mensagem .= "<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n";
+    $mensagem .= "<p><b>Nome da Marca:</b></p> $nomeMarca\n";
+    $mensagem .= "<p><b>Língua Estrangeira:</b></p> $linguaEstrangeira\n";
+    $mensagem .= "<p><b>Tradução:</b></p> $traducao\n";
+    $mensagem .= "<p><b>Como a Marca é Utilizada:</b></p> $comoMarcaUtilizada\n";
 
     // Cria uma instância do PHPMailer
     $mail = new PHPMailer(true);
@@ -105,10 +105,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Body    = $mensagem;
 
         // Anexar arquivo, se presente
-        if (isset($_FILES["fileInput"]) && $_FILES["fileInput"]["error"] == UPLOAD_ERR_OK) {
-            $fileTmpPath = $_FILES["fileInput"]["tmp_name"];
-            $fileName = $_FILES["fileInput"]["name"];
-            $mail->addAttachment($fileTmpPath, $fileName);
+        if (isset($_FILES["fileInput"])) {
+            if ($_FILES["fileInput"]["error"] == UPLOAD_ERR_OK) {
+                $fileTmpPath = $_FILES["fileInput"]["tmp_name"];
+                $fileName = $_FILES["fileInput"]["name"];
+                $mail->addAttachment($fileTmpPath, $fileName);
+                $mensagem .= "Arquivo Enviado: $fileName\n";
+            } else {
+                // Adiciona uma mensagem de erro ao e-mail se o upload falhar
+                $mensagem .= "Erro no upload do arquivo: " . $_FILES["fileInput"]["error"] . "\n";
+            }
+        } else {
+            $mensagem .= "Nenhum arquivo enviado.\n";
         }
 
         // Enviar e-mail
