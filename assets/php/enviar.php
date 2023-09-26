@@ -124,10 +124,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Enviar e-mail
         $mail->send();
-        header("Location: ../../envio-sucesso.html");
+        // Retorna sucesso
+        echo json_encode(['success' => true]);
         exit;
     } catch (Exception $e) {
-        header("Location: ../../404.shtml");
+        // Retorna falha e a URL de redirecionamento
+        echo json_encode(['success' => false, 'redirectUrl' => '../../404.shtml']);
         exit;
     }
 } else {

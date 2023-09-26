@@ -1,3 +1,5 @@
+import { planos } from './planos.js';
+
 document.addEventListener("DOMContentLoaded", function () {
     // Funções e variáveis relacionadas à primeira tela
     const checkboxes = document.querySelectorAll('.termos__checkbox');
@@ -372,10 +374,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const formElement = document.querySelector('.carrinho');
+    const preloader = document.querySelector('#preloader');
 
     // Quando o formulário é submetido
     formElement.addEventListener("submit", function (e) {
         e.preventDefault(); // Previne o envio padrão do formulário
+
+        // Exibe o preloader
+        preloader.style.display = 'flex';
 
         const formData = new FormData();
 
@@ -397,9 +403,23 @@ document.addEventListener("DOMContentLoaded", function () {
             method: 'POST',
             body: formData,
         })
-            .then(response => response.text())
-            .then(data => console.log(data))
-            .catch((error) => console.error('Error:', error));
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Se o envio foi bem-sucedido, redireciona diretamente para a página de pagamento
+                    const planoSelecionado = localStorage.getItem('planoSelecionado');
+                    const planoInfo = planos[planoSelecionado];
+                    window.location.href = planoInfo.pagamento;
+                } else {
+                    // Se ocorreu um erro, redireciona para a página de erro
+                    window.location.href = data.redirectUrl;
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // Em caso de erro na requisição, redirecione para a página 404
+                window.location.href = '../../404.shtml';
+            });
     });
 
     // Adicione eventos de escuta aos radio buttons e aos outros campos
