@@ -262,117 +262,68 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    function simulateIndividualUpload(file, loadingBarFile, fileDiv, callback) {
-        let progress = 0;
-        const percentageElement = loadingBarFile.querySelector(".loading-percentage");
-    
-        const progressInterval = setInterval(function () {
-            progress += 5;
-            percentageElement.textContent = `${progress}%`;
-    
-            if (progress >= 100) {
-                clearInterval(progressInterval);
-                loadingBarFile.style.display = 'none';
-                filesFullyLoaded++;  // Incrementa o contador de arquivos carregados
-                
-                callback(fileDiv);  // Chama o callback
-    
-                // Se todos os arquivos foram carregados, chame checarRadioSelecionadoQuintaTela
-                if (filesFullyLoaded === allFiles.length) {
-                    checarRadioSelecionadoQuintaTela();
-                }
-            }
-        }, 200);
-    }
-
     const fileNameSpan = document.querySelector(".file-name");
     const fileListContainer = document.querySelector(".custom-file-upload__container-arquivos");
 
-    let allFiles = [];  // Armazene todos os arquivos selecionados aqui
+    let allFiles = [];
 
     fileInput.addEventListener("change", function () {
         const file = this.files[0];
-        if (file) {
-            // Verifique o tipo MIME do arquivo
-            if (file.type !== "image/jpeg") {
-                alert("Por favor, selecione uma imagem JPEG válida.");
-                fileInput.value = '';  // Limpa o input
-                isImageValid = false;  // Define como imagem inválida
-                checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
-                return;  // Saia do evento
-            }
-    
-            const image = new Image();
-            image.src = URL.createObjectURL(file);
-            image.onload = function () {
-                isImageValid = true;  // Define como imagem válida
-            };
-        } else {
-            isImageValid = false;  // Se nenhum arquivo for selecionado, defina como inválido
-            checarRadioSelecionadoQuintaTela();  // Verifica novamente a validação
+        if (!file) return;
+
+        if (file.type !== "image/jpeg") {
+            alert("Por favor, selecione uma imagem JPEG válida.");
+            return;
         }
-        
-        filesFullyLoaded = 0;  // Redefina o contador de arquivos carregados
-    
-        // Filtrar arquivos novos que não estão na lista 'allFiles'
-        const newFiles = Array.from(fileInput.files).filter(file => !allFiles.some(f => f.name === file.name));
-    
-        newFiles.forEach(file => {
-            const image = new Image();
-            image.src = URL.createObjectURL(file);
-    
-            image.onload = function () {
-                const fileDiv = document.createElement("div");
-                fileDiv.classList.add('file-upload-item');
-    
-                const fileNameSpanDiv = document.createElement("div");
-                fileNameSpanDiv.classList.add('file-name__container');
-    
-                const fileNameSpan = document.createElement("span");
-                fileNameSpan.textContent = file.name;
-                fileNameSpan.classList.add('file-name');
-                fileNameSpanDiv.appendChild(fileNameSpan);
-    
-                const removeBtn = document.createElement("span");
-                removeBtn.textContent = "X";
-                removeBtn.classList.add('remove-file-btn');
-                removeBtn.onclick = function () {
-                    allFiles = allFiles.filter(f => f.name !== file.name);
-                    fileDiv.remove();
-                    if (allFiles.length === 0) {
-                        fileNameSpan.textContent = "Adicionar arquivo";
-                        fileListContainer.style.display = 'none';
-                    }
-                }
-                fileNameSpanDiv.appendChild(removeBtn);
-    
-                const loadingBarFile = document.createElement("div");
-                loadingBarFile.classList.add("loading-bar-file");
-                loadingBarFile.innerHTML = `Carregando... <span class="loading-percentage">0%</span>`;
-    
-                fileListContainer.style.display = 'flex';
-                fileDiv.appendChild(loadingBarFile);
-                fileListContainer.appendChild(fileDiv);
-    
-                // Inicia a simulação de upload para esse arquivo
-                simulateIndividualUpload(file, loadingBarFile, fileDiv, function (divElement) {
-                    // Esta função será chamada após a simulação do upload ser concluída
-                    divElement.appendChild(fileNameSpanDiv);
-                });
-    
-                allFiles.push(...newFiles);
-            };
+
+        const fileDiv = document.createElement("div");
+        fileDiv.classList.add('file-upload-item');
+
+        const loadingBarFile = document.createElement("div");
+        loadingBarFile.classList.add("loading-bar-file");
+        const percentageElement = document.createElement("span");
+        percentageElement.classList.add("loading-percentage");
+        percentageElement.textContent = "0%";
+        loadingBarFile.appendChild(percentageElement);
+
+        fileDiv.appendChild(loadingBarFile);
+        fileListContainer.appendChild(fileDiv);
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.upload.addEventListener("progress", function (e) {
+            if (e.lengthComputable) {
+                const progress = Math.round((e.loaded * 100) / e.total);
+                percentageElement.textContent = `${progress}%`;
+            }
         });
-    
+
+        xhr.addEventListener("load", function () {
+            if (xhr.status === 200) {
+                // Upload concluído com sucesso
+                loadingBarFile.style.display = 'none';
+                // Adicione o código para lidar com sucesso, por exemplo, mostrar o nome do arquivo
+            } else {
+                // Ocorreu um erro durante o upload
+                alert("Erro no upload do arquivo");
+            }
+        });
+
+        const formData = new FormData();
+        formData.append("fileInput", file);
+
+        xhr.open("POST", "assets/php/enviar.php", true);
+        xhr.send(formData);
+
+        allFiles.push(file);
+
         if (allFiles.length > 0) {
             fileNameSpan.textContent = "Adicionar mais arquivos";
         } else {
             fileNameSpan.textContent = "Adicionar arquivo";
         }
-    
-        fileInput.value = '';  // Limpa a seleção atual do input
     });
-    
+
 
     // Adicione eventos de escuta aos radio buttons e aos outros campos
     radioButtonsComoMarcaUtilizada.forEach((radio) => {
