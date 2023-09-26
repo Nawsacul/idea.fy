@@ -6,6 +6,10 @@ require 'assets/php/PHPMailer-6.8.1/src/Exception.php';
 require 'assets/php/PHPMailer-6.8.1/src/PHPMailer.php';
 require 'assets/php/PHPMailer-6.8.1/src/SMTP.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Capturar e validar dados do formulário
