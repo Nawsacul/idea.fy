@@ -1,6 +1,9 @@
 const contactForm = document.getElementById('contact-form');
+const botaoSubmit = document.querySelector('.contato-formulario__botao');
 contactForm.addEventListener('submit', function (e) {
   e.preventDefault(); // Impede a atualização da página
+
+  botaoSubmit.disabled = true;
 
   const formData = new FormData(contactForm);
 
