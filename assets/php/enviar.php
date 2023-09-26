@@ -7,33 +7,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $termo_privacidade = isset($_POST["termo_privacidade"]) ? "Aceito" : "Não aceito";
     $termo_avulso = isset($_POST["termo_avulso"]) ? "Aceito" : 'Não existente';
 
-    $pessoaMarca = filter_input(INPUT_POST, "pessoaMarca", FILTER_SANITIZE_STRING);
+    $pessoaMarca = filter_input(INPUT_POST, "pessoaMarca");
     if (empty($pessoaMarca)) {
         echo "Tipo de pessoa/marca é obrigatório.";
         exit;
     }
 
-    $nomeCompleto = filter_input(INPUT_POST, "nomeCompleto", FILTER_SANITIZE_STRING) ?? '';
-    $cpf = filter_input(INPUT_POST, "cpf", FILTER_SANITIZE_STRING) ?? '';
+    $nomeCompleto = filter_input(INPUT_POST, "nomeCompleto") ?? '';
+    $cpf = filter_input(INPUT_POST, "cpf") ?? '';
 
-    $razaoSocial = filter_input(INPUT_POST, "razaoSocial", FILTER_SANITIZE_STRING) ?? '';
-    $porteEmpresa = filter_input(INPUT_POST, "porteEmpresa", FILTER_SANITIZE_STRING) ?? '';
-    $cnpj = filter_input(INPUT_POST, "cnpj", FILTER_SANITIZE_STRING) ?? '';
+    $razaoSocial = filter_input(INPUT_POST, "razaoSocial") ?? '';
+    $porteEmpresa = filter_input(INPUT_POST, "porteEmpresa") ?? '';
+    $cnpj = filter_input(INPUT_POST, "cnpj") ?? '';
 
-    $cep = filter_input(INPUT_POST, "cep", FILTER_SANITIZE_STRING);
-    $endereco = filter_input(INPUT_POST, "endereco", FILTER_SANITIZE_STRING);
-    $telefone = filter_input(INPUT_POST, "telefone", FILTER_SANITIZE_STRING);
+    $cep = filter_input(INPUT_POST, "cep");
+    $endereco = filter_input(INPUT_POST, "endereco");
+    $telefone = filter_input(INPUT_POST, "telefone");
     $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-    $dadosPessoais = filter_input(INPUT_POST, "dadosPessoais", FILTER_SANITIZE_STRING) ?? '';
+    $dadosPessoais = filter_input(INPUT_POST, "dadosPessoais") ?? '';
 
-    $atividades = filter_input(INPUT_POST, "atividades", FILTER_SANITIZE_STRING) ?? '';
-    $nomeMarca = filter_input(INPUT_POST, "nomeMarca", FILTER_SANITIZE_STRING) ?? '';
-    $linguaEstrangeira = filter_input(INPUT_POST, "linguaEstrangeira", FILTER_SANITIZE_STRING) ?? '';
-    $traducao = filter_input(INPUT_POST, "traducao", FILTER_SANITIZE_STRING) ?? '';
-    $comoMarcaUtilizada = filter_input(INPUT_POST, "comoMarcaUtilizada", FILTER_SANITIZE_STRING) ?? '';
+    $atividades = filter_input(INPUT_POST, "atividades") ?? '';
+    $nomeMarca = filter_input(INPUT_POST, "nomeMarca") ?? '';
+    $linguaEstrangeira = filter_input(INPUT_POST, "linguaEstrangeira") ?? '';
+    $traducao = filter_input(INPUT_POST, "traducao") ?? '';
+    $comoMarcaUtilizada = filter_input(INPUT_POST, "comoMarcaUtilizada") ?? '';
 
-    $planoSelecionado = filter_input(INPUT_POST, "planoSelecionado", FILTER_SANITIZE_STRING);
+    $planoSelecionado = filter_input(INPUT_POST, "planoSelecionado");
 
     if (!$email) {
         echo "Email inválido.";
@@ -80,16 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_FILES["fileInput"]["error"] !== UPLOAD_ERR_OK) {
         die('Erro no upload do arquivo.');
     }
-
-    // 1. Validar o Tipo de Arquivo
-    $allowedMimeTypes = ['image/jpeg', 'image/jpg'];
-    if (!in_array($_FILES['fileInput']['type'], $allowedMimeTypes)) {
-        die('Tipo de arquivo não permitido.');
-    }
-
-    // 6. Limpar Nomes de Arquivos
-    $filename = basename($_FILES['fileInput']['name']);
-    $filename = preg_replace("/[^A-Z0-9._-]/i", "_", $filename);
 
     // Lidar com o upload de arquivos
     $mensagem .= "Arquivo Enviado: $filename\n";
