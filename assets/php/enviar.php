@@ -33,60 +33,74 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $traducao = filter_input(INPUT_POST, "traducao", FILTER_SANITIZE_STRING) ?? '';
     $comoMarcaUtilizada = filter_input(INPUT_POST, "comoMarcaUtilizada", FILTER_SANITIZE_STRING) ?? '';
 
+    $planoSelecionado = filter_input(INPUT_POST, "planoSelecionado", FILTER_SANITIZE_STRING);
+
     if (!$email) {
         echo "Email inválido.";
         exit;
     }
 
     // Construir mensagem de email
-    $mensagem = `<b>Termo de Documento:</b> $termo_documento\n`;
-    $mensagem .= `<b>Termo de Condições:</b> $termo_condicoes\n`;
-    $mensagem .= `<b>Termo de Privacidade:</b> $termo_privacidade\n`;
-    $mensagem .= `<b>Termo Avulso:</b> $termo_avulso\n`;
 
-    $mensagem .= `<b>Quem vai registrar a marca?:</b> $pessoaMarca\n`;
+    $mensagem = "<b>Termo de Documento:</b> $termo_documento\n";
+    $mensagem .= "<b>Termo de Condições:</b> $termo_condicoes\n";
+    $mensagem .= "<b>Termo de Privacidade:</b> $termo_privacidade\n";
+    $mensagem .= "<b>Termo Avulso:</b> $termo_avulso\n";
+
+    $mensagem .= "<b>Quem vai registrar a marca?:</b> $pessoaMarca\n";
 
     if (!empty($nomeCompleto) && !empty($cpf)) {
-        $mensagem .= `<b>Nome Completo:</b> $nomeCompleto\n`;
-        $mensagem .= `<b>CPF:</b> $cpf\n`;
+        $mensagem .= "<b>Nome Completo:</b> $nomeCompleto\n";
+        $mensagem .= "<b>CPF:</b> $cpf\n";
     }
 
     if (!empty($razaoSocial) && !empty($porteEmpresa) && !empty($cnpj)) {
-        $mensagem .= `<b>Razão Social:</b> $razaoSocial\n`;
-        $mensagem .= `<b>Porte da Empresa:</b> $porteEmpresa\n`;
-        $mensagem .= `<b>CNPJ:</b> $cnpj\n`;
+        $mensagem .= "<b>Razão Social:</b> $razaoSocial\n";
+        $mensagem .= "<b>Porte da Empresa:</b> $porteEmpresa\n";
+        $mensagem .= "<b>CNPJ:</b> $cnpj\n";
     }
 
-    $mensagem .= `<b>CEP:</b> $cep\n`;
-    $mensagem .= `<b>Endereço:</b> $endereco\n`;
-    $mensagem .= `<b>Telefone:</b> $telefone\n`;
-    $mensagem .= `<b>Email:</b> $email\n`;
-    $mensagem .= `<b>Como você prefere que a gente entre em contato?</b> $dadosPessoais\n`;
+    $mensagem .= "<b>CEP:</b> $cep\n";
+    $mensagem .= "<b>Endereço:</b> $endereco\n";
+    $mensagem .= "<b>Telefone:</b> $telefone\n";
+    $mensagem .= "<b>Email:</b> $email\n";
+    $mensagem .= "<b>Como você prefere que a gente entre em contato?</b> $dadosPessoais\n";
 
-    $mensagem .= `<b>Atividades:</b> $atividades\n`;
+    $mensagem .= "<b>Atividades:</b> $atividades\n";
 
-    $mensagem .= `<b>Nome da Marca:</b> $nomeMarca\n`;
-    $mensagem .= `<b>Língua Estrangeira:</b> $linguaEstrangeira\n`;
+    $mensagem .= "<b>Nome da Marca:</b> $nomeMarca\n";
+    $mensagem .= "<b>Língua Estrangeira:</b> $linguaEstrangeira\n";
 
     if (!empty($traducao)) {
-        $mensagem .= `<b>Tradução:</b> $traducao\n`;
+        $mensagem .= "<b>Tradução:</b> $traducao\n";
     }
-    $mensagem .= `<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n`;
+    $mensagem .= "<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n";
+
+    // 3. Verificar Erros de Upload
+    if ($_FILES["fileInput"]["error"] !== UPLOAD_ERR_OK) {
+        die('Erro no upload do arquivo.');
+    }
+
+    // 1. Validar o Tipo de Arquivo
+    $allowedMimeTypes = ['image/jpeg', 'image/jpg'];
+    if (!in_array($_FILES['fileInput']['type'], $allowedMimeTypes)) {
+        die('Tipo de arquivo não permitido.');
+    }
+
+    // 6. Limpar Nomes de Arquivos
+    $filename = basename($_FILES['fileInput']['name']);
+    $filename = preg_replace("/[^A-Z0-9._-]/i", "_", $filename);
 
     // Lidar com o upload de arquivos
-    if (isset($_FILES["fileInput"]) && $_FILES["fileInput"]["error"] == UPLOAD_ERR_OK) {
-        $nomeArquivo = $_FILES["fileInput"]["name"];
-        $mensagem .= `Arquivo Enviado: $nomeArquivo\n`;
-    } else {
-        $mensagem .= `Nenhum arquivo enviado.\n`;
-    }
+    $mensagem .= "Arquivo Enviado: $filename\n";
 
     // Endereço de email para o qual a mensagem será enviada
     $to = "lucaswan09@gmail.com";
-    $subject = "Nova mensagem do formulário";
+    $subject = "Novo pedido - Pacote" . $planoSelecionado;
     $headers = "De: carrinho@ideafy.com.br"; // Substitua pelo email de origem válido no seu domínio
     // Adicionar cabeçalho de conteúdo HTML
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $headers = "MIME-Version: 1.0\n";
+    $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
 
     // Verifica se o email foi enviado com sucesso
     if (mail($to, $subject, $mensagem, $headers)) {

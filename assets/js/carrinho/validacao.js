@@ -394,6 +394,8 @@ document.addEventListener("DOMContentLoaded", function () {
         checarRadioSelecionadoQuintaTela();
     });
 
+    document.getElementById('planoSelecionado').value = localStorage.getItem('planoSelecionado');
+
     // Verificar o estado inicial da quinta tela
     checarRadioSelecionadoQuintaTela();
 });
