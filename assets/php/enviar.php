@@ -108,14 +108,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // // Configurações do servidor
-        // $mail->isSMTP();                                            
-        // $mail->Host       = 'smtp.seudominio.com';                    
-        // $mail->SMTPAuth   = true;                                   
-        // $mail->Username   = 'carrinho@ideafy.com.br';                     
-        // $mail->Password   = 'sua_senha';                              
-        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-        // $mail->Port       = 587;                                    
+        // Configurações do servidor
+        $mail->isSMTP();                                            
+        $mail->Host       = 'mail.ideafy.com.br';                    
+        $mail->SMTPAuth   = true;                                   
+        $mail->Username   = 'carrinho@ideafy.com.br';                     
+        $mail->Password   = 'TesteEmail123.';                              
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // SSL           
+        $mail->Port       = 465;                                    
 
         // Destinatários
         $mail->setFrom('carrinho@ideafy.com.br', 'Mailer');
