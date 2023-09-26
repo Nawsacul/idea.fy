@@ -70,7 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mensagem .= "<p><b>Nome da Marca:</b></p> $nomeMarca\n";
     $mensagem .= "<p><b>Língua Estrangeira:</b></p> $linguaEstrangeira\n";
-    $mensagem .= "<p><b>Tradução:</b></p> $traducao\n";
+    if (!empty($traducao)) {
+        $mensagem .= "<p><b>Tradução:</b></p> $traducao\n";
+    }
     $mensagem .= "<p><b>Como a Marca é Utilizada:</b></p> $comoMarcaUtilizada\n";
 
     // Cria uma instância do PHPMailer
@@ -106,14 +108,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Anexar arquivo, se presente
         if (isset($_FILES["fileInput"])) {
-            if ($_FILES["fileInput"]["error"] == UPLOAD_ERR_OK) {
-                $fileTmpPath = $_FILES["fileInput"]["tmp_name"];
-                $fileName = $_FILES["fileInput"]["name"];
-                $mail->addAttachment($fileTmpPath, $fileName);
-                $mensagem .= "Arquivo Enviado: $fileName\n";
-            } else {
-                // Adiciona uma mensagem de erro ao e-mail se o upload falhar
-                $mensagem .= "Erro no upload do arquivo: " . $_FILES["fileInput"]["error"] . "\n";
+            foreach ($_FILES["fileInput"]["error"] as $key => $error) {
+                if ($error == UPLOAD_ERR_OK) {
+                    $tmp_name = $_FILES["fileInput"]["tmp_name"][$key];
+                    $name = $_FILES["fileInput"]["name"][$key];
+                    $mail->addAttachment($tmp_name, $name);
+                    $mensagem .= "Arquivo Enviado: $name\n";
+                } else {
+                    $mensagem .= "Erro no upload do arquivo $key: $error\n";
+                }
             }
         } else {
             $mensagem .= "Nenhum arquivo enviado.\n";
