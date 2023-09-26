@@ -1,4 +1,13 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Inclua os arquivos do PHPMailer
+require './PHPMailer-6.8.1/src/Exception.php';
+require './PHPMailer-6.8.1/src/PHPMailer.php';
+require './PHPMailer-6.8.1/src/SMTP.php';
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Capturar e validar dados do formulário
@@ -64,57 +73,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "<b>Tradução:</b> $traducao\n";
     $mensagem .= "<b>Como a Marca é Utilizada:</b> $comoMarcaUtilizada\n";
 
-    // Handle the file upload
-    $attachment = "";
-    if (isset($_FILES["fileInput"]) && $_FILES["fileInput"]["error"] == UPLOAD_ERR_OK) {
-        $fileTmpPath = $_FILES["fileInput"]["tmp_name"];
-        $fileName = $_FILES["fileInput"]["name"];
-        $fileSize = $_FILES["fileInput"]["size"];
-        $fileType = $_FILES["fileInput"]["type"];
-        $fileNameCmps = explode(".", $fileName);
-        $fileExtension = strtolower(end($fileNameCmps));
+    // Cria uma instância do PHPMailer
+    $mail = new PHPMailer(true);
 
-        // MIME boundary string
-        $mime_boundary = "-----=" . md5(time());
-        
-        // Encode the file data
-        $data = chunk_split(base64_encode(file_get_contents($fileTmpPath)));
+    try {
+        // Configurações do servidor
+        $mail->SMTPDebug = 2; // Enable verbose debug output
+        $mail->isSMTP(); // Set mailer to use SMTP
+        $mail->Host = 'mail.ideafy.com.br'; // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true; // Enable SMTP authentication
+        $mail->Username = 'carrinho@ideafy.com.br'; // SMTP username
+        $mail->Password = 'IdeaFyEmail2023.'; // SMTP password
+        $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465; // TCP port to connect to
 
-        // Add file attachment to the message
-        $attachment .= "--" . $mime_boundary . "\n";
-        $attachment .= "Content-Type: " . $fileType . "; name=\"" . $fileName . "\"\n";
-        $attachment .= "Content-Transfer-Encoding: base64\n";
-        $attachment .= "Content-Disposition: attachment; filename=\"" . $fileName . "\"\n\n";
-        $attachment .= $data . "\n\n";
-        $attachment .= "--" . $mime_boundary . "--\n";
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
 
-        $mensagem .= "Arquivo Enviado: $fileName\n";
-    } else {
-        $mensagem .= "Nenhum arquivo enviado.\n";
-    }
+        // Remetente e destinatário
+        $mail->setFrom('carrinho@ideafy.com.br', 'Webmaster');
+        $mail->addAddress('lucaswan09@gmail.com'); // Add a recipient
 
-    // Recipient email
-    $to = "lucaswan09@gmail.com";
-    $subject = "Novo pedido - Plano " . $planoSelecionado;
-    
-    // Headers for attachment
-    $headers = "From: carrinho@ideafy.com.br\n";
-    $headers .= "MIME-Version: 1.0\n";
-    $headers .= "Content-Type: multipart/mixed; boundary=\"" . $mime_boundary . "\"\n\n";
-    $headers .= "This is a multi-part message in MIME format.\n\n";
-    $headers .= "--" . $mime_boundary . "\n";
-    $headers .= "Content-Type: text/plain; charset=\"iso-8859-1\"\n";
-    $headers .= "Content-Transfer-Encoding: 7bit\n\n";
-    $headers .= $mensagem . "\n\n";
+        // Assunto e corpo do e-mail
+        $mail->isHTML(true); // Set email format to HTML
+        $mail->Subject = "Novo pedido - Plano " . $planoSelecionado;
+        $mail->Body    = $mensagem;
 
-    // Final email body
-    $messageBody = $headers . $attachment;
+        // Anexar arquivo, se presente
+        if (isset($_FILES["fileInput"]) && $_FILES["fileInput"]["error"] == UPLOAD_ERR_OK) {
+            $fileTmpPath = $_FILES["fileInput"]["tmp_name"];
+            $fileName = $_FILES["fileInput"]["name"];
+            $mail->addAttachment($fileTmpPath, $fileName);
+        }
 
-    // Send email
-    if (mail($to, $subject, $messageBody, $headers)) {
+        // Enviar e-mail
+        $mail->send();
         header("Location: ../../envio-sucesso.html");
         exit;
-    } else {
+    } catch (Exception $e) {
         header("Location: ../../404.shtml");
         exit;
     }
