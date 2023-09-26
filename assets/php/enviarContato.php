@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         // Remetente e destinatário
         $mail->setFrom('carrinho@ideafy.com.br', 'Webmaster');
-        $mail->addAddress('lucaswan09@gmail.com'); // Add a recipient
+        $mail->addAddress('ideafy.pi@gmail.com'); // Add a recipient
 
         // Assunto e corpo do e-mail
         $mail->isHTML(true); // Set email format to HTML
