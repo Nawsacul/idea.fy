@@ -12,8 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = filter_input(INPUT_POST, "telefone", FILTER_SANITIZE_STRING);
     $mensagem = filter_input(INPUT_POST, "mensagem", FILTER_SANITIZE_STRING);
 
+    $contato = "<p><b>Nome:</b></p> $nome\n";
+    $contato = "<p><b>Email:</b></p> $email\n";
+    $contato = "<p><b>Telefone:</b></p> $telefone\n";
+    $contato = "<p><b>Mensagem:</b></p> $mensagem\n";
+
+    // Cria uma instância do PHPMailer
     $mail = new PHPMailer(true);
-    
+
     try {
         // Configurações do servidor
         $mail->SMTPDebug = 2; // Enable verbose debug output
@@ -33,10 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             )
         );
         
-        $mail->setFrom($email, $nome);
-        $mail->addAddress('lucaswan09@gmail.com'); // Endereço de email do destinatário
-        $mail->Subject = "Nova Mensagem de Contato";
-        $mail->Body    = "Nome: $nome\nEmail: $email\nTelefone: $telefone\n\nMensagem:\n$mensagem";
+        // Remetente e destinatário
+        $mail->setFrom('carrinho@ideafy.com.br', 'Webmaster');
+        $mail->addAddress('lucaswan09@gmail.com'); // Add a recipient
+
+        // Assunto e corpo do e-mail
+        $mail->isHTML(true); // Set email format to HTML
+        $mail->Subject = "Novo contato";
+        $mail->Body    = $contato;
+
         
         $mail->send();
         echo json_encode(['success' => true]);
