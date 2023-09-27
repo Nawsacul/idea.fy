@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!-- Hotjar Tracking Code for https://ideafy.com.br -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3672248, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 | Idea.fy</title>
@@ -104,9 +121,7 @@
             oferecer uma melhor experiência. Usando esse site, você concorda com
             o uso de cookies. Encontre mais informações sobre o uso de cookies
             nesse site no nosso
-            <a
-              href="termo-de-privacidade"
-              class="notificacao-cookies__link"
+            <a href="termo-de-privacidade" class="notificacao-cookies__link"
               >Termo de Privacidade</a
             >. Você pode ajustar as configurações abaixo.
           </p>
