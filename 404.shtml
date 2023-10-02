@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Idea.fy</title>
+
     <!-- Hotjar Tracking Code for https://ideafy.com.br -->
     <script>
       (function (h, o, t, j, a, r) {
@@ -18,9 +22,6 @@
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
     
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 | Idea.fy</title>
     <link rel="stylesheet" href="assets/css/error404.css" />
     <!-- Favicon -->
     <link
