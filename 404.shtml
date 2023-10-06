@@ -6,7 +6,7 @@
     <title>404 | Idea.fy</title>
 
     <!-- Hotjar Tracking Code for https://ideafy.com.br -->
-    <script>
+    <script defer>
       (function (h, o, t, j, a, r) {
         h.hj =
           h.hj ||
