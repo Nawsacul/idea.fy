@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
             secaoPreferencias.style.display = 'flex';
             cookiesContainer.style.display = 'none';
             botaoPreferencias.innerHTML = 'Confirmar Escolhas';
+            //Ao clicar em Confirmar escolhas
             botaoPreferencias.addEventListener('click', function () {
                 // Definir os cookies conforme a escolha do usuário
                 let cookieEssencial = document.getElementById('cookieEssencial').checked;
