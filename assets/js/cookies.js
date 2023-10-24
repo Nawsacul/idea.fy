@@ -52,6 +52,19 @@ document.addEventListener('DOMContentLoaded', function () {
             secaoPreferencias.style.display = 'flex';
             cookiesContainer.style.display = 'none';
             botaoPreferencias.innerHTML = 'Confirmar Escolhas';
+            botaoPreferencias.addEventListener('click', function () {
+                // Definir os cookies conforme a escolha do usuário
+                let cookieEssencial = document.getElementById('cookieEssencial').checked;
+                let cookieEstatistica = document.getElementById('cookieEstatistica').checked;
+                let cookieMarketing = document.getElementById('cookieMarketing').checked;
+
+                definirCookie('cookieEssencial', cookieEssencial, 365); // Válido por 365 dias
+                definirCookie('cookieEstatistica', cookieEstatistica, 365);
+                definirCookie('cookieMarketing', cookieMarketing, 365);
+                definirCookie('cookiesAceitos', true, 365); // Para verificar se o usuário já aceitou os cookies
+
+                notificacaoCookies.style.display = 'none';
+            });
         } else {
             secaoPreferencias.style.display = 'none';
             cookiesContainer.style.display = 'flex';
