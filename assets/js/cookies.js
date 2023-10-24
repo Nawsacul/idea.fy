@@ -74,16 +74,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     botaoAceitar.addEventListener('click', function () {
-        // Definir os cookies conforme a escolha do usuário
-        let cookieEssencial = document.getElementById('cookieEssencial').checked;
-        let cookieEstatistica = document.getElementById('cookieEstatistica').checked;
-        let cookieMarketing = document.getElementById('cookieMarketing').checked;
-
-        definirCookie('cookieEssencial', cookieEssencial, 365); // Válido por 365 dias
-        definirCookie('cookieEstatistica', cookieEstatistica, 365);
-        definirCookie('cookieMarketing', cookieMarketing, 365);
-        definirCookie('cookiesAceitos', true, 365); // Para verificar se o usuário já aceitou os cookies
-
+        // Definir todos os cookies como aceitos
+        let aceitacao = true; // Você está definindo a aceitação como verdadeira independentemente da entrada do usuário
+    
+        definirCookie('cookieEssencial', aceitacao, 365); // Válido por 365 dias
+        definirCookie('cookieEstatistica', aceitacao, 365);
+        definirCookie('cookieMarketing', aceitacao, 365);
+        definirCookie('cookiesAceitos', aceitacao, 365); // Para verificar se o usuário já aceitou os cookies
+    
+        // Ocultar a notificação de cookies depois que os cookies forem aceitos
         notificacaoCookies.style.display = 'none';
     });
+    
 });
